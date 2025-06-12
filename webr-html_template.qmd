@@ -69,11 +69,11 @@ set.seed(1234)
 ```
 
 ```{webr-r}
-#| autorun: true
+#| autorun: false
 
 atib <- tibble(x = rnorm(10), y = 2 + 4*x + rnorm(10))
 atib %>% ggplot(aes(x = x, y = y)) + 
-  geom_point()
+  geom_point(colour="red")
 ```
 
 ## A second slide {style="font-size:70%;"}
