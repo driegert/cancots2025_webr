@@ -1,9 +1,14 @@
 # cancots2025_webr
+
 WebR templates and instructions from CanCOTS 2025 in Montreal (June 10-12).
 
 You can view the template, rendered to HTML, by [clicking here](https://driegert.github.io/cancots2025_webr/webr-html_template.html)
 
 The steps below are from [https://quarto-webr.thecoatlessprofessor.com/](https://quarto-webr.thecoatlessprofessor.com/).
+
+## Templates
+
+[template](webr-html_template.html)
 
 # Prerequisites
 
