@@ -1,0 +1,233 @@
+---
+title: "A WebR Template"
+subtitle: ""
+author: "Your name here"
+institute: "Your Institution"
+execute: 
+  echo: true
+format:
+     html:
+#    revealjs:
+        code-fold: true
+        toc: true
+        toc-location: left
+        toc-depth: 2
+        toc-title: "Table of Contents"
+        self-contained: false
+        mathjax: "local"
+filters:
+  - webr
+webr:
+  packages: ["tibble", "ggplot2", "palmerpenguins", "skimr", "dplyr", "mosaic"]
+slide-number: true
+smaller: false
+---
+
+# Introduction to Web-R
+
+Content goes here
+
+```{r}
+#| include: false
+
+library(knitr)
+library(kableExtra)
+library(tidyverse)
+library(ggfortify)
+library(janitor)
+library(broom)
+library(skimr)
+library(mosaic)
+library(dplyr)
+
+theme_set(theme_bw())
+```
+
+
+# A Sample Lecture for an Introduction to Regression
+
+This is a sample lecture on regression. For this example, we set `packages: ["tibble", "dplyr", "ggplot2", "palmerpenguins", "mosaic]`.
+
+This example is on the `palmerpenguins` data set.
+
+
+## Exploratory data analysis
+
+Let's examine the data set.
+For simplicity, we will use complete cases for this tutorial.
+
+```{webr-r}
+penguins = penguins %>% filter(complete.cases(.))
+
+glimpse(penguins)
+```
+
+
+## 2-Sample Hypothesis Test
+
+We would like to perform a t-test on the body mass of male and female Adelie penguins. Let's start with some initial data analysis.
+
+
+```{webr-r}
+Adelie =  penguins %>% filter(species == "Adelie") %>% mutate(species = as.character(species))
+
+favstats(body_mass_g ~ species + sex, data = Adelie, var.equal = T)
+```
+
+let's examine side-by-side boxplots and histograms of the mass 
+of male and female Adelie penguins.
+For simplicity, we'll remove the data points where information is missing.
+
+
+```{webr-r}
+Adelie %>% ggplot(aes(x = body_mass_g, fill = sex)) + 
+  geom_boxplot() +
+  coord_flip()
+```
+
+```{webr-r}
+#| message: false
+  Adelie %>% ggplot(aes(x = body_mass_g, fill = sex)) + 
+  geom_histogram(alpha = 0.5)
+```
+
+
+Let's conduct the following test on whether the 
+mean body mass of male Adelie penguins is equal to the 
+mean body mass of female Adelie penguins,
+or whether there is a difference.
+
+
+
+The null and alternative hypothesis are
+$$
+  H_{0}: \mu_{\text{male}} = \mu_{\text{female}}
+  \quad
+  H_{a}: \mu_{\text{male}} \neq \mu_{\text{female}}
+$$
+
+
+```{webr-r}
+t.test(Adelie$body_mass_g ~ Adelie$sex)
+```
+
+
+
+## Simple Linear Regression
+
+Recall the simple linear regression model is
+
+$$
+y = \beta_{0} + \beta_{1}x + \varepsilon, \quad \varepsilon \sim N(0, \sigma^2)
+$$
+This is estimated using
+$$
+\hat{y} = \hat{\beta}_{0} + \hat{\beta}_{1}x
+$$
+
+
+For the Adelie penguins, let's examine whether there is a linear relationship between the `bill_length` and `body_mass_g` of the Adelie penguins.
+We'll start with a scatterplot of the data.
+
+```{webr-r}
+Adelie %>% ggplot(aes(x = body_mass_g, y = flipper_length_mm)) +
+  geom_point(col="#F8766D") +
+  xlab("Body mass (g)") +
+  ylab("Flipper Length (mm)") +
+  ggtitle("Scatter plot of Flipper Length vs. Body mass \nfor the Adelie Penguins") +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+There appears to be a positive linear relationship between body mass and flipper length. 
+Let's get the least squares regression line:
+
+```{webr-r}
+Adelie_lm = lm(flipper_length_mm ~ body_mass_g, data = Adelie)
+
+summary(Adelie_lm)
+```
+
+The equation of the regression line is:
+
+$$
+  \hat{y}_{\text{flipper length}} = 165.2 
+    + 0.007 x_{\text{mass}}
+$$
+
+Let's superimpose the least squares line on the plot:
+
+```{webr-r}
+Adelie %>% ggplot(aes(x = body_mass_g, y = flipper_length_mm)) +
+  geom_point(col = "#F8766D") +
+  geom_smooth(method = 'lm', formula = y ~ x, col = "#F8766D", se = F) + 
+  xlab("Body mass (g)") +
+  ylab("Flipper Length (mm)") +
+  ggtitle("Scatter plot of Flipper Length vs. Body mass \nfor the Adelie Penguins") +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+Let's see if there is a difference between the flipper length 
+of male and female flipper lengths:
+
+```{webr-r}
+Adelie %>% ggplot(aes(x = body_mass_g, y = flipper_length_mm, fill = sex)) +
+  geom_point() +
+  xlab("Body mass (g)") +
+  ylab("Flipper Length (mm)") +
+  ggtitle("Scatter plot of Flipper Length vs. Body mass \nfor the Adelie Penguins") +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+
+
+
+
+
+<!--
+## A Slide Title
+
+```{webr-r}
+#| context: setup
+#| autorun: true
+set.seed(1234)
+```
+
+```{webr-r}
+#| autorun: true
+
+atib <- tibble(x = rnorm(10), y = 2 + 4*x + rnorm(10))
+atib %>% ggplot(aes(x = x, y = y)) + 
+  geom_point()
+```
+
+## A second slide {style="font-size:70%;" .scrollable}
+
+
+```{webr-r}
+#| autorun: false
+
+________ %>% ggplot(aes(x = ____)) + 
+  geom_histogram(colour = "white", bins = 4)
+```
+
+
+```{webr-r}
+p = gapminder %>%
+  filter(year==1977) %>%
+  ggplot( aes(gdpPercap, lifeExp, size = pop, color=continent)) +
+  geom_point() +
+  theme_bw()
+
+ggplotly(p)
+```
+
+## More Drawing Here
+
+- item one
+- item two
+- item three
+- 90 degrees
+- 180 degrees
+- 270 degrees
+- 360 degrees
+-->
