@@ -78,7 +78,7 @@ This lesson .qmd file should be created in the directory that you created in 4. 
     > [!warning]
     > Directories will need to be dragged and dropped separately from individual files!
 8.  **Enable GitHub Pages**:
-    - Go to your forked repository on GitHub.
+    - Go to your newly created repository on GitHub.
     - Click on "**Settings**" (usually found near "Insights").
     - In the left-hand menu, click on "**Pages**".
     - Under "Source", ensure "**Deploy from a branch**" is selected.
