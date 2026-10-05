@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Aarushi Alreja, Kabir Bhatia, Nishan Mudalige">
+
+<title>Graded Tutorial: Introduction to R – Course Tutorials</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a14e3238c51140e99ccc48519b6ed9ce.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Graded Tutorial: Introduction to R</h1>
+<p class="subtitle lead">A graded tutorial to test introductory knowledge in R</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Aarushi Alreja, Kabir Bhatia, Nishan Mudalige </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            University of Toronto
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cell" data-edit="false">
+<pre class="{webr}"><code>#| edit: false
+#| output: false
+webr::install("gradethis", quiet = TRUE)
+library(gradethis)
+options(webr.exercise.checker = function(
+  label, user_code, solution_code, check_code, envir_result, evaluate_result,
+  envir_prep, last_value, engine, stage, ...
+) {
+  if (is.null(check_code)) {
+    # No grading code, so just skip grading
+    invisible(NULL)
+  } else if (is.null(label)) {
+    list(
+      correct = FALSE,
+      type = "warning",
+      message = "All exercises must have a label."
+    )
+  } else if (is.null(solution_code)) {
+    list(
+      correct = FALSE,
+      type = "warning",
+      message = htmltools::tags$div(
+        htmltools::tags$p("A problem occurred grading this exercise."),
+        htmltools::tags$p(
+          "No solution code was found. Note that grading exercises using the ",
+          htmltools::tags$code("gradethis"),
+          "package requires a model solution to be included in the document."
+        )
+      )
+    )
+  } else {
+    gradethis::gradethis_exercise_checker(
+      label = label, solution_code = solution_code, user_code = user_code,
+      check_code = check_code, envir_result = envir_result,
+      evaluate_result = evaluate_result, envir_prep = envir_prep,
+      last_value = last_value, stage = stage, engine = engine)
+  }
+})</code></pre>
+</div>
+<section id="q1" class="level2">
+<h2 class="anchored" data-anchor-id="q1">Q1 — Make the sum equal 10</h2>
+<p>Replace <code>＿</code> with a number so the expression evaluates to <strong>10</strong>.</p>
+<div class="cell" data-setup="true" data-exercise="ex_sum">
+<pre class="{webr}"><code>#| setup: true
+#| exercise: ex_sum
+＿ &lt;- NA_real_</code></pre>
+</div>
+<div class="cell" data-exercise="ex_sum">
+<pre class="{webr}"><code>#| exercise: ex_sum
+1 + 2 + ＿ + ＿</code></pre>
+</div>
+<div class="hint" data-exercise="ex_sum">
+<p>Replace the two ＿ with 2 numbers that add up to 7.</p>
+</div>
+<div class="proof solution" data-exercise="ex_sum">
+<p><span class="proof-title"><em>Solution</em>. </span></p>
+<div class="cell" data-exercise="ex_sum" data-solution="true">
+<pre class="{webr}"><code>#| exercise: ex_sum
+#| solution: true 
+1 + 2 + 3 + 4</code></pre>
+</div>
+</div>
+<div class="cell" data-exercise="ex_sum" data-check="true">
+<pre class="{webr}"><code>#| exercise: ex_sum
+#| check: true
+gradethis::grade_this({
+  if (grepl("＿", .user_code, fixed = TRUE)) {
+    fail("Replace ＿ with a number.")
+  }
+  # Pass if the evaluated result is (numerically) 10
+  if (is.numeric(.result) &amp;&amp; length(.result) == 1 &amp;&amp;
+      isTRUE(all.equal(.result, 10))) {
+    pass("✅ Correct!")
+  } else {
+    fail("Not quite — try to make the expression evaluate to 10.")
+  }
+})</code></pre>
+</div>
+</section>
+<section id="q2-create-a-vector" class="level2">
+<h2 class="anchored" data-anchor-id="q2-create-a-vector">Q2 — Create a vector</h2>
+<p>Make a vector called <code>my_vec</code> that contains the numbers <strong>5, 10, 15, 20</strong>.</p>
+<div class="cell" data-exercise="ex_vec" data-exercise.lines="2">
+<pre class="{webr}"><code>#| exercise: ex_vec
+#| exercise.lines: 2
+#| echo: false
+my_vec &lt;- NULL
+</code></pre>
+</div>
+<div class="hint" data-exercise="ex_vec">
+<p>Use the c() function to combine numbers: c(1, 2, 3)</p>
+</div>
+<div class="proof solution" data-exercise="ex_vec">
+<p><span class="proof-title"><em>Solution</em>. </span></p>
+<div class="cell" data-exercise="ex_vec" data-solution="true">
+<pre class="{webr}"><code>#| exercise: ex_vec
+#| solution: true
+my_vec &lt;- c(5, 10, 15, 20)
+</code></pre>
+</div>
+</div>
+<div class="cell" data-exercise="ex_vec" data-check="true">
+<pre class="{webr}"><code>#| exercise: ex_vec
+#| check: true
+gradethis::grade_this({
+  if (!exists("my_vec", envir = .envir_result)) {
+    fail("You need to define `my_vec`.")
+  }
+  v &lt;- get("my_vec", envir = .envir_result)
+  if (!is.numeric(v)) {
+    fail("`my_vec` should be numeric.")
+  }
+  if (!identical(v, c(5, 10, 15, 20))) {
+    fail("`my_vec` should contain exactly 5, 10, 15, 20 in that order.")
+  }
+  pass("✅ Nice! Your vector is correct.")
+})
+</code></pre>
+</div>
+</section>
+<section id="q3-find-the-average" class="level2">
+<h2 class="anchored" data-anchor-id="q3-find-the-average">Q3 — Find the average</h2>
+<p>Compute the mean of the vector <code>c(2, 4, 6, 8, 10)</code>.<br>
+Your answer should be stored in a variable called <code>avg_val</code>.</p>
+<div class="cell" data-exercise="ex_mean" data-exercise.lines="2">
+<pre class="{webr}"><code>#| exercise: ex_mean
+#| exercise.lines: 2
+#| echo: false
+avg_val &lt;- NULL</code></pre>
+</div>
+<div class="hint" data-exercise="ex_mean">
+<p>Use the mean() function: mean(c(…))</p>
+</div>
+<div class="proof solution" data-exercise="ex_mean">
+<p><span class="proof-title"><em>Solution</em>. </span></p>
+<div class="cell" data-exercise="ex_mean" data-solution="true">
+<pre class="{webr}"><code>#| exercise: ex_mean
+#| solution: true
+avg_val &lt;- mean(c(2, 4, 6, 8, 10))
+</code></pre>
+</div>
+</div>
+<div class="cell" data-exercise="ex_mean" data-check="true">
+<pre class="{webr}"><code>#| exercise: ex_mean
+#| check: true
+gradethis::grade_this({
+  if (!exists("avg_val", envir = .envir_result)) {
+    fail("You need to define `avg_val`.")
+  }
+  v &lt;- get("avg_val", envir = .envir_result)
+  if (!is.numeric(v) || length(v) != 1) {
+    fail("`avg_val` should be a single numeric value.")
+  }
+  if (!isTRUE(all.equal(v, 6, tol = 1e-8))) {
+    fail("Not quite — the mean of c(2,4,6,8,10) is 6.")
+  }
+  pass("✅ Correct! You computed the mean successfully.")
+})
+</code></pre>
+</div>
+</section>
+<section id="q4-draw-a-histogram-from-toothgrowth-type-the-full-call" class="level2">
+<h2 class="anchored" data-anchor-id="q4-draw-a-histogram-from-toothgrowth-type-the-full-call">Q4 — Draw a histogram from ToothGrowth (type the full call)</h2>
+<p>Use exactly one of these numeric columns and nothing else: len or dose</p>
+<figure style="text-align:center" class="figure">
+<img src="./images/toothgrowth.jpg" style="width:75%" class="figure-img">
+<figcaption>
+Photo by <a href="https://unsplash.com/@thehumbleco?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">The Humble Co.</a> on <a href="https://unsplash.com/photos/blue-and-white-toothbrush-in-clear-glass-jar-cADflhZzgyo?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
+</figcaption>
+</figure>
+<div class="callout callout-style-default callout-note callout-titled" title="Preview">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Preview
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Find a preview of the ToothGrowth dataset here:</p>
+<div class="cell">
+<pre class="{webr}"><code>#| echo: true
+head(ToothGrowth, 8)
+</code></pre>
+</div>
+</div>
+</div>
+<div class="cell" data-exercise="ex_hist_exact">
+<pre class="{webr}"><code>#| exercise: ex_hist_exact
+# Type your answer on the next line (one command only):</code></pre>
+</div>
+<div class="hint" data-exercise="ex_hist_exact">
+<p>Use the hist command.</p>
+</div>
+<div class="proof solution" data-exercise="ex_hist_exact">
+<p><span class="proof-title"><em>Solution</em>. </span></p>
+<div class="cell" data-exercise="ex_hist_exact" data-solution="true">
+<pre class="{webr}"><code>#| exercise: ex_hist_exact
+#| solution: true
+hist(ToothGrowth$len)</code></pre>
+</div>
+</div>
+<div class="cell" data-exercise="ex_hist_exact" data-check="true">
+<pre class="{webr}"><code>#| exercise: ex_hist_exact
+#| check: true
+gradethis::grade_this({
+code &lt;- .user_code
+lines &lt;- strsplit(paste(code, collapse = "\n"), "\n", fixed = TRUE)[[1]]
+lines &lt;- sub("#.*$", "", lines)
+trim &lt;- function(s) sub("^[[:space:]]+|[[:space:]]+$", "", s)
+lines &lt;- trim(lines); lines &lt;- lines[nzchar(lines)]
+
+if (length(lines) == 0) fail("Type your answer; it can't be empty.")
+if (length(lines) &gt; 1)  fail("Enter exactly one command.")
+
+one &lt;- lines[1]
+if (!inherits(.result, "histogram")) fail("Your code should draw a histogram.")
+
+expr &lt;- try(parse(text = one)[[1]], silent = TRUE)
+if (inherits(expr, "try-error")) fail("Your code must be a single valid R expression.")
+if (!(is.call(expr) &amp;&amp; identical(as.character(expr[[1]]), "hist"))) fail("Use hist(...).")
+
+args &lt;- as.list(expr)[-1]
+if (length(args) != 1L) fail("Pass exactly one argument to hist().")
+
+arg_txt &lt;- paste0(deparse(args[[1]]), collapse = "")
+allowed &lt;- c("ToothGrowth$len","ToothGrowth$dose")
+
+if (arg_txt %in% allowed) pass("OK")
+else if (arg_txt == "ToothGrowth") fail("hist(ToothGrowth) won’t work—choose len or dose.")
+else fail("Type exactly hist(ToothGrowth$len) or hist(ToothGrowth$dose).")
+})
+</code></pre>
+</div>
+</section>
+<section id="q5-draw-a-boxplot-from-toothgrowth-type-the-full-call" class="level2">
+<h2 class="anchored" data-anchor-id="q5-draw-a-boxplot-from-toothgrowth-type-the-full-call">Q5 — Draw a boxplot from ToothGrowth (type the full call)</h2>
+<p>Use exactly one of these numeric columns and nothing else: len or dose</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Preview">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Preview
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Find a preview of the ToothGrowth dataset here:</p>
+<div class="cell">
+<pre class="{webr}"><code>#| echo: true
+head(ToothGrowth, 8)
+</code></pre>
+</div>
+</div>
+</div>
+<div class="cell" data-exercise="ex_boxplot_exact">
+<pre class="{webr}"><code>#| exercise: ex_boxplot_exact
+# Type your answer on the next line (one command only):</code></pre>
+</div>
+<div class="hint" data-exercise="ex_boxplot_exact">
+<p>Use the boxplot command.</p>
+</div>
+<div class="proof solution" data-exercise="ex_boxplot_exact">
+<p><span class="proof-title"><em>Solution</em>. </span></p>
+<div class="cell" data-exercise="ex_boxplot_exact" data-solution="true">
+<pre class="{webr}"><code>#| exercise: ex_boxplot_exact
+#| solution: true
+boxplot(ToothGrowth$len)</code></pre>
+</div>
+</div>
+<div class="cell" data-exercise="ex_boxplot_exact" data-check="true">
+<pre class="{webr}"><code>#| exercise: ex_boxplot_exact
+#| check: true
+gradethis::grade_this({
+code &lt;- .user_code
+lines &lt;- strsplit(paste(code, collapse = "\n"), "\n", fixed = TRUE)[[1]]
+lines &lt;- sub("#.*$", "", lines)
+trim &lt;- function(s) sub("^[[:space:]]+|[[:space:]]+$", "", s)
+lines &lt;- trim(lines); lines &lt;- lines[nzchar(lines)]
+
+if (length(lines) == 0) fail("Type your answer; it can't be empty.")
+if (length(lines) &gt; 1)  fail("Enter exactly one command.")
+
+one &lt;- lines[1]
+
+expr &lt;- try(parse(text = one)[[1]], silent = TRUE)
+if (inherits(expr, "try-error")) fail("Your code must be a single valid R expression.")
+if (!(is.call(expr) &amp;&amp; identical(as.character(expr[[1]]), "boxplot"))) fail("Use boxplot(...).")
+
+args &lt;- as.list(expr)[-1]
+if (length(args) != 1L) fail("Pass exactly one argument to boxplot().")
+
+arg_txt &lt;- paste0(deparse(args[[1]]), collapse = "")
+allowed &lt;- c("ToothGrowth$len","ToothGrowth$dose")
+
+if (arg_txt %in% allowed) {
+if (!(is.list(.result) &amp;&amp; !is.null(.result$stats))) pass("OK (note: base boxplot())") else pass("OK")
+} else if (arg_txt == "ToothGrowth") {
+fail("boxplot(ToothGrowth) won’t work—choose len or dose.")
+} else {
+fail("Type exactly boxplot(ToothGrowth$len) or boxplot(ToothGrowth$dose).")
+}
+})
+</code></pre>
+</div>
+</section>
+<section id="q6-add-a-color-to-the-histogram" class="level2">
+<h2 class="anchored" data-anchor-id="q6-add-a-color-to-the-histogram">Q6 — Add a color to the histogram</h2>
+<p>Re-draw a histogram of ToothGrowth$len and set any bar color using the col= argument.</p>
+<div class="cell" data-exercise="ex_hist_col">
+<pre class="{webr}"><code>#| exercise: ex_hist_col
+# (one command)</code></pre>
+</div>
+<div class="hint" data-exercise="ex_hist_col">
+<p>add col as an additional argument here and give it a color of your choice.</p>
+</div>
+<div class="proof solution" data-exercise="ex_hist_col">
+<p><span class="proof-title"><em>Solution</em>. </span></p>
+<div class="cell" data-exercise="ex_hist_col" data-solution="true">
+<pre class="{webr}"><code>#| exercise: ex_hist_col
+#| solution: true
+hist(ToothGrowth$len, col = "steelblue")
+</code></pre>
+</div>
+</div>
+<div class="cell" data-exercise="ex_hist_col" data-check="true">
+<pre class="{webr}"><code>#| exercise: ex_hist_col
+#| check: true
+gradethis::grade_this({
+line &lt;- paste(.user_code, collapse = "\n")
+if (!inherits(.result, "histogram")) fail("Use hist(...) on ToothGrowth$len.")
+
+expr &lt;- try(parse(text = line)[[1]], silent = TRUE)
+if (inherits(expr, "try-error")) fail("Your code must be a single valid R expression.")
+if (!(is.call(expr) &amp;&amp; identical(as.character(expr[[1]]), "hist"))) fail("Call hist(...).")
+
+args &lt;- as.list(expr)[-1]
+arg1_txt &lt;- paste0(deparse(args[[1]]), collapse = "")
+if (arg1_txt != "ToothGrowth$len") fail("Use ToothGrowth$len as the data argument.")
+
+has_col &lt;- any(names(args) == "col")
+if (!has_col) fail("Add a color with col = ...")
+
+pass("OK")
+})
+</code></pre>
+</div>
+</section>
+<section id="q7-boxplot-make-it-horizontal" class="level2">
+<h2 class="anchored" data-anchor-id="q7-boxplot-make-it-horizontal">Q7 — Boxplot (make it horizontal)</h2>
+<p>Draw a boxplot of ToothGrowth$dose and make it horizontal using horizontal = TRUE as an argument.</p>
+<div class="cell" data-exercise="ex_box_h">
+<pre class="{webr}"><code>#| exercise: ex_box_h
+# (one command)</code></pre>
+</div>
+<div class="hint" data-exercise="ex_box_h">
+<p>add horizontal as an argument just like col from the previous question</p>
+</div>
+<div class="proof solution" data-exercise="ex_box_h">
+<p><span class="proof-title"><em>Solution</em>. </span></p>
+<div class="cell" data-exercise="ex_box_h" data-solution="true">
+<pre class="{webr}"><code>#| exercise: ex_box_h
+#| solution: true
+boxplot(ToothGrowth$dose, horizontal = TRUE)</code></pre>
+</div>
+</div>
+<div class="cell" data-exercise="ex_box_h" data-check="true">
+<pre class="{webr}"><code>#| exercise: ex_box_h
+#| check: true
+gradethis::grade_this({
+line &lt;- paste(.user_code, collapse = "\n")
+
+expr &lt;- try(parse(text = line)[[1]], silent = TRUE)
+if (inherits(expr, "try-error")) fail("Your code must be a single valid R expression.")
+if (!(is.call(expr) &amp;&amp; identical(as.character(expr[[1]]), "boxplot"))) fail("Use boxplot(...).")
+
+args &lt;- as.list(expr)[-1]
+if (length(args) &lt; 1L) fail("Pass ToothGrowth$dose to boxplot().")
+
+arg1_txt &lt;- paste0(deparse(args[[1]]), collapse = "")
+if (arg1_txt != "ToothGrowth$dose") fail("Use ToothGrowth$dose as the data argument.")
+
+arg_names &lt;- names(args)
+if (is.null(arg_names)) arg_names &lt;- rep("", length(args))
+idx &lt;- which(arg_names == "horizontal")
+horiz_ok &lt;- FALSE
+if (length(idx) &gt; 0) {
+hval &lt;- args[[idx[1]]]
+horiz_ok &lt;- isTRUE(eval(hval))
+}
+if (!horiz_ok) fail("Add horizontal = TRUE.")
+
+if (!(is.list(.result) &amp;&amp; !is.null(.result$stats))) {
+pass("OK (note: ensure you're using base boxplot())")
+} else {
+pass("OK")
+}
+})
+</code></pre>
+</div>
+</section>
+<section id="q8-load-a-csv-as-a-dataframe" class="level2">
+<h2 class="anchored" data-anchor-id="q8-load-a-csv-as-a-dataframe">Q8 — Load a CSV as a DataFrame</h2>
+<p>Load iris.csv into a dataframe named df.</p>
+<figure style="text-align:center" class="figure">
+<img src="./images/iris.jpg" style="width:75%" class="figure-img">
+<figcaption>
+Photo by <a href="https://unsplash.com/@andsmall?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Andrew Small</a> on <a href="https://unsplash.com/photos/selective-focus-photography-of-pink-petaled-flower-EfhCUc_fjrU?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
+</figcaption>
+</figure>
+<div class="cell">
+<pre class="{webr}"><code># Q9 SETUP — create iris.csv inside the webR filesystem
+#| setup: true
+#| exercise: ex_csv_load
+write.csv(iris, "iris.csv", row.names = FALSE)
+</code></pre>
+</div>
+<div class="cell">
+<pre class="{webr}"><code>## Q9 — Load a CSV as a data frame
+# Read "iris.csv" into a data frame named df
+#| exercise: ex_csv_load
+#| exercise.lines: 3
+#| echo: false
+df &lt;- </code></pre>
+</div>
+<div class="hint" data-exercise="ex_csv_load">
+<p>Use read.csv here.</p>
+</div>
+<div class="proof solution" data-exercise="ex_csv_load">
+<p><span class="proof-title"><em>Solution</em>. </span></p>
+<div class="cell" data-exercise="ex_csv_load" data-solution="true" data-files="data/iris.csv">
+<pre class="{webr}"><code>#| exercise: ex_csv_load
+#| solution: true
+#| files: ["data/iris.csv"]   # solution runs in its own sandbox — mount again
+df &lt;- read.csv("iris.csv")
+</code></pre>
+</div>
+</div>
+<div class="cell" data-exercise="ex_csv_load" data-check="true">
+<pre class="{webr}"><code>#| exercise: ex_csv_load
+#| check: true
+gradethis::grade_this({
+  if (!exists("df", envir = .envir_result)) fail("Create `df` with `read.csv(\"iris.csv\")`.")
+  x &lt;- get("df", envir = .envir_result)
+  if (!is.data.frame(x)) fail("`df` should be a data frame.")
+  need &lt;- c("Sepal.Length","Sepal.Width","Petal.Length","Petal.Width","Species")
+  if (!all(need %in% names(x))) fail("`df` doesn't look like the expected columns.")
+  pass("✅ Loaded correctly!")
+})</code></pre>
+</div>
+</section>
+<section id="q9-count-rows-in-iris.csv" class="level2">
+<h2 class="anchored" data-anchor-id="q9-count-rows-in-iris.csv">Q9 — Count rows in iris.csv</h2>
+<p>Count the number of rows in iris.csv and store them in the variable rows</p>
+<div class="cell">
+<pre class="{webr}"><code># Q10 setup
+#| setup: true
+#| exercise: ex_csv_nrows
+write.csv(iris, "iris.csv", row.names = FALSE)
+</code></pre>
+</div>
+<div class="cell" data-exercise="ex_csv_nrows" data-exercise.lines="3">
+<pre class="{webr}"><code>#| exercise: ex_csv_nrows
+#| exercise.lines: 3
+#| echo: false
+df &lt;- read.csv("iris.csv")
+rows &lt;- </code></pre>
+</div>
+<div class="hint" data-exercise="ex_csv_nrows">
+<p>Use nrow.</p>
+</div>
+<div class="proof solution" data-exercise="ex_csv_nrows">
+<p><span class="proof-title"><em>Solution</em>. </span></p>
+<div class="cell" data-exercise="ex_csv_nrows" data-solution="true" data-files="data/iris.csv">
+<pre class="{webr}"><code>#| exercise: ex_csv_nrows
+#| solution: true
+#| files: ["data/iris.csv"]   # solution runs in its own sandbox — mount again
+df &lt;- read.csv("iris.csv")
+rows &lt;- nrow(df)
+</code></pre>
+</div>
+</div>
+<div class="cell" data-exercise="ex_csv_nrows" data-check="true">
+<pre class="{webr}"><code>#| exercise: ex_csv_nrows
+#| check: true
+gradethis::grade_this({
+  stopifnot(exists("rows", envir=.envir_result))
+  x &lt;- get("rows", envir=.envir_result)
+  if (!is.numeric(x) || length(x)!=1) fail("`rows` must be a single number.")
+  if (x==150) pass("✅ 150 rows.") else pass("ℹ️ Count recorded.")
+})
+</code></pre>
+</div>
+</section>
+<section id="q10-show-column-names" class="level2">
+<h2 class="anchored" data-anchor-id="q10-show-column-names">Q10 — Show column names</h2>
+<p>Print the column names from iris.csv</p>
+<div class="cell" data-setup="true" data-exercise="ex_csv_names">
+<pre class="{webr}"><code>#| setup: true
+#| exercise: ex_csv_names
+write.csv(iris, "iris.csv", row.names = FALSE)
+</code></pre>
+</div>
+<div class="cell" data-exercise="ex_csv_names" data-exercise.lines="4">
+<pre class="{webr}"><code>#| exercise: ex_csv_names
+#| exercise.lines: 4
+#| echo: false
+# Read the CSV and print the column names
+df   &lt;- read.csv("iris.csv")
+cols &lt;- 
+</code></pre>
+</div>
+<div class="hint" data-exercise="ex_csv_names">
+<p>Use names.</p>
+</div>
+<div class="proof solution" data-exercise="ex_csv_names">
+<p><span class="proof-title"><em>Solution</em>. </span></p>
+<div class="cell" data-exercise="ex_csv_names" data-solution="true" data-files="data/iris.csv">
+<pre class="{webr}"><code>#| exercise: ex_csv_names
+#| solution: true
+#| files: ["data/iris.csv"]   # solution runs in its own sandbox — mount again
+df   &lt;- read.csv("iris.csv")
+cols &lt;- names(df)
+cols</code></pre>
+</div>
+</div>
+<div class="cell" data-exercise="ex_csv_names" data-check="true">
+<pre class="{webr}"><code>#| exercise: ex_csv_names
+#| check: true
+gradethis::grade_this({
+  if (!exists("cols", envir=.envir_result)) fail("Create `cols &lt;- names(df)` and print it.")
+  x &lt;- get("cols", envir=.envir_result)
+  if (!is.character(x)) fail("`cols` should be a character vector from `names(df)`.")
+  need &lt;- c("Sepal.Length","Sepal.Width","Petal.Length","Petal.Width","Species")
+  if (!all(need %in% x)) fail("Those don’t look like the iris columns—did you read the CSV and call `names(df)`?")
+  pass("✅ Columns detected: Sepal/ Petal and Species.")
+})
+</code></pre>
+</div>
+</section>
+<section id="q11-print-some-of-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="q11-print-some-of-the-data">Q11 — Print some of the data</h2>
+<p>Print the first 5 rows from iris.csv.</p>
+<div class="cell" data-setup="true" data-exercise="ex_csv_head">
+<pre class="{webr}"><code>#| setup: true
+#| exercise: ex_csv_head
+write.csv(iris, "iris.csv", row.names = FALSE)
+</code></pre>
+</div>
+<div class="cell" data-exercise="ex_csv_head" data-exercise.lines="4">
+<pre class="{webr}"><code>#| exercise: ex_csv_head
+#| exercise.lines: 4
+#| echo: false
+# Read the CSV and print the column names
+df   &lt;- read.csv("iris.csv")
+#your code here
+</code></pre>
+</div>
+<div class="hint" data-exercise="ex_csv_head">
+<p>Use head.</p>
+</div>
+<div class="proof solution" data-exercise="ex_csv_head">
+<p><span class="proof-title"><em>Solution</em>. </span></p>
+<div class="cell" data-exercise="ex_csv_head" data-solution="true" data-files="data/iris.csv">
+<pre class="{webr}"><code>#| exercise: ex_csv_head
+#| solution: true
+#| files: ["data/iris.csv"]   # solution runs in its own sandbox — mount again
+df &lt;- read.csv("iris.csv")
+head(df)</code></pre>
+</div>
+</div>
+<div class="cell" data-exercise="ex_csv_head" data-check="true">
+<pre class="{webr}"><code>#| exercise: ex_csv_head
+#| check: true
+gradethis::grade_this({
+  # If the *last* expression is head(df, 5), .result should be a 5-row data.frame
+  if (!(is.data.frame(.result) &amp;&amp; nrow(.result)==5)) {
+    fail("Show the first 5 rows (e.g., `head(df, 5)`) as the **last** line.")
+  }
+  if (!all(c("Sepal.Length","Sepal.Width","Petal.Length","Petal.Width","Species") %in% names(.result))) {
+    fail("Your preview should be from `df` read from the CSV (it must have the iris columns).")
+  }
+  pass("✅ Nice—now you can clearly see the columns and a few rows.")
+})
+</code></pre>
+</div>
+</section>
+<section id="q12-make-a-histogram-from-iris.csv" class="level2">
+<h2 class="anchored" data-anchor-id="q12-make-a-histogram-from-iris.csv">Q12 — Make a histogram from iris.csv</h2>
+<p>Make a histogram of the column Sepal.Length from iris.csv.</p>
+<div class="cell" data-setup="true" data-exercise="ex_csv_hist">
+<pre class="{webr}"><code>#| setup: true
+#| exercise: ex_csv_hist
+write.csv(iris, "iris.csv", row.names = FALSE)
+</code></pre>
+</div>
+<div class="cell" data-exercise="ex_csv_hist" data-exercise.lines="3">
+<pre class="{webr}"><code>#| exercise: ex_csv_hist
+#| exercise.lines: 3
+#| echo: false
+df &lt;- read.csv("iris.csv")
+</code></pre>
+</div>
+<div class="hint" data-exercise="ex_csv_hist">
+<p>Use hist (see Q5).</p>
+</div>
+<div class="proof solution" data-exercise="ex_csv_hist">
+<p><span class="proof-title"><em>Solution</em>. </span></p>
+<div class="cell" data-exercise="ex_csv_hist" data-solution="true" data-files="data/iris.csv">
+<pre class="{webr}"><code>#| exercise: ex_csv_hist
+#| solution: true
+#| files: ["data/iris.csv"]   # solution runs in its own sandbox — mount again
+df &lt;- read.csv("iris.csv")
+hist(df$Sepal.Length, col = "lightgray", main = "Sepal.Length", xlab = "cm") </code></pre>
+</div>
+</div>
+<div class="cell" data-exercise="ex_csv_hist" data-check="true">
+<pre class="{webr}"><code>#| exercise: ex_csv_hist
+#| check: true
+gradethis::grade_this({
+  if (!inherits(.result,"histogram")) fail("Use base `hist(df$Sepal.Length, ...)`.")
+  if (!grepl("Sepal\\.Length", paste(.user_code, collapse="\n"))) fail("Plot `df$Sepal.Length`.")
+  pass("✅ Histogram detected.")
+})</code></pre>
+</div>
+</section>
+<section id="q2" class="level2">
+<h2 class="anchored" data-anchor-id="q2">Q13 — Write a function using division</h2>
+<p>Define a function called <code>divide_nums</code> that takes two arguments (<code>a</code> and <code>b</code>) and returns the results of:</p>
+<ol type="1">
+<li><code>a / b</code></li>
+<li><code>b / a</code></li>
+</ol>
+<p>Both results should be stored in separate variables before being returned.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Info">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Info
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Remember: in R, division by zero (1/0) will return Inf rather than an error.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Info">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Info
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In R, lists are written with list(a, b, c). Each element can be anything: a number, a string, or even another list.</p>
+</div>
+</div>
+<div class="cell" data-exercise="ex_fun_div" data-exercise.lines="8">
+<pre class="{webr}"><code>#| exercise: ex_fun_div
+#| exercise.lines: 8
+#| echo: false
+divide_nums &lt;- function(a, b) {
+  # your code here
+}</code></pre>
+</div>
+<div class="hint" data-exercise="ex_fun_div">
+<p>Start with: res1 &lt;- a / b res2 &lt;- b / a and then use the list command.</p>
+</div>
+<div class="proof solution" data-exercise="ex_fun_div">
+<p><span class="proof-title"><em>Solution</em>. </span></p>
+<div class="cell" data-exercise="ex_fun_div" data-solution="true">
+<pre class="{webr}"><code>#| exercise: ex_fun_div
+#| solution: true
+divide_nums &lt;- function(a, b) {
+  res1 &lt;- a / b
+  res2 &lt;- b / a
+  list(res1, res2)
+}</code></pre>
+</div>
+</div>
+<div class="cell" data-exercise="ex_fun_div" data-check="true">
+<pre class="{webr}"><code>#| exercise: ex_fun_div
+#| check: true
+gradethis::grade_this({
+  code &lt;- .user_code
+
+  # 0) Empty/untouched?
+  if (!nzchar(gsub("\\s|#.*", "", code))) {
+    fail("Type your answer in the editor.")
+  }
+
+  # 1) Find the student's env (webR/gradethis names vary)
+  env &lt;- get0(".envir_result", ifnotfound = NULL)
+  if (is.null(env)) env &lt;- get0(".user_env", ifnotfound = NULL)
+  if (is.null(env)) env &lt;- parent.frame()
+
+  # 2) Get their function (prefer the named binding; fall back to .result)
+  f &lt;- NULL
+  if (exists("divide_nums", envir = env, inherits = FALSE)) {
+    f &lt;- get("divide_nums", envir = env)
+  } else if (is.function(.result)) {
+    f &lt;- .result
+  }
+
+  if (!is.function(f)) {
+    fail("Define a function named `divide_nums(a, b)` (use `divide_nums &lt;- function(a, b) { ... }`).")
+  }
+
+  # 3) Run it and grade
+  val &lt;- tryCatch(f(8, 2), error = function(e) e)
+  if (inherits(val, "error")) {
+    msg &lt;- conditionMessage(val)
+    if (grepl("object .* not found", msg)) {
+      fail("Looks like you referenced a variable that wasn’t created (e.g., `res1` or `res2`).")
+    } else {
+      fail(paste0("Your function raised an error: ", msg))
+    }
+  }
+
+  if (!is.list(val) || length(val) != 2) {
+    fail("Return a **list** of two elements: `list(res1, res2)`.")
+  }
+  if (!(is.numeric(val[[1]]) &amp;&amp; is.numeric(val[[2]]))) {
+    fail("Both returned values must be numeric (`a/b` and `b/a`).")
+  }
+
+  ok &lt;- isTRUE(all.equal(val[[1]], 4,    tol = 1e-8)) &amp;&amp;
+        isTRUE(all.equal(val[[2]], 0.25, tol = 1e-8))
+  if (!ok) {
+    fail("Close! Compute `res1 &lt;- a / b` and `res2 &lt;- b / a`, then return `list(res1, res2)`.")
+  }
+
+  pass("✅ Well done! Function name, outputs, and return format are correct.")
+})</code></pre>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/nishanmudalige\.github\.io\/STA258_Tutorials\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,84 @@
+---
+title: "About"
+format: html
+---
+
+## About this course
+
+This course provides an introduction to key concepts in statistics and data science, with an emphasis on **understanding, interpretation, and communication** rather than rote computation.
+
+Students will engage with real and realistic datasets, develop intuition through visualization and simulation, and learn to clearly communicate their findings.
+
+
+## Teaching philosophy
+
+This course is designed around the following principles:
+
+- **Conceptual understanding first**  
+  We focus on *why* methods work and *how to interpret results*, not just how to compute them.
+
+- **Reproducibility matters**  
+  All work should be clear, organized, and reproducible using modern tools.
+
+- **Learning by doing**  
+  Students will practice through labs, assignments, and in-class activities.
+
+- **Communication is key**  
+  Being able to explain results clearly is just as important as obtaining them.
+
+
+## Course structure
+
+The course typically includes:
+
+- **Lectures**  
+  Introduce key concepts and worked examples
+
+- **Labs / practice**  
+  Reinforce ideas through hands-on work
+
+- **Assignments**  
+  Apply methods to new problems and datasets
+
+- **Assessments**  
+  Evaluate conceptual understanding and applied skills
+
+
+## Tools and technologies
+
+This course uses:
+
+- **R and RStudio / Positron**
+- **Quarto** for reproducible documents and presentations
+- **WebR** (in some cases) for running code in the browser
+- **GitHub** for version control and collaboration (optional/advanced)
+
+No prior experience with these tools is assumed unless otherwise stated.
+
+
+## Expectations
+
+Students are expected to:
+
+- attend and participate in lectures
+- engage actively with course materials
+- attempt all assigned work
+- ask questions and seek help when needed
+- collaborate appropriately while maintaining academic integrity
+
+
+## Support
+
+Learning new concepts can be challenging. Support is available through:
+
+- office hours
+- discussion forums
+- peer collaboration (where appropriate)
+
+If you are struggling, please reach out early.
+
+
+## A note on flexibility
+
+The course schedule and materials may be adjusted based on pacing and feedback to best support student learning.
+

@@ -1,0 +1,82 @@
+---
+title: '<img src="assets/logo.png" height="50"> Course Title'
+subtitle: "Course Skeleton"
+author: "Instructor Name"
+institution: "Name of Institution"
+format: html
+---
+
+This is a generic course landing page.
+
+Here students will find:
+
+- A course [syllabus](syllabus.html) (edit this in `syllabus.qmd`)
+- A tentative lecture schedule; see @tbl-lecsched
+- A tentative schedule for activities; see @tbl-activitysched
+- A tentative tutorial schedule; see @tbl-tutorialsched
+
+
+## Course Schedule
+
+The schedule below is tentative and may be adjusted as the course progresses.
+
+### Lectures
+
+| Week | Topic | Materials |
+|-----------------------:|:-----------------------|------------------------|
+| 1 | Introduction to Quarto Slides with webr | [Slides](lectures/lecture-template.html) |
+| 2 | Linear Regression demo | [Slides](lectures/regression-lecture.html) |
+
+: *The tentative course schedule for lectures* {#tbl-lecsched}
+
+
+### Interactive Activities and Simulations
+
+| Week | Topic | Materials |
+|-----------------------:|:-----------------------|------------------------|
+| 1 | Coin Flipping activity | [Activity](activities/activity_coins.html) |
+| 2 | Introduction to visuals | [Activity](activities/activity_intro_to_visuals.html) |
+
+: *The tentative course schedule for interactive activities and simulations with R* {#tbl-activitysched}
+
+
+### Interactive R Tutorials
+
+| Week | Topic | Materials |
+|-----------------------:|:-----------------------|------------------------|
+| 1 | Introduction to R | [Tutorial](tutorials/tutorial_intro_to_r.html) |
+| 2 | Tutorial on Regression with R | [Tutorial](tutorials/tutorial_regression.html) |
+| 3 | Graded tutorial on introductory level content in R | [Tutorial](tutorials/graded_tutorial_intro_to_r.html) |
+
+: *The tentative course schedule for interactive R tutorials* {#tbl-tutorialsched}
+
+
+
+
+
+## Lecture Slide
+
+The slide decks above were made in Quarto in revealjs (HTML). A lecture template with some helpful demonstrations can be [here](lectures/lecture-template.qmd); see the rendered version [here](https://irene.vrbik.ok.ubc.ca/webr-demo/lectures/lecture-template.html#/title-slide).  
+
+::: {.callout-note}
+Note that revealjs presentations can be presented as HTML slides or can be printed to PDF for easier distribution. 🎉
+:::
+
+
+### Print/Save to PDF:
+
+Reveal presentations can be exported to PDF via a special print stylesheet.
+
+1.  Toggle into Print View using the `E` key (or using the [Navigation Menu](https://quarto.org/docs/presentations/revealjs/presenting.html#navigation-menu))
+2.  Open the in-browser[^2] print dialog (CTRL/CMD+P).
+3.  Change the **Destination** setting to **Save as PDF**.
+4.  Change the **Layout** to **Landscape**.
+5.  Change the **Margins** to **None**.
+6.  Enable the **Background graphics** option.
+7.  Click **Save** 🎉
+
+
+
+Visit <https://quarto.org/docs/presentations/revealjs/> for more details on create revealjs slides. 
+
+

@@ -1,0 +1,371 @@
+---
+title: "Regression"
+author: "Dr. Irene Vrbik"
+subtitle: "STAT 205: Introduction to Mathematical Statistics"
+institute: "University of British Columbia Okanagan"
+format:
+  revealjs:
+    html-math-method: mathjax
+    chalkboard: true
+    slide-number: true
+revealjs-plugins:
+  - quiz
+filters:
+  - webr
+webr:
+  packages: ["tibble", "ggplot2"]
+bibliography: ../references.bib  
+---
+
+```{r}
+#| include: false
+
+library(knitr)
+library(kableExtra)
+library(tidyverse)
+library(ggfortify)
+library(janitor)
+library(broom)
+
+theme_set(theme_bw())
+```
+
+## Introduction
+
+:::: {style="font-size: 90%;"}
+::: incremental
+- In this lecture we will introduce Simple Linear Regression (SLR) to model the relationship between two numerical variables.
+
+- We will quantify the relationship between variables using popular metrics like the Correlation Coefficient and $R^2$ value.
+
+- Statistical inference for this model will be discussed, and the critical distinction between inference for mean response and inference for the outcome will be clarified.
+
+- We will also introduce a basic understanding of the multiple regression model.
+:::
+::::
+
+## Recall: Scatterplots
+
+```{webr-r}
+#| context: setup
+#| autorun: true
+
+theme_set(theme_bw())
+```
+
+```{webr-r}
+#| autorun: false
+
+set.seed(2025); n = 8
+atib <- tibble(x = rnorm(8), y = 2 + 4*x + rnorm(n, sd = 2))
+atib %>% ggplot(aes(x = x, y = y)) + 
+  geom_point(colour="red", size = 3) 
+```
+
+## Line of Best fit
+
+```{r}
+#| echo: false
+
+set.seed(2025); n = 8
+atib <- tibble(x = rnorm(8), y = 2 + 4*x + rnorm(n, sd = 2))
+```
+
+```{r}
+#| fig-width: 7
+#| fig-height: 5
+#| fig-align: "center"
+
+
+# Fit a linear model
+model <- lm(y ~ x, data = atib)
+
+# Plot data with regression line only
+ggplot(atib, aes(x = x, y = y)) +
+  geom_point(color = "red", size = 3) +                     # Data points
+  geom_smooth(method = "lm", se = FALSE, color = "blue") + # Regression line
+  theme_bw() +                                              # Match scatterplot theme
+  labs(title = NULL)                                        # No title
+
+```
+
+## Visualization of Residuals
+
+```{r}
+#| fig-width: 7
+#| fig-height: 5
+#| fig-align: "center"
+
+
+# Add fitted values and residuals to the data
+atib <- atib %>%
+  mutate(fitted = model$fitted.values,
+         resid = model$residuals,
+         label = paste0("epsilon[", row_number(), "]"))
+
+ggplot(atib, aes(x = x, y = y)) +
+  geom_point(color = "red", size = 2) +                         # Original data points
+  geom_smooth(method = "lm", se = FALSE, color = "blue") +     # Regression line
+  geom_segment(aes(xend = x, yend = fitted),                   # Residual lines
+               linetype = "dashed", color = "gray") +
+  geom_text(aes(label = label, y = y + 0.5), parse = TRUE) +   # Epsilon labels
+  theme_bw() +                                                 # Match theme
+  labs(title = NULL)                                           # Remove title to match scatterplot
+
+```
+
+## What is regression
+
+::: {style="font-size: 90%;"}
+Regression analysis is a tool to investigate how two or more variables are related.
+
+> *"The general objective of a regression analysis is to determine the relationship between two (or more) variables so that we can gain information about one of them through knowing values of the other(s)."*
+
+<p style="text-align: right;">
+
+Source: Ch 12 of @devore2021modern
+
+</p>
+:::
+
+## Variable Types
+
+We want to see how a specific **response variable**, $Y$ is affected by one or more **explanatory** **variables** $X_1, \dots, X_p$
+
+::: incremental
+- $Y$ is also known as the **dependent** **variable** or **output variable.** This variable is continuous (i.e. numeric data type)
+
+- $X_i$'s are also known as **independent/predictor variables** or **features.** These may be continuous or categorical; however, we only consider continuous predictors in this course.
+:::
+
+##  {.quiz-question}
+
+:::: {.callout-note icon="false"}
+## Example
+
+::: exr-height
+One may wish to use a person's height, gender and race to predict a person's weight. What is/are the response variable(s)?
+:::
+::::
+
+- Height
+- Gender
+- Race
+- [Weight]{.correct}
+
+##  {.quiz-question}
+
+:::: {.callout-note icon="false"}
+## Example
+
+::: exr-height
+One may wish to use a person's height, gender and race to predict a person's weight. What is/are the dependent variable(s)?
+:::
+::::
+
+- [Height]{.correct data-explanation="This is one potential answer."}
+- [Gender]{.correct data-explanation="This is one potential answer."}
+- [Race]{.correct data-explanation="This is one potential answer."}
+- [Weight]{data-explanation="This is the response variable. It would not make sense to use as a depedent variable as well."}
+
+## Model
+
+$$\begin{align}
+Y &= \underbrace{f(X_1, \dots, X_p)}_{\text{deterministic}} + \underbrace{\epsilon}_{\text{random}} \\
+&\phantom{= \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots \beta_p X_p + \epsilon}
+\end{align}$$
+
+## Model
+
+$$\begin{align}
+Y &= \underbrace{f(X_1, \dots, X_p)}_{\text{deterministic}} + \underbrace{\epsilon}_{\text{random}}\\
+&= \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots \beta_p X_p + \epsilon
+\end{align}$$
+
+. . .
+
+In a **linear regression model**, the function $f(X_1, \dots, X_p)$ is a *linear* combination of the explanatory variables.
+
+## Model
+
+$$\begin{align}
+\overset{\overset{\text{response}}{\downarrow}}{Y} &= \beta_0 + \beta_1 \underset{\underset{\text{explanatory}}{\uparrow}}{X_1} + \beta_2 \underset{\underset{\text{explanatory}}{\uparrow}}{X_2} + \dots \beta_p \underset{\underset{\text{explanatory}}{\uparrow}}{X_p} + \epsilon
+\end{align}$$
+
+:::: {style="font-size: 90%;"}
+::: incremental
+- $\beta_0$ is the $y$-intercept
+
+- $\beta_i$ are the regression coefficients, and
+
+- $\epsilon$ are the errors that are assumed $N(0, \sigma)$
+:::
+::::
+
+::: notes
+In statistics, we can describe how variables are related using a mathematical function.
+
+The function along with other assumptions is called a model.
+
+There are many models we can consider. In this class, we will focus on linear models, particularly, when there is only one predictor variable.
+
+We refer to this model as the **simple linear regression model**. (Penn STat 500)
+:::
+
+::: notes
+as well as modeling numerical response variables using a numerical or categorical explanatory variable.
+:::
+
+## Simple Linear Regression
+
+- When $p = 1$, namely, we are only considering one explanatory variable, our model is called *"simple" linear regression (SLR).*
+- When $p>1$ we fall into *multiple linear regression (MLR).*
+
+<!-- - Let us first consider the "simple" case: using a person's height to predict the person's weight. -->
+
+## SLR model
+
+The SLR model reduces to an equation for of a line:
+
+$$Y = \beta_0 + \beta_1 X$$
+
+where:
+
+- $\beta_0$ is the $y$-intercept, and
+
+- $\beta_1$ is the slope
+
+## Simulation: Part 1 {.scrollable}
+
+```{webr-r}
+beta0 = __ # pick a y-intercept
+beta1 = __ # pick a slope
+```
+
+```{webr-r}
+n = 20 # number of points 
+x = sample(100, n)
+y = beta0 + beta1*x
+plot(x, y)
+```
+
+::: notes
+This is only the deterministic portion
+:::
+
+## Comment
+
+- We have only code the *deterministic* portion of this model
+- In other words, we are missing *random* component
+- Let's add some random noise ...
+
+## Simulation: Part II {.scrollable}
+
+::: callout-warning
+Change `sd` as needed
+:::
+
+```{webr-r}
+beta0 = 3; beta1 = 4; n = 20; x = sample(100, n)
+eps = rnorm(n, mean = 0, sd = 15) # random noise 
+y = beta0 + beta1*x + eps         # linear model with noise
+plot(x, y)                        # plot the data
+```
+
+## 
+
+```{r}
+#| echo: false
+beta0 = 3; beta1 = 4; n = 20; 
+```
+
+::: panel-tabset
+### $X$s
+
+Create `n` values for `x`, for example using:
+
+```{r}
+#| echo: true
+x = runif(n, min = -2, max = 10) # or runif() / rnorm()
+```
+
+```{r}
+#| echo: false
+
+eps = rnorm(n, mean = 0, sd = 3) # random noise 
+y = beta0 + beta1*x + eps         # linear model with noise
+df <- data.frame(x = x, y = y)
+
+```
+
+```{r}
+#| meesage: false
+
+g = ggplot(df, aes(x = x, y = y)) +
+  geom_point(color = NA) +  # add the points
+  geom_abline(intercept = beta0, slope = beta1, color = "steelblue", linewidth = 0, color = NA) +
+  geom_hline(yintercept = 0, linewidth = 0.3) +
+  geom_vline(xintercept = 0, linewidth = 0.3) +
+  scale_x_continuous(breaks = seq(0, 100, 25)) +
+  labs(x = "X", y = "Y") +
+  theme_minimal(base_size = 14) +
+  theme(
+    panel.grid = element_blank(),
+    axis.line = element_blank(),
+    axis.ticks = element_line(),
+    plot.margin = margin(20, 20, 20, 20)
+  )
+
+# Add both point layers
+g + 
+  geom_point(data = df, aes(x = x, y = 0), color = "firebrick", size = 4, shape = 21, fill = "firebrick", alpha = 0.5)
+
+
+```
+
+### Parameters
+
+For $\beta_0$ = `beta0` = `r beta0`, $\beta_1$ = `beta1` = `r beta1`, we have
+
+$$Y = `r beta0` + `r beta1` \cdot X$$
+
+```{r}
+g = ggplot(df, aes(x = x, y = y)) +
+  geom_point(color = NA) +  # add the points
+  geom_abline(intercept = beta0, slope = beta1, color = "steelblue", linewidth = 1) +
+  geom_hline(yintercept = 0, linewidth = 0.3) +
+  geom_vline(xintercept = 0, linewidth = 0.3) +
+  scale_x_continuous(breaks = seq(0, 100, 25)) +
+  labs(x = "X", y = "Y") +
+  theme_minimal(base_size = 14) +
+  theme(
+    panel.grid = element_blank(),
+    axis.line = element_blank(),
+    axis.ticks = element_line(),
+    plot.margin = margin(20, 20, 20, 20)
+  )
+
+# Add both point layers
+g + 
+  geom_point(data = df, aes(x = x, y = 0), color = "firebrick", size = 4, shape = 21, fill = "firebrick", alpha = 0.5)
+
+```
+
+### Deterministic
+
+```{r}
+# Add both point layers
+g + 
+  geom_point(data = df, aes(x = x, y = beta0 + beta1*x), color = "firebrick", size = 4, shape = 21, fill = "firebrick", alpha = 0.5)
+```
+
+### Noise
+
+```{r}
+# Add both point layers
+g + 
+  geom_point(data = df, aes(x = x, y = y), color = "firebrick", size = 4, shape = 21, fill = "firebrick", alpha = 0.5)
+```
+:::
+
+## References

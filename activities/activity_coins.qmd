@@ -1,0 +1,89 @@
+---
+title: "An Activity in R on Coin Flipping"
+subtitle: "Run R code to simulate the results of flipping coins many times"
+author: "Kyran Cupido"
+institute: "St. Francis Xavier University"
+execute: 
+  echo: true
+format:
+    html:
+        code-fold: true
+        toc: true
+        toc-location: left
+        toc-depth: 2
+        toc-title: "Table of Contents"
+        self-contained: false
+        mathjax: "local"
+filters:
+  - webr
+webr:
+  packages: ["tibble", "ggplot2"]
+slide-number: true
+smaller: false
+---
+
+
+
+
+
+
+# Coin Flip Example
+
+For a random variable $X$ that follows the Bernoulli distribution with probability $p$, each realization of the random variable has two possible outcomes (e.g., Success or Failure, 1 or 0, Heads or Tails, etc.). More specifically, the Bernoulli distribution is a discrete probability distribution such that $P(X=1)=p$ and $P(X=0)=1-p$. 
+
+As a simple example, we can design an experiment where we flip a coin and record the outcome using the following code:
+
+```{webr-r}
+#| autorun: false
+coin <- c("Heads", "Tails") 
+sample(coin, 1) 
+```
+
+Now let's try flipping the coin a few times:
+
+
+```{webr-r}
+#| autorun: false
+num_flips <- 10
+sample(coin, num_flips, replace = T)  
+```
+
+Let's do this again, but this time we'll keep track of the number of Heads and Tails that occur.
+
+```{webr-r}
+#| autorun: false
+flips <- sample(coin, num_flips, replace = T)  
+table(flips)
+```
+
+By default, the `sample` function gives every outcome an equal chance of happening. If we want to make certain events more likely than others, we can do this by adding a `prob` argument. For example, we can make it so that our coin has a 75% chance of landing on heads for any single flip by using the following code:
+
+```{webr-r}
+#| autorun: false
+num_flips <- 10
+flips <- sample(coin, num_flips, replace = T, prob=c(0.75,0.25))  
+table(flips)
+```
+
+
+Finally, let's try flipping the coin 100 times and keep track of how the frequency of Heads progresses over the tosses.
+
+```{webr-r}
+#| autorun: false
+num_flips <- 100
+flips <- sample(coin, size = num_flips, replace = TRUE)
+heads_freq <- cumsum(flips == 'Heads') / 1:num_flips
+
+plot(heads_freq, 
+     type = 'l',
+     col="red",
+     xlab = "Number of Tosses",
+     ylab="Relative Frequency",
+     ylim = c(0, 1))
+
+abline(h = 0.5, col = 'gray50')
+```
+
+
+
+

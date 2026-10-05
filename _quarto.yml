@@ -1,0 +1,51 @@
+project:
+  type: website
+  output-dir: "docs"
+
+website:
+  title: "Course Tutorials"
+  site-url: https://nishanmudalige.github.io/STA258_Tutorials/
+#   navbar:
+#     pinned: true
+#     left:
+#       - text: "Home"
+#         href: https://nishanmudalige.github.io/STA258_Tutorials/
+#       - text: "Tutorials"
+#         menu:
+#         - text: "Tutorial on Intro to R"
+#           href: tutorials/tutorial_01.qmd
+#         - text: "Tutorial on Descriptive Statistics"
+#           href: tutorials/tutorial_02.qmd
+#         - text: "Tutorial on Distributions"
+#           href: tutorials/tutorial_03.qmd
+#         - text: "Tutorial on One Sample Confidence Intervals"
+#           href: tutorials/tutorial_04.qmd
+#         - text: "Tutorial on Two Sample Confidence Intervals"
+#           href: tutorials/tutorial_05.qmd
+#         - text: "Tutorial on One Sample Hypothesis Tests"
+#           href: tutorials/tutorial_06.qmd
+#         - text: "Tutorial on Two Sample Hypothesis Tests"
+#           href: tutorials/tutorial_07.qmd
+#         - text: "Tutorial on ANOVA"
+#           href: tutorials/tutorial_08.qmd
+#         - text: "Tutorial on Intro to Regression"
+#           href: tutorials/tutorial_09.qmd
+#         - text: "Tutorial on Inference Techniques on Regression"
+#           href: tutorials/tutorial_10.qmd
+#         - text: "Tutorial on Categorical Data"
+#           href: tutorials/tutorial_11.qmd
+#      
+#       
+# format:
+#   live-html:
+#     theme: 
+#       light: flatly
+#       dark: darkly
+#     css: design.css
+#     # toc: false
+#     toc: true
+#     toc-location: left
+#     toc-title: "On this page"
+#     toc-depth: 2
+#     smooth-scroll: true
+#     anchor-sections: true

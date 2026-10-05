@@ -1,0 +1,667 @@
+[
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#outline",
+    "href": "course_skeleton/lectures/lecture-template.html#outline",
+    "title": "Lecture Template",
+    "section": "Outline",
+    "text": "Outline\nHere you can link to certain slides for navigation1\n\n\nThe Basics\n\nText formating\n…\nImages\n\n\nImbedding Code:\n\nCode\nInteractive Code\n\n\nYou can either use Markdown with slide title name, e.g. Slide Title, link to the generated id, e.g. go to code slide, go to image slide, or link to a custom id, e.g. Custom Link"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#introduction",
+    "href": "course_skeleton/lectures/lecture-template.html#introduction",
+    "title": "Lecture Template",
+    "section": "Introduction",
+    "text": "Introduction\nThese slides are created using revealjs format in Quarto.\n\nWe’ve highlighted many of the useful and cool features, but you can explore even more on the Quarto website:\n\nrevealjs (Presentations in Quarto)\nAuthoring in Quarto (markdown basics & content formatting)\nQuarto: The Definitive Guide (a book about Quarto created using Quarto"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#font-styles",
+    "href": "course_skeleton/lectures/lecture-template.html#font-styles",
+    "title": "Lecture Template",
+    "section": "Font Styles",
+    "text": "Font Styles\nitalics, bold, bold italics, strikethrough, monospaced\n\nBigger font\n\n\nSmaller font\n\n\nThis text will appear red.\n\nThis is line green text."
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#math",
+    "href": "course_skeleton/lectures/lecture-template.html#math",
+    "title": "Lecture Template",
+    "section": "Math",
+    "text": "Math\nYou can write mathematical equations using LaTex\n\ne.g. $f(y) = x^2$ renders to \\(f(y) = x^2\\)\n\nYou can center math on its own line using double dollar signs, e.g. $$f(y) = x^2$$ renders to:\n\\[f(y) = x^2\\]"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#tables",
+    "href": "course_skeleton/lectures/lecture-template.html#tables",
+    "title": "Lecture Template",
+    "section": "Tables",
+    "text": "Tables\n\nTable caption: Math syntax summary\n\n\nSyntax\nAppearance\nUsage\n\n\n\n\n$...$\nInline\nFor short expressions in text\n\n\n$$...$$\nDisplay\nFor emphasizing key equations"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#lists",
+    "href": "course_skeleton/lectures/lecture-template.html#lists",
+    "title": "Lecture Template",
+    "section": "Lists",
+    "text": "Lists\n\n\nUnordered\n\nfruit\n\napples\nbananas\n\nvegetables\n\n\n\nOrdered\n\none\ntwo\n\nalpha\nbeta\n\n\n\nTasks\n\nTask 1\nTask 2\nTask 3\n\n\n\n\n🔗 https://quarto.org/docs/authoring/markdown-basics.html#lists"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#animated-bullets",
+    "href": "course_skeleton/lectures/lecture-template.html#animated-bullets",
+    "title": "Lecture Template",
+    "section": "Animated Bullets",
+    "text": "Animated Bullets\nYou can create incremental lists using the incremental div.\n\n\nSource\n::: incremental\n-   la\n-   la\n-   land\n:::\n\nRendered\n\nla\nla\nland\n\n\n\nNote: You can also enable this for all lists by default:\nformat:\n  revealjs:\n    incremental: true"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#code",
+    "href": "course_skeleton/lectures/lecture-template.html#code",
+    "title": "Lecture Template",
+    "section": "Writing Code",
+    "text": "Writing Code\nTo include runnable code in Quarto, use fenced code blocks with the appropriate language engine:\n\n```{r}\n# Load data\ndata(mtcars)\n\n# Fit linear model\nmodel &lt;- lm(mpg ~ wt + hp, data = mtcars)\n```\n\n\nUse three backticks followed by {r} to start an R code block.\nYou can add Chunk Options after #|, one per line."
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#chunk-options",
+    "href": "course_skeleton/lectures/lecture-template.html#chunk-options",
+    "title": "Lecture Template",
+    "section": "Chunk Options",
+    "text": "Chunk Options\nThese control how code blocks behave:\n\necho: true/false – Show or hide the source code.\neval: true/false – Evaluate the code or not.\ncode-fold: true/false – Allow the code block to be collapsible.\ncode-summary: \"text\" – Customize label for folded code.\n\n\n\nThese are just a few popular examples—Quarto supports more chunk options.\n➡️ Full reference: https://quarto.org/docs/computations/execution-options.html"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#example-code-folding",
+    "href": "course_skeleton/lectures/lecture-template.html#example-code-folding",
+    "title": "Lecture Template",
+    "section": "Example: Code Folding",
+    "text": "Example: Code Folding\nSee the next slide for the rendered output …\n```{r}\n#| echo: true\n#| code-summary: \"Click me to show the code!\"\n#| code-fold: true\n\nlibrary(ggplot2)\ndat &lt;- data.frame(cond = rep(c(\"A\", \"B\"), each=10),\n                  xvar = 1:20 + rnorm(20,sd=3),\n                  yvar = 1:20 + rnorm(20,sd=3))\n\nggplot(dat, aes(x=xvar, y=yvar)) +\n  geom_point(shape=1) + \n  geom_smooth() \n```"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#example-code-folding-1",
+    "href": "course_skeleton/lectures/lecture-template.html#example-code-folding-1",
+    "title": "Lecture Template",
+    "section": "Example: Code Folding",
+    "text": "Example: Code Folding\n\n\nClick me to show the code!\nlibrary(ggplot2)\ndat &lt;- data.frame(cond = rep(c(\"A\", \"B\"), each=10),\n                  xvar = 1:20 + rnorm(20,sd=3),\n                  yvar = 1:20 + rnorm(20,sd=3))\n\nggplot(dat, aes(x=xvar, y=yvar)) +\n  geom_point(shape=1) + \n  geom_smooth()"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#example-code-hiding",
+    "href": "course_skeleton/lectures/lecture-template.html#example-code-hiding",
+    "title": "Lecture Template",
+    "section": "Example: Code Hiding",
+    "text": "Example: Code Hiding\nSetting echo: false hides the code and shows only the output.\n```{r}\n#| echo: false\n\nlibrary(ggplot2)\ndat &lt;- data.frame(cond = rep(c(\"A\", \"B\"), each=10),\n                  xvar = 1:20 + rnorm(20,sd=3),\n                  yvar = 1:20 + rnorm(20,sd=3))\n\nggplot(dat, aes(x=xvar, y=yvar)) +\n  geom_point(shape=1) + \n  geom_smooth() \n```\nSee the next slide for the rendered output …"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#example-code-hiding-1",
+    "href": "course_skeleton/lectures/lecture-template.html#example-code-hiding-1",
+    "title": "Lecture Template",
+    "section": "Example: Code Hiding",
+    "text": "Example: Code Hiding"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#code-copying",
+    "href": "course_skeleton/lectures/lecture-template.html#code-copying",
+    "title": "Lecture Template",
+    "section": "Code Copying",
+    "text": "Code Copying\nAll code blocks include a clipboard icon by default. Hover and click to copy the code.\n\nlibrary(ggplot2)\ndat &lt;- data.frame(cond = rep(c(\"A\", \"B\"), each=10),\n                  xvar = 1:20 + rnorm(20,sd=3),\n                  yvar = 1:20 + rnorm(20,sd=3))\n\nggplot(dat, aes(x=xvar, y=yvar)) +\n  geom_point(shape=1) + \n  geom_smooth()"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#output-location",
+    "href": "course_skeleton/lectures/lecture-template.html#output-location",
+    "title": "Lecture Template",
+    "section": "Output Location",
+    "text": "Output Location\nBy default, the output will follow immediately after the code. Use output-location to control where the output appears:\n\n\n\n\n\n\n\noutput-location\nDescription\n\n\n\n\nfragment\nOutput appears as a fragment—revealed when you advance the slide\n\n\nslide\nOutput appears on the next slide, separate from the code\n\n\ncolumn\nCode and output shown side‑by‑side in two equal-width columns on one slide\n\n\ncolumn-fragment\nSame as column, but output is delayed as a fragment"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#adjusting-slide-size",
+    "href": "course_skeleton/lectures/lecture-template.html#adjusting-slide-size",
+    "title": "Lecture Template",
+    "section": "Adjusting Slide Size",
+    "text": "Adjusting Slide Size\nThe table didn’t quite fit on the previous slide, so we use the .smaller CSS class to reduce the font size for the entire slide. Here’s what’s happening under the hood:\n## Normal Slide\n\nThis is normal size text.\n\n## Smaller Slide {.smaller}\n\nThis text will be smaller so more fits on the slide."
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#example-default-output-after-code",
+    "href": "course_skeleton/lectures/lecture-template.html#example-default-output-after-code",
+    "title": "Lecture Template",
+    "section": "Example: Default (output after code)",
+    "text": "Example: Default (output after code)\n\nggplot(dat, aes(x=xvar, y=yvar)) +\n  geom_point(shape=1) + \n  geom_smooth()"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#example-output-on-next-slide",
+    "href": "course_skeleton/lectures/lecture-template.html#example-output-on-next-slide",
+    "title": "Lecture Template",
+    "section": "Example: Output on next slide",
+    "text": "Example: Output on next slide\n\n```{r}\n#| output-location: slide\n\nggplot(dat, aes(x=xvar, y=yvar)) +\n  geom_point(shape=1) + \n  geom_smooth() \n```"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#example-output-on-next-slide-output",
+    "href": "course_skeleton/lectures/lecture-template.html#example-output-on-next-slide-output",
+    "title": "Lecture Template",
+    "section": "Example: Output on next slide",
+    "text": "Example: Output on next slide"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#example-column",
+    "href": "course_skeleton/lectures/lecture-template.html#example-column",
+    "title": "Lecture Template",
+    "section": "Example: Column",
+    "text": "Example: Column\n\n\n```{r}\n#| output-location: column\n\nggplot(dat, aes(x=xvar, y=yvar)) +\n  geom_point(shape=1) + \n  geom_smooth() \n```"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#example-resize-figure",
+    "href": "course_skeleton/lectures/lecture-template.html#example-resize-figure",
+    "title": "Lecture Template",
+    "section": "Example: Resize figure",
+    "text": "Example: Resize figure\n\n\n```{r}\n#| output-location: column\n#| fig-width: 4\n#| fig-height: 3\n#| out-width: \"100%\"\n\nggplot(dat, aes(x=xvar, y=yvar)) +\n  geom_point(shape=1) + \n  geom_smooth() \n```"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#interactive-code",
+    "href": "course_skeleton/lectures/lecture-template.html#interactive-code",
+    "title": "Lecture Template",
+    "section": "Interactive Code",
+    "text": "Interactive Code\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#static-image",
+    "href": "course_skeleton/lectures/lecture-template.html#static-image",
+    "title": "Lecture Template",
+    "section": "Static Image",
+    "text": "Static Image\nThe basic syntax for including an image is:\n![Image Caption (Optional)](img/logo.png)\nWhich renders to: (jump here for more image options)\n\nImage Caption (Optional). Read more about figures and subfigures here: Quarto: figures"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#presenter-notes",
+    "href": "course_skeleton/lectures/lecture-template.html#presenter-notes",
+    "title": "Lecture Template",
+    "section": "Presenter Notes",
+    "text": "Presenter Notes\nYou can create presenter notes using div with the notes class\n::: notes\nThis is how you include presenter notes\n:::\nRead this in Speaker View by pressing the SS key (give it a try!)\n\n\n\n\n\n\nWarning\n\n\nIf you are publishing your HTML slides, your students can also gain access to the presenter notes by pressing S.\n\n\n\n\nThis is how you include presenter notes"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#scrollable-slides",
+    "href": "course_skeleton/lectures/lecture-template.html#scrollable-slides",
+    "title": "Lecture Template",
+    "section": "Scrollable Slides",
+    "text": "Scrollable Slides\nThe .scrollable class makes overflow content scrollable vertically rather than being cut off.\nYou can acheive it using:\n## Slide Title {.scrollable}\nThis is especially useful when you have:\n\nLong code blocks\nLarge tables\nVerbose output\nLists or explanations that extend beyond the slide height"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#example-without-using-scrollable",
+    "href": "course_skeleton/lectures/lecture-template.html#example-without-using-scrollable",
+    "title": "Lecture Template",
+    "section": "Example without using scrollable",
+    "text": "Example without using scrollable\nBelow is a long list of repeated text to demonstrate how text will get cut off without using scrollable 😞\n\nLine 1: You can’t scroll down to see more\n\nLine 2: You can’t scroll down to see more\n\nLine 3: You can’t scroll down to see more\n\nLine 4: You can’t scroll down to see more\n\nLine 5: You can’t scroll down to see more\n\nLine 6: You can’t scroll down to see more\n\nLine 7: You can’t scroll down to see more\n\nLine 8: You can’t scroll down to see more\n\nLine 9: You can’t scroll down to see more\n\nLine 10: You can’t scroll down to see more\n\nLine 11: You can’t scroll down to see more\n\nLine 12: You can’t scroll down to see more\n\nLine 13: You can’t scroll down to see more\n\nLine 14: You can’t scroll down to see more\n\nLine 15: You can’t scroll down to see more\n\nLine 16: You can’t scroll down to see more\n\nLine 17: You can’t scroll down to see more\n\nLine 18: You can’t scroll down to see more\n\nLine 19: You can’t scroll down to see more\n\nLine 20: You can’t scroll down to see more"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#example-using-scrollable",
+    "href": "course_skeleton/lectures/lecture-template.html#example-using-scrollable",
+    "title": "Lecture Template",
+    "section": "Example using scrollable",
+    "text": "Example using scrollable\nBelow is a long list of repeated text to demonstrate scrolling in action 🥳\n\nLine 1: Scroll down to see more\n\nLine 2: Scroll down to see more\n\nLine 3: Scroll down to see more\n\nLine 4: Scroll down to see more\n\nLine 5: Scroll down to see more\n\nLine 6: Scroll down to see more\n\nLine 7: Scroll down to see more\n\nLine 8: Scroll down to see more\n\nLine 9: Scroll down to see more\n\nLine 10: Scroll down to see more\n\nLine 11: Scroll down to see more\n\nLine 12: Scroll down to see more\n\nLine 13: Scroll down to see more\n\nLine 14: Scroll down to see more\n\nLine 15: Scroll down to see more\n\nLine 16: Scroll down to see more\n\nLine 17: Scroll down to see more\n\nLine 18: Scroll down to see more\n\nLine 19: Scroll down to see more\n\nLine 20: Scroll down to see more"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#example-scrollable-figure",
+    "href": "course_skeleton/lectures/lecture-template.html#example-scrollable-figure",
+    "title": "Lecture Template",
+    "section": "Example: Scrollable Figure",
+    "text": "Example: Scrollable Figure\n\n\n\n\n\n\nTip\n\n\n.scrollable is useful when you have interactive code where students are expected to achieve a specific output that may otherwise be cut off due to limited slide space.\n\n\n\nQ1. Change the points from circles to triangles (after running you will need to scroll down to see the resulting plot)\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#smaller-slides",
+    "href": "course_skeleton/lectures/lecture-template.html#smaller-slides",
+    "title": "Lecture Template",
+    "section": "Smaller Slides",
+    "text": "Smaller Slides\nThe .smaller class—used in the same way as .scrollable— reduces the base font size for the entire slide, excluding the slide title.\n## Normal Slide\n\nThis is normal size text.\n\n## Smaller Slide {.smaller}\n\nThis text will be smaller so more fits on the slide.\nAn example of this can be seen on this slide."
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#cross-referencing-slides",
+    "href": "course_skeleton/lectures/lecture-template.html#cross-referencing-slides",
+    "title": "Lecture Template",
+    "section": "Cross-referencing slides",
+    "text": "Cross-referencing slides\n\nGiven the following slide title, Quarto will automatically generate the ID: of my-amazing-slide.1\n## My Amazing Slide! \nTo reference that slide we can use\n\n[this slide](#my-amazing-slide), e.g. this slide\n[My Amazing Slide!], e.g. Output Location\n\n\nSpecial characters are removed, spaces become dashes, and uppercase letters are converted to lowercase."
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#custom-titles",
+    "href": "course_skeleton/lectures/lecture-template.html#custom-titles",
+    "title": "Lecture Template",
+    "section": "Custom Titles",
+    "text": "Custom Titles\nIf you want to make a custom-id, use:\n## This slide title is too long {#short-id}\nand reference using:\n[link](#short-id) \n\nQuarto auto-generates heading IDs (like Pandoc) by: converting to lower case, removing punctation and replacing spaces with hyphens\nHow to manually assign IDs using {#my-id}\nHow these IDs can be used as anchors\nThis slide is here to show how to make custom slide ids"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#callouts",
+    "href": "course_skeleton/lectures/lecture-template.html#callouts",
+    "title": "Lecture Template",
+    "section": "Callouts",
+    "text": "Callouts\n\n\n\n\n\n\nTip\n\n\nThere are five types of callouts, including: note, warning, important, tip, and caution; see Callout Blocks\n\n\n\n\n\n\nTip with Title\n\n\nThis is an example of a callout with a (non-default) title and the lightbulb icon disabled.\n\n\n\n\n\n\n\n\n\nNote\n\n\nIf you do not specify a title it will default to the name of the callout type.\n\n\n\n\n\n\n\n\n\nA “simple” appearance warning callout (retains icon)\n\n\n\n\n\n\nA “minimal” appearance important callout (supresses icon)"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#whats-ahead",
+    "href": "course_skeleton/lectures/lecture-template.html#whats-ahead",
+    "title": "Lecture Template",
+    "section": "Whats Ahead",
+    "text": "Whats Ahead\nThe above should be more than you need to get started creating presentations in your course. If you’re building more customized or interactive slides, we cover:\n\nFragments & animations\nSlide state events\nCustom keyboard bindings\nCode execution and plugins\nEmbedding other HTML/JS content"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#code-highlighting",
+    "href": "course_skeleton/lectures/lecture-template.html#code-highlighting",
+    "title": "Lecture Template",
+    "section": "Code highlighting",
+    "text": "Code highlighting\nIn addition to the HTML Code Block options, revealjs supports the ability to do line highlighting. This is accomplished using:\n#| code-line-numbers: \"1-2|4-5|7-8\"\n\n# Load data\ndata(mtcars)\n\n# Fit linear model\nmodel &lt;- lm(mpg ~ wt + hp, data = mtcars)\n\n# Summary output\nsummary(model)  \n\n\n\nSee Quarto: Line Highlighting"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#code-annotation",
+    "href": "course_skeleton/lectures/lecture-template.html#code-annotation",
+    "title": "Lecture Template",
+    "section": "Code Annotation",
+    "text": "Code Annotation\nMuch like footnotes, we could use Code Annotations to attach explanation to lines of code.\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n1penguins |&gt;\n2  mutate(\n    bill_ratio = bill_depth_mm / bill_length_mm,\n    bill_area  = bill_depth_mm * bill_length_mm\n  )\n\n\n1\n\nTake penguins, and then,\n\n2\n\nadd new columns for the bill ratio and bill area.\n\n\n\n\n\n\nSource: https://quarto.org/docs/authoring/code-annotation.html"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#code-animations",
+    "href": "course_skeleton/lectures/lecture-template.html#code-animations",
+    "title": "Lecture Template",
+    "section": "Code Animations",
+    "text": "Code Animations\nYou can also animate between code blocks to show changes in code. For example:\n# Define a server for the Shiny app\nfunction(input, output) {\n  \n  # Fill in the spot we created for a plot\n  output$phonePlot &lt;- renderPlot({\n    # Render a barplot\n  })\n}"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#code-animations-ii",
+    "href": "course_skeleton/lectures/lecture-template.html#code-animations-ii",
+    "title": "Lecture Template",
+    "section": "Code Animations II",
+    "text": "Code Animations II\nYou can also animate between code blocks to show changes in code. For example:\n# Define a server for the Shiny app\nfunction(input, output) {\n  \n  # Fill in the spot we created for a plot\n  output$phonePlot &lt;- renderPlot({\n    # Render a barplot\n    barplot(WorldPhones[,input$region]*1000, \n            main=input$region,\n            ylab=\"Number of Telephones\",\n            xlab=\"Year\")\n  })\n}\n\nLearn more: Code Animations"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#visual-editor",
+    "href": "course_skeleton/lectures/lecture-template.html#visual-editor",
+    "title": "Lecture Template",
+    "section": "Visual Editor",
+    "text": "Visual Editor\nThe Visual Editor (VE) (as opposed to the Source Editor) in RStudio is a WYSIWYM editor interface.\nIt includes a toolbar with buttons and menu options for:\n\nformatting text (bold, italics, headers, lists)\ninserting tables, images\nhyperlinks,\nand more!\n\nBonus: It also provides previews of rendered math, plots, and supports the execution of code cells."
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#figuresimages-using-ve",
+    "href": "course_skeleton/lectures/lecture-template.html#figuresimages-using-ve",
+    "title": "Lecture Template",
+    "section": "Figures/Images using VE",
+    "text": "Figures/Images using VE\nQuarto supports a number of ways to include figures and subfigures into your documents; see Quarto:Figures.\n\nThis is how you can included an image in yours slides using the Visual Editor in RStudio"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#figure-options",
+    "href": "course_skeleton/lectures/lecture-template.html#figure-options",
+    "title": "Lecture Template",
+    "section": "Figure Options",
+    "text": "Figure Options\n\nThe VE will open up a pop-up window where you can choose the alignment of your image (default, left, center, right), add captions, and include alternative text."
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#right-aligned-image",
+    "href": "course_skeleton/lectures/lecture-template.html#right-aligned-image",
+    "title": "Lecture Template",
+    "section": "Right-aligned Image",
+    "text": "Right-aligned Image\nFor demonstration we make our image left-aligned.\n\nIn the Source Editor, the markdown syntax is:\n![](img/logo.png){fig-align=\"right\"}"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#resizing",
+    "href": "course_skeleton/lectures/lecture-template.html#resizing",
+    "title": "Lecture Template",
+    "section": "Resizing in Markdown (Source Editor)",
+    "text": "Resizing in Markdown (Source Editor)\nYou can resize images using the {} attribute list syntax directly after the image. e.g.\n![](img/logo.png){width=150px}\nYou can also use other units:\n![](img/logo.png){width=50%}\nYou can combine it with alignment:\n![](img/logo.png){fig-align=\"right\" width=150px}"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#resizing-in-visual-editor",
+    "href": "course_skeleton/lectures/lecture-template.html#resizing-in-visual-editor",
+    "title": "Lecture Template",
+    "section": "Resizing in Visual Editor",
+    "text": "Resizing in Visual Editor\n\nIn VE you can resize an image by clicking and dragging its corner handles.\nBy default, the aspect ratio is locked. You can disable this and adjust dimensions independently.\nSee the next slide for a demonstration"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#section",
+    "href": "course_skeleton/lectures/lecture-template.html#section",
+    "title": "Lecture Template",
+    "section": "",
+    "text": "."
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#videos",
+    "href": "course_skeleton/lectures/lecture-template.html#videos",
+    "title": "Lecture Template",
+    "section": "Videos",
+    "text": "Videos\nYou can embed videos in documents using {{&lt; video &gt;}} the shortcode; see Quarto: videos\n\nFor example, here we embed a YouTube video (see the rendered output on the following slide):\n{{&lt; video https://youtu.be/EbAAmrB0luA?si=f0TtOI9v_kotj8bk \n  width=\"800\" \n  aspect-ratio=\"21x12\" \n  &gt;}}"
+  },
+  {
+    "objectID": "course_skeleton/lectures/lecture-template.html#iframe",
+    "href": "course_skeleton/lectures/lecture-template.html#iframe",
+    "title": "Lecture Template",
+    "section": "iFrame",
+    "text": "iFrame\nYou can also embed videos/webpages using an iFrame\n\n\n\n\n\n\n\n\nNote\n\n\nSome websites block iframe, so previews may not appear in the rendered Quarto output for those sites."
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#introduction",
+    "href": "course_skeleton/lectures/regression-lecture.html#introduction",
+    "title": "Regression",
+    "section": "Introduction",
+    "text": "Introduction\n\n\nIn this lecture we will introduce Simple Linear Regression (SLR) to model the relationship between two numerical variables.\nWe will quantify the relationship between variables using popular metrics like the Correlation Coefficient and \\(R^2\\) value.\nStatistical inference for this model will be discussed, and the critical distinction between inference for mean response and inference for the outcome will be clarified.\nWe will also introduce a basic understanding of the multiple regression model."
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#recall-scatterplots",
+    "href": "course_skeleton/lectures/regression-lecture.html#recall-scatterplots",
+    "title": "Regression",
+    "section": "Recall: Scatterplots",
+    "text": "Recall: Scatterplots\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#line-of-best-fit",
+    "href": "course_skeleton/lectures/regression-lecture.html#line-of-best-fit",
+    "title": "Regression",
+    "section": "Line of Best fit",
+    "text": "Line of Best fit"
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#visualization-of-residuals",
+    "href": "course_skeleton/lectures/regression-lecture.html#visualization-of-residuals",
+    "title": "Regression",
+    "section": "Visualization of Residuals",
+    "text": "Visualization of Residuals"
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#what-is-regression",
+    "href": "course_skeleton/lectures/regression-lecture.html#what-is-regression",
+    "title": "Regression",
+    "section": "What is regression",
+    "text": "What is regression\n\nRegression analysis is a tool to investigate how two or more variables are related.\n\n“The general objective of a regression analysis is to determine the relationship between two (or more) variables so that we can gain information about one of them through knowing values of the other(s).”\n\n\nSource: Ch 12 of Devore, Berk, and Carlton (2021)"
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#variable-types",
+    "href": "course_skeleton/lectures/regression-lecture.html#variable-types",
+    "title": "Regression",
+    "section": "Variable Types",
+    "text": "Variable Types\nWe want to see how a specific response variable, \\(Y\\) is affected by one or more explanatory variables \\(X_1, \\dots, X_p\\)\n\n\\(Y\\) is also known as the dependent variable or output variable. This variable is continuous (i.e. numeric data type)\n\\(X_i\\)’s are also known as independent/predictor variables or features. These may be continuous or categorical; however, we only consider continuous predictors in this course."
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#section",
+    "href": "course_skeleton/lectures/regression-lecture.html#section",
+    "title": "Regression",
+    "section": "",
+    "text": "Example\n\n\n\nOne may wish to use a person’s height, gender and race to predict a person’s weight. What is/are the response variable(s)?\n\n\n\n\n\nHeight\nGender\nRace\nWeight"
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#section-1",
+    "href": "course_skeleton/lectures/regression-lecture.html#section-1",
+    "title": "Regression",
+    "section": "",
+    "text": "Example\n\n\n\nOne may wish to use a person’s height, gender and race to predict a person’s weight. What is/are the dependent variable(s)?\n\n\n\n\n\nHeight\nGender\nRace\nWeight"
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#model",
+    "href": "course_skeleton/lectures/regression-lecture.html#model",
+    "title": "Regression",
+    "section": "Model",
+    "text": "Model\n\\[\\begin{align}\nY &= \\underbrace{f(X_1, \\dots, X_p)}_{\\text{deterministic}} + \\underbrace{\\epsilon}_{\\text{random}} \\\\\n&\\phantom{= \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\dots \\beta_p X_p + \\epsilon}\n\\end{align}\\]"
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#model-1",
+    "href": "course_skeleton/lectures/regression-lecture.html#model-1",
+    "title": "Regression",
+    "section": "Model",
+    "text": "Model\n\\[\\begin{align}\nY &= \\underbrace{f(X_1, \\dots, X_p)}_{\\text{deterministic}} + \\underbrace{\\epsilon}_{\\text{random}}\\\\\n&= \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\dots \\beta_p X_p + \\epsilon\n\\end{align}\\]\n\nIn a linear regression model, the function \\(f(X_1, \\dots, X_p)\\) is a linear combination of the explanatory variables."
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#model-2",
+    "href": "course_skeleton/lectures/regression-lecture.html#model-2",
+    "title": "Regression",
+    "section": "Model",
+    "text": "Model\n\\[\\begin{align}\n\\overset{\\overset{\\text{response}}{\\downarrow}}{Y} &= \\beta_0 + \\beta_1 \\underset{\\underset{\\text{explanatory}}{\\uparrow}}{X_1} + \\beta_2 \\underset{\\underset{\\text{explanatory}}{\\uparrow}}{X_2} + \\dots \\beta_p \\underset{\\underset{\\text{explanatory}}{\\uparrow}}{X_p} + \\epsilon\n\\end{align}\\]\n\n\n\\(\\beta_0\\) is the \\(y\\)-intercept\n\\(\\beta_i\\) are the regression coefficients, and\n\\(\\epsilon\\) are the errors that are assumed \\(N(0, \\sigma)\\)\n\n\n\nIn statistics, we can describe how variables are related using a mathematical function.\nThe function along with other assumptions is called a model.\nThere are many models we can consider. In this class, we will focus on linear models, particularly, when there is only one predictor variable.\nWe refer to this model as the simple linear regression model. (Penn STat 500)\n\n\nas well as modeling numerical response variables using a numerical or categorical explanatory variable."
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#simple-linear-regression",
+    "href": "course_skeleton/lectures/regression-lecture.html#simple-linear-regression",
+    "title": "Regression",
+    "section": "Simple Linear Regression",
+    "text": "Simple Linear Regression\n\nWhen \\(p = 1\\), namely, we are only considering one explanatory variable, our model is called “simple” linear regression (SLR).\nWhen \\(p&gt;1\\) we fall into multiple linear regression (MLR)."
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#slr-model",
+    "href": "course_skeleton/lectures/regression-lecture.html#slr-model",
+    "title": "Regression",
+    "section": "SLR model",
+    "text": "SLR model\nThe SLR model reduces to an equation for of a line:\n\\[Y = \\beta_0 + \\beta_1 X\\]\nwhere:\n\n\\(\\beta_0\\) is the \\(y\\)-intercept, and\n\\(\\beta_1\\) is the slope"
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#simulation-part-1",
+    "href": "course_skeleton/lectures/regression-lecture.html#simulation-part-1",
+    "title": "Regression",
+    "section": "Simulation: Part 1",
+    "text": "Simulation: Part 1\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nThis is only the deterministic portion"
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#comment",
+    "href": "course_skeleton/lectures/regression-lecture.html#comment",
+    "title": "Regression",
+    "section": "Comment",
+    "text": "Comment\n\nWe have only code the deterministic portion of this model\nIn other words, we are missing random component\nLet’s add some random noise …"
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#simulation-part-ii",
+    "href": "course_skeleton/lectures/regression-lecture.html#simulation-part-ii",
+    "title": "Regression",
+    "section": "Simulation: Part II",
+    "text": "Simulation: Part II\n\n\n\n\n\n\nWarning\n\n\nChange sd as needed\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#section-2",
+    "href": "course_skeleton/lectures/regression-lecture.html#section-2",
+    "title": "Regression",
+    "section": "",
+    "text": "\\(X\\)sParametersDeterministicNoise\n\n\nCreate n values for x, for example using:\n\nx = runif(n, min = -2, max = 10) # or runif() / rnorm()\n\n\n\n\n\n\n\n\n\n\n\n\nFor \\(\\beta_0\\) = beta0 = 3, \\(\\beta_1\\) = beta1 = 4, we have\n\\[Y = 3 + 4 \\cdot X\\]"
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#references",
+    "href": "course_skeleton/lectures/regression-lecture.html#references",
+    "title": "Regression",
+    "section": "References",
+    "text": "References\n\n\n\n\nDevore, J. L., K. N. Berk, and M. A. Carlton. 2021. Modern Mathematical Statistics with Applications. Springer Texts in Statistics. Springer International Publishing. https://books.google.ca/books?id=ghcsEAAAQBAJ."
+  },
+  {
+    "objectID": "course_skeleton/index.html",
+    "href": "course_skeleton/index.html",
+    "title": " Course Title",
+    "section": "",
+    "text": "This is a generic course landing page.\nHere students will find:"
+  },
+  {
+    "objectID": "course_skeleton/index.html#course-schedule",
+    "href": "course_skeleton/index.html#course-schedule",
+    "title": " Course Title",
+    "section": "Course Schedule",
+    "text": "Course Schedule\nThe schedule below is tentative and may be adjusted as the course progresses.\n\nLectures\n\n\n\nTable 1: The tentative course schedule for lectures\n\n\n\n\n\nWeek\nTopic\nMaterials\n\n\n\n\n1\nIntroduction to Quarto Slides with webr\nSlides\n\n\n2\nLinear Regression demo\nSlides\n\n\n\n\n\n\n\n\nInteractive Activities and Simulations\n\n\n\nTable 2: The tentative course schedule for interactive activities and simulations with R\n\n\n\n\n\nWeek\nTopic\nMaterials\n\n\n\n\n1\nCoin Flipping activity\nActivity\n\n\n2\nIntroduction to visuals\nActivity\n\n\n\n\n\n\n\n\nInteractive R Tutorials\n\n\n\nTable 3: The tentative course schedule for interactive R tutorials\n\n\n\n\n\nWeek\nTopic\nMaterials\n\n\n\n\n1\nIntroduction to R\nTutorial\n\n\n2\nTutorial on Regression with R\nTutorial\n\n\n3\nGraded tutorial on introductory level content in R\nTutorial"
+  },
+  {
+    "objectID": "course_skeleton/index.html#lecture-slide",
+    "href": "course_skeleton/index.html#lecture-slide",
+    "title": " Course Title",
+    "section": "Lecture Slide",
+    "text": "Lecture Slide\nThe slide decks above were made in Quarto in revealjs (HTML). A lecture template with some helpful demonstrations can be here; see the rendered version here.\n\n\n\n\n\n\nNote\n\n\n\nNote that revealjs presentations can be presented as HTML slides or can be printed to PDF for easier distribution. 🎉\n\n\n\nPrint/Save to PDF:\nReveal presentations can be exported to PDF via a special print stylesheet.\n\nToggle into Print View using the E key (or using the Navigation Menu)\nOpen the in-browser[^2] print dialog (CTRL/CMD+P).\nChange the Destination setting to Save as PDF.\nChange the Layout to Landscape.\nChange the Margins to None.\nEnable the Background graphics option.\nClick Save 🎉\n\nVisit https://quarto.org/docs/presentations/revealjs/ for more details on create revealjs slides."
+  },
+  {
+    "objectID": "activities/activity_intro_to_visuals.html",
+    "href": "activities/activity_intro_to_visuals.html",
+    "title": "In-Class Activity: Summarizing Numerical Data",
+    "section": "",
+    "text": "This script will provide a quick demonstration of summarizing data visually."
+  },
+  {
+    "objectID": "activities/activity_intro_to_visuals.html#pixar-data",
+    "href": "activities/activity_intro_to_visuals.html#pixar-data",
+    "title": "In-Class Activity: Summarizing Numerical Data",
+    "section": "Pixar Data",
+    "text": "Pixar Data\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe data we will be looking at contains information about Pixar films released prior to 2021, as provided by Wikipedia. The following variables were collected for each film:\n\nfilm: The name of the film.\nrelease_date: The date the film premiered.\nrun_time: The length of the film in minutes.\nrotten_tomatoes: Score from the review-aggregation website Rotten Tomatoes; scored out of 100.\nbox_office_worldwide: Box office gross amount in U.S. dollars worldwide.\nbudget: Movie budget in U.S. dollars.\n\nThe data can be found in the following table:\n\n\n\n\n\n\nfilm\nrelease_date\nrun_time\nrotten_tomatoes\nbox_office_worldwide\nbudget\n\n\n\n\nToy Story\n1995-11-22\n81\n100\n373,554,033\n30,000,000\n\n\nA Bug's Life\n1998-11-25\n95\n92\n363,258,859\n120,000,000\n\n\nToy Story 2\n1999-11-24\n92\n100\n497,374,776\n90,000,000\n\n\nMonsters, Inc.\n2001-11-02\n92\n96\n632,316,649\n115,000,000\n\n\nFinding Nemo\n2003-05-30\n100\n99\n871,014,978\n94,000,000\n\n\nThe Incredibles\n2004-11-05\n115\n97\n631,606,713\n92,000,000\n\n\nCars\n2006-06-09\n117\n74\n461,983,149\n120,000,000\n\n\nRatatouille\n2007-06-29\n111\n96\n623,726,085\n150,000,000\n\n\nWALL-E\n2008-06-27\n98\n95\n521,311,860\n180,000,000\n\n\nUp\n2009-05-29\n96\n98\n735,099,082\n175,000,000\n\n\nToy Story 3\n2010-06-18\n103\n98\n1,066,969,703\n200,000,000\n\n\nCars 2\n2011-06-24\n106\n40\n559,852,396\n200,000,000\n\n\nBrave\n2012-06-22\n93\n78\n538,983,207\n185,000,000\n\n\nMonsters University\n2013-06-21\n104\n80\n743,559,607\n200,000,000\n\n\nInside Out\n2015-06-19\n95\n98\n857,611,174\n175,000,000\n\n\nThe Good Dinosaur\n2015-11-25\n93\n76\n332,207,671\n175,000,000\n\n\nFinding Dory\n2016-06-17\n97\n94\n1,028,570,889\n200,000,000\n\n\nCars 3\n2017-06-16\n102\n69\n383,930,656\n175,000,000\n\n\nCoco\n2017-11-22\n105\n97\n807,082,196\n175,000,000\n\n\nIncredibles 2\n2018-06-15\n118\n93\n1,242,805,359\n200,000,000\n\n\nToy Story 4\n2019-06-21\n100\n97\n1,073,394,593\n200,000,000\n\n\nOnward\n2020-03-06\n102\n88\n141,950,121\n175,000,000\n\n\nSoul\n2020-12-25\n100\n96\n135,435,315\n175,000,000\n\n\n\n\n\n\n\nDescriptive Statistics\nThe following functions are useful for summarizing numerical data: mean, median, min, max, range, sd, var, fivenum\nTry them here:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nBasic Plots\nThere is a generic plot function in R which is useful for creating quick visualizations of a data set. If you pass one numeric variable into this function, a quick plot will be made by creating a point for each observation in the order they occur in the data frame (index). Passing two numeric variables into this function will create a scatterplot, with the first variable corresponding to the x-axis and the second corresponding to the y-axis.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere are some arguments we can add to the plot function to make our visualizations more informative:\n\nmain = “Title of the Graph”\nxlab = “x-axis label”\nylab = “y-axis label”\nxlim = c(0,100) (changing the values on the x-axis)\nylim = c(0,100) (changing the values on the y-axis)\ncol = “colour” (full list of colours can be found here)\npch = number (list of potential shapes for points can be found here)\n\nWe can even add text to our plots by incorporating the text function.\n\n\nBarplots\nTo draw a basic bar graph, we can simply use the barplot function and specify which variable it is that we want to represent the height of the bars. For example, we can use the following code to quickly plot the Rotten Tomatoes score for each of the Pixar movies:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere are some arguments we can add to the barplot function to make our bar graph more informative.\n\nhoriz = T (draw the bars horizontally)\nname = variable to label the bars\nlas = 2 (rotates the labels)\ncex.names = 0.5 (change the labels font size)\n\n\n\nHistograms\nWe can create histograms of the data using the hist function. For example, we can use the following code to quickly create a histogram of the Rotten Tomatoes scores for the Pixar movies:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nArguments we can add to the hist function to make our graph more informative.\n\nbreaks = number (number of bars displayed)\nlabels = T (add numbers to bars)\n\n\n\nBoxplots\nThe boxplot function can be used to (unsurprisingly) create boxplots. Keeping with our Rotten Tomatoes examples:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nArguments we can add to the boxplot function to make our graph more informative.\n\nhorizontal = T (draw the boxplot horizontally)"
+  },
+  {
+    "objectID": "tutorials/tutorial_regression.html",
+    "href": "tutorials/tutorial_regression.html",
+    "title": "Tutorial: Regression Analaysis with R",
+    "section": "",
+    "text": "This is a sample lecture on regression. For this example, we set packages: [\"tibble\", \"dplyr\", \"ggplot2\", \"palmerpenguins\", \"mosaic].\n\n\nThis example is on the palmerpenguins data set.\n\n\n\n\n\nLet’s examine the data set. For simplicity, we will use complete cases for this tutorial.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nWe would like to perform a t-test on the body mass of male and female Adelie penguins. Let’s start with some initial data analysis.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nlet’s examine side-by-side boxplots and histograms of the mass of male and female Adelie penguins. For simplicity, we’ll remove the data points where information is missing.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s conduct the following test on whether the mean body mass of male Adelie penguins is equal to the mean body mass of female Adelie penguins, or whether there is a difference.\nThe null and alternative hypothesis are \\[\n  H_{0}: \\mu_{\\text{male}} = \\mu_{\\text{female}}\n  \\quad\n  H_{a}: \\mu_{\\text{male}} \\neq \\mu_{\\text{female}}\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nRecall the simple linear regression model is\n\\[\nY = \\beta_{0} + \\beta_{1} X + \\varepsilon, \\quad \\varepsilon \\sim N(0, \\sigma^2)\n\\] This is estimated using \\[\n\\hat{y} = \\hat{\\beta}_{0} + \\hat{\\beta}_{1}x\n\\]\nFor the Adelie penguins, let’s examine whether there is a linear relationship between the bill_length and body_mass_g of the Adelie penguins. We’ll start with a scatterplot of the data.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere appears to be a positive linear relationship between body mass and flipper length. Let’s get the least squares regression line:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe equation of the regression line is:\n\\[\n  \\hat{y}_{\\text{flipper length}} = 165.2\n    + 0.007 x_{\\text{mass}}\n\\]\nLet’s superimpose the least squares line on the plot:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s see if there is a difference between the flipper length of male and female flipper lengths:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere appers to be a difference for male and female penguins. Let’s create a new model with sex as an indicator variable.\n\\[\n  \\hat{y}_{\\text{flipper length}} = \\hat{\\beta}_0\n    + \\hat{\\beta}_{\\text{mass}} x_{\\text{mass}}\n    + \\hat{\\beta}_{\\text{sex}} x_{\\text{sex}}\n\\] where\n\\[\nx_{\\text{sex}} =\n  \\begin{cases}\n    1, \\text{ if sex is } \\texttt{male}; \\\\\n    0, \\text{ if sex is } \\texttt{female}\n  \\end{cases}\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFrom the output above, we see our model is\n\\[\n  \\hat{y}_{\\text{flipper length}} = 165.2\n    + 0.006 x_{\\text{mass}}\n    + 0.344 x_{\\text{sex}}\n\\]\nIf we add both lines to the scatter plot we get the following.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFrom both the plot and the R output, we observe the itnteraction effect is not significant."
+  },
+  {
+    "objectID": "tutorials/tutorial_regression.html#exploratory-data-analysis",
+    "href": "tutorials/tutorial_regression.html#exploratory-data-analysis",
+    "title": "Tutorial: Regression Analaysis with R",
+    "section": "",
+    "text": "This example is on the palmerpenguins data set.\n\n\n\n\n\nLet’s examine the data set. For simplicity, we will use complete cases for this tutorial.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "tutorials/tutorial_regression.html#sample-hypothesis-test",
+    "href": "tutorials/tutorial_regression.html#sample-hypothesis-test",
+    "title": "Tutorial: Regression Analaysis with R",
+    "section": "",
+    "text": "We would like to perform a t-test on the body mass of male and female Adelie penguins. Let’s start with some initial data analysis.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nlet’s examine side-by-side boxplots and histograms of the mass of male and female Adelie penguins. For simplicity, we’ll remove the data points where information is missing.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s conduct the following test on whether the mean body mass of male Adelie penguins is equal to the mean body mass of female Adelie penguins, or whether there is a difference.\nThe null and alternative hypothesis are \\[\n  H_{0}: \\mu_{\\text{male}} = \\mu_{\\text{female}}\n  \\quad\n  H_{a}: \\mu_{\\text{male}} \\neq \\mu_{\\text{female}}\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "tutorials/tutorial_regression.html#simple-linear-regression",
+    "href": "tutorials/tutorial_regression.html#simple-linear-regression",
+    "title": "Tutorial: Regression Analaysis with R",
+    "section": "",
+    "text": "Recall the simple linear regression model is\n\\[\nY = \\beta_{0} + \\beta_{1} X + \\varepsilon, \\quad \\varepsilon \\sim N(0, \\sigma^2)\n\\] This is estimated using \\[\n\\hat{y} = \\hat{\\beta}_{0} + \\hat{\\beta}_{1}x\n\\]\nFor the Adelie penguins, let’s examine whether there is a linear relationship between the bill_length and body_mass_g of the Adelie penguins. We’ll start with a scatterplot of the data.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere appears to be a positive linear relationship between body mass and flipper length. Let’s get the least squares regression line:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe equation of the regression line is:\n\\[\n  \\hat{y}_{\\text{flipper length}} = 165.2\n    + 0.007 x_{\\text{mass}}\n\\]\nLet’s superimpose the least squares line on the plot:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s see if there is a difference between the flipper length of male and female flipper lengths:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere appers to be a difference for male and female penguins. Let’s create a new model with sex as an indicator variable.\n\\[\n  \\hat{y}_{\\text{flipper length}} = \\hat{\\beta}_0\n    + \\hat{\\beta}_{\\text{mass}} x_{\\text{mass}}\n    + \\hat{\\beta}_{\\text{sex}} x_{\\text{sex}}\n\\] where\n\\[\nx_{\\text{sex}} =\n  \\begin{cases}\n    1, \\text{ if sex is } \\texttt{male}; \\\\\n    0, \\text{ if sex is } \\texttt{female}\n  \\end{cases}\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFrom the output above, we see our model is\n\\[\n  \\hat{y}_{\\text{flipper length}} = 165.2\n    + 0.006 x_{\\text{mass}}\n    + 0.344 x_{\\text{sex}}\n\\]\nIf we add both lines to the scatter plot we get the following.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFrom both the plot and the R output, we observe the itnteraction effect is not significant."
+  },
+  {
+    "objectID": "tutorials/graded_tutorial_intro_to_r.html",
+    "href": "tutorials/graded_tutorial_intro_to_r.html",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "",
+    "text": "#| edit: false\n#| output: false\nwebr::install(\"gradethis\", quiet = TRUE)\nlibrary(gradethis)\noptions(webr.exercise.checker = function(\n  label, user_code, solution_code, check_code, envir_result, evaluate_result,\n  envir_prep, last_value, engine, stage, ...\n) {\n  if (is.null(check_code)) {\n    # No grading code, so just skip grading\n    invisible(NULL)\n  } else if (is.null(label)) {\n    list(\n      correct = FALSE,\n      type = \"warning\",\n      message = \"All exercises must have a label.\"\n    )\n  } else if (is.null(solution_code)) {\n    list(\n      correct = FALSE,\n      type = \"warning\",\n      message = htmltools::tags$div(\n        htmltools::tags$p(\"A problem occurred grading this exercise.\"),\n        htmltools::tags$p(\n          \"No solution code was found. Note that grading exercises using the \",\n          htmltools::tags$code(\"gradethis\"),\n          \"package requires a model solution to be included in the document.\"\n        )\n      )\n    )\n  } else {\n    gradethis::gradethis_exercise_checker(\n      label = label, solution_code = solution_code, user_code = user_code,\n      check_code = check_code, envir_result = envir_result,\n      evaluate_result = evaluate_result, envir_prep = envir_prep,\n      last_value = last_value, stage = stage, engine = engine)\n  }\n})"
+  },
+  {
+    "objectID": "tutorials/graded_tutorial_intro_to_r.html#q1",
+    "href": "tutorials/graded_tutorial_intro_to_r.html#q1",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q1 — Make the sum equal 10",
+    "text": "Q1 — Make the sum equal 10\nReplace ＿ with a number so the expression evaluates to 10.\n\n#| setup: true\n#| exercise: ex_sum\n＿ &lt;- NA_real_\n\n\n#| exercise: ex_sum\n1 + 2 + ＿ + ＿\n\n\nReplace the two ＿ with 2 numbers that add up to 7.\n\n\nSolution. \n\n#| exercise: ex_sum\n#| solution: true \n1 + 2 + 3 + 4\n\n\n\n#| exercise: ex_sum\n#| check: true\ngradethis::grade_this({\n  if (grepl(\"＿\", .user_code, fixed = TRUE)) {\n    fail(\"Replace ＿ with a number.\")\n  }\n  # Pass if the evaluated result is (numerically) 10\n  if (is.numeric(.result) && length(.result) == 1 &&\n      isTRUE(all.equal(.result, 10))) {\n    pass(\"✅ Correct!\")\n  } else {\n    fail(\"Not quite — try to make the expression evaluate to 10.\")\n  }\n})"
+  },
+  {
+    "objectID": "tutorials/graded_tutorial_intro_to_r.html#q2-create-a-vector",
+    "href": "tutorials/graded_tutorial_intro_to_r.html#q2-create-a-vector",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q2 — Create a vector",
+    "text": "Q2 — Create a vector\nMake a vector called my_vec that contains the numbers 5, 10, 15, 20.\n\n#| exercise: ex_vec\n#| exercise.lines: 2\n#| echo: false\nmy_vec &lt;- NULL\n\n\n\nUse the c() function to combine numbers: c(1, 2, 3)\n\n\nSolution. \n\n#| exercise: ex_vec\n#| solution: true\nmy_vec &lt;- c(5, 10, 15, 20)\n\n\n\n\n#| exercise: ex_vec\n#| check: true\ngradethis::grade_this({\n  if (!exists(\"my_vec\", envir = .envir_result)) {\n    fail(\"You need to define `my_vec`.\")\n  }\n  v &lt;- get(\"my_vec\", envir = .envir_result)\n  if (!is.numeric(v)) {\n    fail(\"`my_vec` should be numeric.\")\n  }\n  if (!identical(v, c(5, 10, 15, 20))) {\n    fail(\"`my_vec` should contain exactly 5, 10, 15, 20 in that order.\")\n  }\n  pass(\"✅ Nice! Your vector is correct.\")\n})"
+  },
+  {
+    "objectID": "tutorials/graded_tutorial_intro_to_r.html#q3-find-the-average",
+    "href": "tutorials/graded_tutorial_intro_to_r.html#q3-find-the-average",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q3 — Find the average",
+    "text": "Q3 — Find the average\nCompute the mean of the vector c(2, 4, 6, 8, 10).\nYour answer should be stored in a variable called avg_val.\n\n#| exercise: ex_mean\n#| exercise.lines: 2\n#| echo: false\navg_val &lt;- NULL\n\n\nUse the mean() function: mean(c(…))\n\n\nSolution. \n\n#| exercise: ex_mean\n#| solution: true\navg_val &lt;- mean(c(2, 4, 6, 8, 10))\n\n\n\n\n#| exercise: ex_mean\n#| check: true\ngradethis::grade_this({\n  if (!exists(\"avg_val\", envir = .envir_result)) {\n    fail(\"You need to define `avg_val`.\")\n  }\n  v &lt;- get(\"avg_val\", envir = .envir_result)\n  if (!is.numeric(v) || length(v) != 1) {\n    fail(\"`avg_val` should be a single numeric value.\")\n  }\n  if (!isTRUE(all.equal(v, 6, tol = 1e-8))) {\n    fail(\"Not quite — the mean of c(2,4,6,8,10) is 6.\")\n  }\n  pass(\"✅ Correct! You computed the mean successfully.\")\n})"
+  },
+  {
+    "objectID": "tutorials/graded_tutorial_intro_to_r.html#q4-draw-a-histogram-from-toothgrowth-type-the-full-call",
+    "href": "tutorials/graded_tutorial_intro_to_r.html#q4-draw-a-histogram-from-toothgrowth-type-the-full-call",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q4 — Draw a histogram from ToothGrowth (type the full call)",
+    "text": "Q4 — Draw a histogram from ToothGrowth (type the full call)\nUse exactly one of these numeric columns and nothing else: len or dose\n\n\n\nPhoto by The Humble Co. on Unsplash\n\n\n\n\n\n\n\n\nPreview\n\n\n\nFind a preview of the ToothGrowth dataset here:\n\n#| echo: true\nhead(ToothGrowth, 8)\n\n\n\n\n\n#| exercise: ex_hist_exact\n# Type your answer on the next line (one command only):\n\n\nUse the hist command.\n\n\nSolution. \n\n#| exercise: ex_hist_exact\n#| solution: true\nhist(ToothGrowth$len)\n\n\n\n#| exercise: ex_hist_exact\n#| check: true\ngradethis::grade_this({\ncode &lt;- .user_code\nlines &lt;- strsplit(paste(code, collapse = \"\\n\"), \"\\n\", fixed = TRUE)[[1]]\nlines &lt;- sub(\"#.*$\", \"\", lines)\ntrim &lt;- function(s) sub(\"^[[:space:]]+|[[:space:]]+$\", \"\", s)\nlines &lt;- trim(lines); lines &lt;- lines[nzchar(lines)]\n\nif (length(lines) == 0) fail(\"Type your answer; it can't be empty.\")\nif (length(lines) &gt; 1)  fail(\"Enter exactly one command.\")\n\none &lt;- lines[1]\nif (!inherits(.result, \"histogram\")) fail(\"Your code should draw a histogram.\")\n\nexpr &lt;- try(parse(text = one)[[1]], silent = TRUE)\nif (inherits(expr, \"try-error\")) fail(\"Your code must be a single valid R expression.\")\nif (!(is.call(expr) && identical(as.character(expr[[1]]), \"hist\"))) fail(\"Use hist(...).\")\n\nargs &lt;- as.list(expr)[-1]\nif (length(args) != 1L) fail(\"Pass exactly one argument to hist().\")\n\narg_txt &lt;- paste0(deparse(args[[1]]), collapse = \"\")\nallowed &lt;- c(\"ToothGrowth$len\",\"ToothGrowth$dose\")\n\nif (arg_txt %in% allowed) pass(\"OK\")\nelse if (arg_txt == \"ToothGrowth\") fail(\"hist(ToothGrowth) won’t work—choose len or dose.\")\nelse fail(\"Type exactly hist(ToothGrowth$len) or hist(ToothGrowth$dose).\")\n})"
+  },
+  {
+    "objectID": "tutorials/graded_tutorial_intro_to_r.html#q5-draw-a-boxplot-from-toothgrowth-type-the-full-call",
+    "href": "tutorials/graded_tutorial_intro_to_r.html#q5-draw-a-boxplot-from-toothgrowth-type-the-full-call",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q5 — Draw a boxplot from ToothGrowth (type the full call)",
+    "text": "Q5 — Draw a boxplot from ToothGrowth (type the full call)\nUse exactly one of these numeric columns and nothing else: len or dose\n\n\n\n\n\n\nPreview\n\n\n\nFind a preview of the ToothGrowth dataset here:\n\n#| echo: true\nhead(ToothGrowth, 8)\n\n\n\n\n\n#| exercise: ex_boxplot_exact\n# Type your answer on the next line (one command only):\n\n\nUse the boxplot command.\n\n\nSolution. \n\n#| exercise: ex_boxplot_exact\n#| solution: true\nboxplot(ToothGrowth$len)\n\n\n\n#| exercise: ex_boxplot_exact\n#| check: true\ngradethis::grade_this({\ncode &lt;- .user_code\nlines &lt;- strsplit(paste(code, collapse = \"\\n\"), \"\\n\", fixed = TRUE)[[1]]\nlines &lt;- sub(\"#.*$\", \"\", lines)\ntrim &lt;- function(s) sub(\"^[[:space:]]+|[[:space:]]+$\", \"\", s)\nlines &lt;- trim(lines); lines &lt;- lines[nzchar(lines)]\n\nif (length(lines) == 0) fail(\"Type your answer; it can't be empty.\")\nif (length(lines) &gt; 1)  fail(\"Enter exactly one command.\")\n\none &lt;- lines[1]\n\nexpr &lt;- try(parse(text = one)[[1]], silent = TRUE)\nif (inherits(expr, \"try-error\")) fail(\"Your code must be a single valid R expression.\")\nif (!(is.call(expr) && identical(as.character(expr[[1]]), \"boxplot\"))) fail(\"Use boxplot(...).\")\n\nargs &lt;- as.list(expr)[-1]\nif (length(args) != 1L) fail(\"Pass exactly one argument to boxplot().\")\n\narg_txt &lt;- paste0(deparse(args[[1]]), collapse = \"\")\nallowed &lt;- c(\"ToothGrowth$len\",\"ToothGrowth$dose\")\n\nif (arg_txt %in% allowed) {\nif (!(is.list(.result) && !is.null(.result$stats))) pass(\"OK (note: base boxplot())\") else pass(\"OK\")\n} else if (arg_txt == \"ToothGrowth\") {\nfail(\"boxplot(ToothGrowth) won’t work—choose len or dose.\")\n} else {\nfail(\"Type exactly boxplot(ToothGrowth$len) or boxplot(ToothGrowth$dose).\")\n}\n})"
+  },
+  {
+    "objectID": "tutorials/graded_tutorial_intro_to_r.html#q6-add-a-color-to-the-histogram",
+    "href": "tutorials/graded_tutorial_intro_to_r.html#q6-add-a-color-to-the-histogram",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q6 — Add a color to the histogram",
+    "text": "Q6 — Add a color to the histogram\nRe-draw a histogram of ToothGrowth$len and set any bar color using the col= argument.\n\n#| exercise: ex_hist_col\n# (one command)\n\n\nadd col as an additional argument here and give it a color of your choice.\n\n\nSolution. \n\n#| exercise: ex_hist_col\n#| solution: true\nhist(ToothGrowth$len, col = \"steelblue\")\n\n\n\n\n#| exercise: ex_hist_col\n#| check: true\ngradethis::grade_this({\nline &lt;- paste(.user_code, collapse = \"\\n\")\nif (!inherits(.result, \"histogram\")) fail(\"Use hist(...) on ToothGrowth$len.\")\n\nexpr &lt;- try(parse(text = line)[[1]], silent = TRUE)\nif (inherits(expr, \"try-error\")) fail(\"Your code must be a single valid R expression.\")\nif (!(is.call(expr) && identical(as.character(expr[[1]]), \"hist\"))) fail(\"Call hist(...).\")\n\nargs &lt;- as.list(expr)[-1]\narg1_txt &lt;- paste0(deparse(args[[1]]), collapse = \"\")\nif (arg1_txt != \"ToothGrowth$len\") fail(\"Use ToothGrowth$len as the data argument.\")\n\nhas_col &lt;- any(names(args) == \"col\")\nif (!has_col) fail(\"Add a color with col = ...\")\n\npass(\"OK\")\n})"
+  },
+  {
+    "objectID": "tutorials/graded_tutorial_intro_to_r.html#q7-boxplot-make-it-horizontal",
+    "href": "tutorials/graded_tutorial_intro_to_r.html#q7-boxplot-make-it-horizontal",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q7 — Boxplot (make it horizontal)",
+    "text": "Q7 — Boxplot (make it horizontal)\nDraw a boxplot of ToothGrowth$dose and make it horizontal using horizontal = TRUE as an argument.\n\n#| exercise: ex_box_h\n# (one command)\n\n\nadd horizontal as an argument just like col from the previous question\n\n\nSolution. \n\n#| exercise: ex_box_h\n#| solution: true\nboxplot(ToothGrowth$dose, horizontal = TRUE)\n\n\n\n#| exercise: ex_box_h\n#| check: true\ngradethis::grade_this({\nline &lt;- paste(.user_code, collapse = \"\\n\")\n\nexpr &lt;- try(parse(text = line)[[1]], silent = TRUE)\nif (inherits(expr, \"try-error\")) fail(\"Your code must be a single valid R expression.\")\nif (!(is.call(expr) && identical(as.character(expr[[1]]), \"boxplot\"))) fail(\"Use boxplot(...).\")\n\nargs &lt;- as.list(expr)[-1]\nif (length(args) &lt; 1L) fail(\"Pass ToothGrowth$dose to boxplot().\")\n\narg1_txt &lt;- paste0(deparse(args[[1]]), collapse = \"\")\nif (arg1_txt != \"ToothGrowth$dose\") fail(\"Use ToothGrowth$dose as the data argument.\")\n\narg_names &lt;- names(args)\nif (is.null(arg_names)) arg_names &lt;- rep(\"\", length(args))\nidx &lt;- which(arg_names == \"horizontal\")\nhoriz_ok &lt;- FALSE\nif (length(idx) &gt; 0) {\nhval &lt;- args[[idx[1]]]\nhoriz_ok &lt;- isTRUE(eval(hval))\n}\nif (!horiz_ok) fail(\"Add horizontal = TRUE.\")\n\nif (!(is.list(.result) && !is.null(.result$stats))) {\npass(\"OK (note: ensure you're using base boxplot())\")\n} else {\npass(\"OK\")\n}\n})"
+  },
+  {
+    "objectID": "tutorials/graded_tutorial_intro_to_r.html#q8-load-a-csv-as-a-dataframe",
+    "href": "tutorials/graded_tutorial_intro_to_r.html#q8-load-a-csv-as-a-dataframe",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q8 — Load a CSV as a DataFrame",
+    "text": "Q8 — Load a CSV as a DataFrame\nLoad iris.csv into a dataframe named df.\n\n\n\nPhoto by Andrew Small on Unsplash\n\n\n\n# Q9 SETUP — create iris.csv inside the webR filesystem\n#| setup: true\n#| exercise: ex_csv_load\nwrite.csv(iris, \"iris.csv\", row.names = FALSE)\n\n\n\n## Q9 — Load a CSV as a data frame\n# Read \"iris.csv\" into a data frame named df\n#| exercise: ex_csv_load\n#| exercise.lines: 3\n#| echo: false\ndf &lt;- \n\n\nUse read.csv here.\n\n\nSolution. \n\n#| exercise: ex_csv_load\n#| solution: true\n#| files: [\"data/iris.csv\"]   # solution runs in its own sandbox — mount again\ndf &lt;- read.csv(\"iris.csv\")\n\n\n\n\n#| exercise: ex_csv_load\n#| check: true\ngradethis::grade_this({\n  if (!exists(\"df\", envir = .envir_result)) fail(\"Create `df` with `read.csv(\\\"iris.csv\\\")`.\")\n  x &lt;- get(\"df\", envir = .envir_result)\n  if (!is.data.frame(x)) fail(\"`df` should be a data frame.\")\n  need &lt;- c(\"Sepal.Length\",\"Sepal.Width\",\"Petal.Length\",\"Petal.Width\",\"Species\")\n  if (!all(need %in% names(x))) fail(\"`df` doesn't look like the expected columns.\")\n  pass(\"✅ Loaded correctly!\")\n})"
+  },
+  {
+    "objectID": "tutorials/graded_tutorial_intro_to_r.html#q9-count-rows-in-iris.csv",
+    "href": "tutorials/graded_tutorial_intro_to_r.html#q9-count-rows-in-iris.csv",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q9 — Count rows in iris.csv",
+    "text": "Q9 — Count rows in iris.csv\nCount the number of rows in iris.csv and store them in the variable rows\n\n# Q10 setup\n#| setup: true\n#| exercise: ex_csv_nrows\nwrite.csv(iris, \"iris.csv\", row.names = FALSE)\n\n\n\n#| exercise: ex_csv_nrows\n#| exercise.lines: 3\n#| echo: false\ndf &lt;- read.csv(\"iris.csv\")\nrows &lt;- \n\n\nUse nrow.\n\n\nSolution. \n\n#| exercise: ex_csv_nrows\n#| solution: true\n#| files: [\"data/iris.csv\"]   # solution runs in its own sandbox — mount again\ndf &lt;- read.csv(\"iris.csv\")\nrows &lt;- nrow(df)\n\n\n\n\n#| exercise: ex_csv_nrows\n#| check: true\ngradethis::grade_this({\n  stopifnot(exists(\"rows\", envir=.envir_result))\n  x &lt;- get(\"rows\", envir=.envir_result)\n  if (!is.numeric(x) || length(x)!=1) fail(\"`rows` must be a single number.\")\n  if (x==150) pass(\"✅ 150 rows.\") else pass(\"ℹ️ Count recorded.\")\n})"
+  },
+  {
+    "objectID": "tutorials/graded_tutorial_intro_to_r.html#q10-show-column-names",
+    "href": "tutorials/graded_tutorial_intro_to_r.html#q10-show-column-names",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q10 — Show column names",
+    "text": "Q10 — Show column names\nPrint the column names from iris.csv\n\n#| setup: true\n#| exercise: ex_csv_names\nwrite.csv(iris, \"iris.csv\", row.names = FALSE)\n\n\n\n#| exercise: ex_csv_names\n#| exercise.lines: 4\n#| echo: false\n# Read the CSV and print the column names\ndf   &lt;- read.csv(\"iris.csv\")\ncols &lt;- \n\n\n\nUse names.\n\n\nSolution. \n\n#| exercise: ex_csv_names\n#| solution: true\n#| files: [\"data/iris.csv\"]   # solution runs in its own sandbox — mount again\ndf   &lt;- read.csv(\"iris.csv\")\ncols &lt;- names(df)\ncols\n\n\n\n#| exercise: ex_csv_names\n#| check: true\ngradethis::grade_this({\n  if (!exists(\"cols\", envir=.envir_result)) fail(\"Create `cols &lt;- names(df)` and print it.\")\n  x &lt;- get(\"cols\", envir=.envir_result)\n  if (!is.character(x)) fail(\"`cols` should be a character vector from `names(df)`.\")\n  need &lt;- c(\"Sepal.Length\",\"Sepal.Width\",\"Petal.Length\",\"Petal.Width\",\"Species\")\n  if (!all(need %in% x)) fail(\"Those don’t look like the iris columns—did you read the CSV and call `names(df)`?\")\n  pass(\"✅ Columns detected: Sepal/ Petal and Species.\")\n})"
+  },
+  {
+    "objectID": "tutorials/graded_tutorial_intro_to_r.html#q11-print-some-of-the-data",
+    "href": "tutorials/graded_tutorial_intro_to_r.html#q11-print-some-of-the-data",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q11 — Print some of the data",
+    "text": "Q11 — Print some of the data\nPrint the first 5 rows from iris.csv.\n\n#| setup: true\n#| exercise: ex_csv_head\nwrite.csv(iris, \"iris.csv\", row.names = FALSE)\n\n\n\n#| exercise: ex_csv_head\n#| exercise.lines: 4\n#| echo: false\n# Read the CSV and print the column names\ndf   &lt;- read.csv(\"iris.csv\")\n#your code here\n\n\n\nUse head.\n\n\nSolution. \n\n#| exercise: ex_csv_head\n#| solution: true\n#| files: [\"data/iris.csv\"]   # solution runs in its own sandbox — mount again\ndf &lt;- read.csv(\"iris.csv\")\nhead(df)\n\n\n\n#| exercise: ex_csv_head\n#| check: true\ngradethis::grade_this({\n  # If the *last* expression is head(df, 5), .result should be a 5-row data.frame\n  if (!(is.data.frame(.result) && nrow(.result)==5)) {\n    fail(\"Show the first 5 rows (e.g., `head(df, 5)`) as the **last** line.\")\n  }\n  if (!all(c(\"Sepal.Length\",\"Sepal.Width\",\"Petal.Length\",\"Petal.Width\",\"Species\") %in% names(.result))) {\n    fail(\"Your preview should be from `df` read from the CSV (it must have the iris columns).\")\n  }\n  pass(\"✅ Nice—now you can clearly see the columns and a few rows.\")\n})"
+  },
+  {
+    "objectID": "tutorials/graded_tutorial_intro_to_r.html#q12-make-a-histogram-from-iris.csv",
+    "href": "tutorials/graded_tutorial_intro_to_r.html#q12-make-a-histogram-from-iris.csv",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q12 — Make a histogram from iris.csv",
+    "text": "Q12 — Make a histogram from iris.csv\nMake a histogram of the column Sepal.Length from iris.csv.\n\n#| setup: true\n#| exercise: ex_csv_hist\nwrite.csv(iris, \"iris.csv\", row.names = FALSE)\n\n\n\n#| exercise: ex_csv_hist\n#| exercise.lines: 3\n#| echo: false\ndf &lt;- read.csv(\"iris.csv\")\n\n\n\nUse hist (see Q5).\n\n\nSolution. \n\n#| exercise: ex_csv_hist\n#| solution: true\n#| files: [\"data/iris.csv\"]   # solution runs in its own sandbox — mount again\ndf &lt;- read.csv(\"iris.csv\")\nhist(df$Sepal.Length, col = \"lightgray\", main = \"Sepal.Length\", xlab = \"cm\") \n\n\n\n#| exercise: ex_csv_hist\n#| check: true\ngradethis::grade_this({\n  if (!inherits(.result,\"histogram\")) fail(\"Use base `hist(df$Sepal.Length, ...)`.\")\n  if (!grepl(\"Sepal\\\\.Length\", paste(.user_code, collapse=\"\\n\"))) fail(\"Plot `df$Sepal.Length`.\")\n  pass(\"✅ Histogram detected.\")\n})"
+  },
+  {
+    "objectID": "tutorials/graded_tutorial_intro_to_r.html#q2",
+    "href": "tutorials/graded_tutorial_intro_to_r.html#q2",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q13 — Write a function using division",
+    "text": "Q13 — Write a function using division\nDefine a function called divide_nums that takes two arguments (a and b) and returns the results of:\n\na / b\nb / a\n\nBoth results should be stored in separate variables before being returned.\n\n\n\n\n\n\nInfo\n\n\n\nRemember: in R, division by zero (1/0) will return Inf rather than an error.\n\n\n\n\n\n\n\n\nInfo\n\n\n\nIn R, lists are written with list(a, b, c). Each element can be anything: a number, a string, or even another list.\n\n\n\n#| exercise: ex_fun_div\n#| exercise.lines: 8\n#| echo: false\ndivide_nums &lt;- function(a, b) {\n  # your code here\n}\n\n\nStart with: res1 &lt;- a / b res2 &lt;- b / a and then use the list command.\n\n\nSolution. \n\n#| exercise: ex_fun_div\n#| solution: true\ndivide_nums &lt;- function(a, b) {\n  res1 &lt;- a / b\n  res2 &lt;- b / a\n  list(res1, res2)\n}\n\n\n\n#| exercise: ex_fun_div\n#| check: true\ngradethis::grade_this({\n  code &lt;- .user_code\n\n  # 0) Empty/untouched?\n  if (!nzchar(gsub(\"\\\\s|#.*\", \"\", code))) {\n    fail(\"Type your answer in the editor.\")\n  }\n\n  # 1) Find the student's env (webR/gradethis names vary)\n  env &lt;- get0(\".envir_result\", ifnotfound = NULL)\n  if (is.null(env)) env &lt;- get0(\".user_env\", ifnotfound = NULL)\n  if (is.null(env)) env &lt;- parent.frame()\n\n  # 2) Get their function (prefer the named binding; fall back to .result)\n  f &lt;- NULL\n  if (exists(\"divide_nums\", envir = env, inherits = FALSE)) {\n    f &lt;- get(\"divide_nums\", envir = env)\n  } else if (is.function(.result)) {\n    f &lt;- .result\n  }\n\n  if (!is.function(f)) {\n    fail(\"Define a function named `divide_nums(a, b)` (use `divide_nums &lt;- function(a, b) { ... }`).\")\n  }\n\n  # 3) Run it and grade\n  val &lt;- tryCatch(f(8, 2), error = function(e) e)\n  if (inherits(val, \"error\")) {\n    msg &lt;- conditionMessage(val)\n    if (grepl(\"object .* not found\", msg)) {\n      fail(\"Looks like you referenced a variable that wasn’t created (e.g., `res1` or `res2`).\")\n    } else {\n      fail(paste0(\"Your function raised an error: \", msg))\n    }\n  }\n\n  if (!is.list(val) || length(val) != 2) {\n    fail(\"Return a **list** of two elements: `list(res1, res2)`.\")\n  }\n  if (!(is.numeric(val[[1]]) && is.numeric(val[[2]]))) {\n    fail(\"Both returned values must be numeric (`a/b` and `b/a`).\")\n  }\n\n  ok &lt;- isTRUE(all.equal(val[[1]], 4,    tol = 1e-8)) &&\n        isTRUE(all.equal(val[[2]], 0.25, tol = 1e-8))\n  if (!ok) {\n    fail(\"Close! Compute `res1 &lt;- a / b` and `res2 &lt;- b / a`, then return `list(res1, res2)`.\")\n  }\n\n  pass(\"✅ Well done! Function name, outputs, and return format are correct.\")\n})"
+  },
+  {
+    "objectID": "tutorials/tutorial_intro_to_r.html",
+    "href": "tutorials/tutorial_intro_to_r.html",
+    "title": "Tutorial: Introduction to R",
+    "section": "",
+    "text": "Objective Learn how to compute summary statistics and create basic plots using dplyr and ggplot2, two core packages from the tidyverse.\n\nSetup\n\n\nLoad necessary packages\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nExample Data\n\nWe’ll use the built-in mtcars dataset for demonstration.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nSummary Statistics\n\nCalculate mean, median, standard deviation, and count for mpg (miles per gallon).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nYou can also group by a categorical variable, e.g., number of cylinders (cyl):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nBasic Plots with ggplot2\n\nScatter plot of mpg vs wt (weight):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nBoxplot of mpg by number of cylinders:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nExercise (Optional)\n\nCompute the mean horsepower (hp) for each cylinder group and create a bar plot of these means.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "course_skeleton/activities/activity_intro_to_visuals.html",
+    "href": "course_skeleton/activities/activity_intro_to_visuals.html",
+    "title": "An Activity in R Introducing Visual",
+    "section": "",
+    "text": "This script will provide a quick demonstration of summarizing data visually."
+  },
+  {
+    "objectID": "course_skeleton/activities/activity_intro_to_visuals.html#pixar-data",
+    "href": "course_skeleton/activities/activity_intro_to_visuals.html#pixar-data",
+    "title": "An Activity in R Introducing Visual",
+    "section": "Pixar Data",
+    "text": "Pixar Data\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe data we will be looking at contains information about Pixar films released prior to 2021, as provided by Wikipedia. The following variables were collected for each film:\n\nfilm: The name of the film.\nrelease_date: The date the film premiered.\nrun_time: The length of the film in minutes.\nrotten_tomatoes: Score from the review-aggregation website Rotten Tomatoes; scored out of 100.\nbox_office_worldwide: Box office gross amount in U.S. dollars worldwide.\nbudget: Movie budget in U.S. dollars.\n\nThe data can be found in the following table:\n\n\n\n\n\n\nfilm\nrelease_date\nrun_time\nrotten_tomatoes\nbox_office_worldwide\nbudget\n\n\n\n\nToy Story\n1995-11-22\n81\n100\n373,554,033\n30,000,000\n\n\nA Bug's Life\n1998-11-25\n95\n92\n363,258,859\n120,000,000\n\n\nToy Story 2\n1999-11-24\n92\n100\n497,374,776\n90,000,000\n\n\nMonsters, Inc.\n2001-11-02\n92\n96\n632,316,649\n115,000,000\n\n\nFinding Nemo\n2003-05-30\n100\n99\n871,014,978\n94,000,000\n\n\nThe Incredibles\n2004-11-05\n115\n97\n631,606,713\n92,000,000\n\n\nCars\n2006-06-09\n117\n74\n461,983,149\n120,000,000\n\n\nRatatouille\n2007-06-29\n111\n96\n623,726,085\n150,000,000\n\n\nWALL-E\n2008-06-27\n98\n95\n521,311,860\n180,000,000\n\n\nUp\n2009-05-29\n96\n98\n735,099,082\n175,000,000\n\n\nToy Story 3\n2010-06-18\n103\n98\n1,066,969,703\n200,000,000\n\n\nCars 2\n2011-06-24\n106\n40\n559,852,396\n200,000,000\n\n\nBrave\n2012-06-22\n93\n78\n538,983,207\n185,000,000\n\n\nMonsters University\n2013-06-21\n104\n80\n743,559,607\n200,000,000\n\n\nInside Out\n2015-06-19\n95\n98\n857,611,174\n175,000,000\n\n\nThe Good Dinosaur\n2015-11-25\n93\n76\n332,207,671\n175,000,000\n\n\nFinding Dory\n2016-06-17\n97\n94\n1,028,570,889\n200,000,000\n\n\nCars 3\n2017-06-16\n102\n69\n383,930,656\n175,000,000\n\n\nCoco\n2017-11-22\n105\n97\n807,082,196\n175,000,000\n\n\nIncredibles 2\n2018-06-15\n118\n93\n1,242,805,359\n200,000,000\n\n\nToy Story 4\n2019-06-21\n100\n97\n1,073,394,593\n200,000,000\n\n\nOnward\n2020-03-06\n102\n88\n141,950,121\n175,000,000\n\n\nSoul\n2020-12-25\n100\n96\n135,435,315\n175,000,000\n\n\n\n\n\n\n\nDescriptive Statistics\nThe following functions are useful for summarizing numerical data: mean, median, min, max, range, sd, var, fivenum\nTry them here:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nBasic Plots\nThere is a generic plot function in R which is useful for creating quick visualizations of a data set. If you pass one numeric variable into this function, a quick plot will be made by creating a point for each observation in the order they occur in the data frame (index). Passing two numeric variables into this function will create a scatterplot, with the first variable corresponding to the x-axis and the second corresponding to the y-axis.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere are some arguments we can add to the plot function to make our visualizations more informative:\n\nmain = “Title of the Graph”\nxlab = “x-axis label”\nylab = “y-axis label”\nxlim = c(0,100) (changing the values on the x-axis)\nylim = c(0,100) (changing the values on the y-axis)\ncol = “colour” (full list of colours can be found here)\npch = number (list of potential shapes for points can be found here)\n\nWe can even add text to our plots by incorporating the text function.\n\n\nBarplots\nTo draw a basic bar graph, we can simply use the barplot function and specify which variable it is that we want to represent the height of the bars. For example, we can use the following code to quickly plot the Rotten Tomatoes score for each of the Pixar movies:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere are some arguments we can add to the barplot function to make our bar graph more informative.\n\nhoriz = T (draw the bars horizontally)\nname = variable to label the bars\nlas = 2 (rotates the labels)\ncex.names = 0.5 (change the labels font size)\n\n\n\nHistograms\nWe can create histograms of the data using the hist function. For example, we can use the following code to quickly create a histogram of the Rotten Tomatoes scores for the Pixar movies:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nArguments we can add to the hist function to make our graph more informative.\n\nbreaks = number (number of bars displayed)\nlabels = T (add numbers to bars)\n\n\n\nBoxplots\nThe boxplot function can be used to (unsurprisingly) create boxplots. Keeping with our Rotten Tomatoes examples:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nArguments we can add to the boxplot function to make our graph more informative.\n\nhorizontal = T (draw the boxplot horizontally)"
+  },
+  {
+    "objectID": "course_skeleton/activities/activity_coins.html",
+    "href": "course_skeleton/activities/activity_coins.html",
+    "title": "An Activity in R on Coin Flipping",
+    "section": "",
+    "text": "Coin Flip Example\nFor a random variable \\(X\\) that follows the Bernoulli distribution with probability \\(p\\), each realization of the random variable has two possible outcomes (e.g., Success or Failure, 1 or 0, Heads or Tails, etc.). More specifically, the Bernoulli distribution is a discrete probability distribution such that \\(P(X=1)=p\\) and \\(P(X=0)=1-p\\).\nAs a simple example, we can design an experiment where we flip a coin and record the outcome using the following code:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNow let’s try flipping the coin a few times:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s do this again, but this time we’ll keep track of the number of Heads and Tails that occur.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nBy default, the sample function gives every outcome an equal chance of happening. If we want to make certain events more likely than others, we can do this by adding a prob argument. For example, we can make it so that our coin has a 75% chance of landing on heads for any single flip by using the following code:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFinally, let’s try flipping the coin 100 times and keep track of how the frequency of Heads progresses over the tosses.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "course_skeleton/tutorials/tutorial_regression.html",
+    "href": "course_skeleton/tutorials/tutorial_regression.html",
+    "title": "Tutorial: Regression Analaysis with R",
+    "section": "",
+    "text": "This is a sample lecture on regression. For this example, we set packages: [\"tibble\", \"dplyr\", \"ggplot2\", \"palmerpenguins\", \"mosaic].\n\n\nThis example is on the palmerpenguins data set.\n\n\n\n\n\nLet’s examine the data set. For simplicity, we will use complete cases for this tutorial.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nWe would like to perform a t-test on the body mass of male and female Adelie penguins. Let’s start with some initial data analysis.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nlet’s examine side-by-side boxplots and histograms of the mass of male and female Adelie penguins. For simplicity, we’ll remove the data points where information is missing.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s conduct the following test on whether the mean body mass of male Adelie penguins is equal to the mean body mass of female Adelie penguins, or whether there is a difference.\nThe null and alternative hypothesis are \\[\n  H_{0}: \\mu_{\\text{male}} = \\mu_{\\text{female}}\n  \\quad\n  H_{a}: \\mu_{\\text{male}} \\neq \\mu_{\\text{female}}\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nRecall the simple linear regression model is\n\\[\nY = \\beta_{0} + \\beta_{1} X + \\varepsilon, \\quad \\varepsilon \\sim N(0, \\sigma^2)\n\\] This is estimated using \\[\n\\hat{y} = \\hat{\\beta}_{0} + \\hat{\\beta}_{1}x\n\\]\nFor the Adelie penguins, let’s examine whether there is a linear relationship between the bill_length and body_mass_g of the Adelie penguins. We’ll start with a scatterplot of the data.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere appears to be a positive linear relationship between body mass and flipper length. Let’s get the least squares regression line:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe equation of the regression line is:\n\\[\n  \\hat{y}_{\\text{flipper length}} = 165.2\n    + 0.007 x_{\\text{mass}}\n\\]\nLet’s superimpose the least squares line on the plot:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s see if there is a difference between the flipper length of male and female flipper lengths:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere appers to be a difference for male and female penguins. Let’s create a new model with sex as an indicator variable.\n\\[\n  \\hat{y}_{\\text{flipper length}} = \\hat{\\beta}_0\n    + \\hat{\\beta}_{\\text{mass}} x_{\\text{mass}}\n    + \\hat{\\beta}_{\\text{sex}} x_{\\text{sex}}\n\\] where\n\\[\nx_{\\text{sex}} =\n  \\begin{cases}\n    1, \\text{ if sex is } \\texttt{male}; \\\\\n    0, \\text{ if sex is } \\texttt{female}\n  \\end{cases}\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFrom the output above, we see our model is\n\\[\n  \\hat{y}_{\\text{flipper length}} = 165.2\n    + 0.006 x_{\\text{mass}}\n    + 0.344 x_{\\text{sex}}\n\\]\nIf we add both lines to the scatter plot we get the following.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFrom both the plot and the R output, we observe the itnteraction effect is not significant."
+  },
+  {
+    "objectID": "course_skeleton/tutorials/tutorial_regression.html#exploratory-data-analysis",
+    "href": "course_skeleton/tutorials/tutorial_regression.html#exploratory-data-analysis",
+    "title": "Tutorial: Regression Analaysis with R",
+    "section": "",
+    "text": "This example is on the palmerpenguins data set.\n\n\n\n\n\nLet’s examine the data set. For simplicity, we will use complete cases for this tutorial.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "course_skeleton/tutorials/tutorial_regression.html#sample-hypothesis-test",
+    "href": "course_skeleton/tutorials/tutorial_regression.html#sample-hypothesis-test",
+    "title": "Tutorial: Regression Analaysis with R",
+    "section": "",
+    "text": "We would like to perform a t-test on the body mass of male and female Adelie penguins. Let’s start with some initial data analysis.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nlet’s examine side-by-side boxplots and histograms of the mass of male and female Adelie penguins. For simplicity, we’ll remove the data points where information is missing.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s conduct the following test on whether the mean body mass of male Adelie penguins is equal to the mean body mass of female Adelie penguins, or whether there is a difference.\nThe null and alternative hypothesis are \\[\n  H_{0}: \\mu_{\\text{male}} = \\mu_{\\text{female}}\n  \\quad\n  H_{a}: \\mu_{\\text{male}} \\neq \\mu_{\\text{female}}\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "course_skeleton/tutorials/tutorial_regression.html#simple-linear-regression",
+    "href": "course_skeleton/tutorials/tutorial_regression.html#simple-linear-regression",
+    "title": "Tutorial: Regression Analaysis with R",
+    "section": "",
+    "text": "Recall the simple linear regression model is\n\\[\nY = \\beta_{0} + \\beta_{1} X + \\varepsilon, \\quad \\varepsilon \\sim N(0, \\sigma^2)\n\\] This is estimated using \\[\n\\hat{y} = \\hat{\\beta}_{0} + \\hat{\\beta}_{1}x\n\\]\nFor the Adelie penguins, let’s examine whether there is a linear relationship between the bill_length and body_mass_g of the Adelie penguins. We’ll start with a scatterplot of the data.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere appears to be a positive linear relationship between body mass and flipper length. Let’s get the least squares regression line:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe equation of the regression line is:\n\\[\n  \\hat{y}_{\\text{flipper length}} = 165.2\n    + 0.007 x_{\\text{mass}}\n\\]\nLet’s superimpose the least squares line on the plot:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s see if there is a difference between the flipper length of male and female flipper lengths:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere appers to be a difference for male and female penguins. Let’s create a new model with sex as an indicator variable.\n\\[\n  \\hat{y}_{\\text{flipper length}} = \\hat{\\beta}_0\n    + \\hat{\\beta}_{\\text{mass}} x_{\\text{mass}}\n    + \\hat{\\beta}_{\\text{sex}} x_{\\text{sex}}\n\\] where\n\\[\nx_{\\text{sex}} =\n  \\begin{cases}\n    1, \\text{ if sex is } \\texttt{male}; \\\\\n    0, \\text{ if sex is } \\texttt{female}\n  \\end{cases}\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFrom the output above, we see our model is\n\\[\n  \\hat{y}_{\\text{flipper length}} = 165.2\n    + 0.006 x_{\\text{mass}}\n    + 0.344 x_{\\text{sex}}\n\\]\nIf we add both lines to the scatter plot we get the following.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFrom both the plot and the R output, we observe the itnteraction effect is not significant."
+  }
+]

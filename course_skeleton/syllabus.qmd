@@ -1,0 +1,56 @@
+---
+title: 'Course Syllabus <img src="assets/logo.png" height="50"> '
+date: last-modified	
+format: 
+  html: 
+    theme: default
+  pdf: default
+bibliography: references.bib   
+---
+
+
+
+## Course information
+
+**Course:** Course Title  
+**Instructor:** Instructor Name  
+**Email:** instructor@email.ca  
+**Office hours:** TBD  
+**Class time/location:** TBD  
+
+## Course description
+
+Add a short course description here.
+
+## Learning objectives
+
+By the end of this course, students should be able to:
+
+- explain core concepts using appropriate terminology
+- apply course methods to real or realistic problems
+- interpret results clearly and accurately
+- communicate findings in a reproducible format
+- reflect on assumptions, limitations, and uncertainty
+
+## Course materials
+
+Required and recommended materials will be listed here.
+
+## Assessment
+
+| Component | Weight |
+|---|---:|
+| Assignments | XX% |
+| Quizzes | XX% |
+| Midterm | XX% |
+| Final project/exam | XX% |
+| Participation | XX% |
+
+## Course policies
+
+Add policies for attendance, late work, academic integrity, use of AI tools, accessibility, and communication expectations.
+
+## Recommended Textbooks
+
+- @devore2021modern
+- @diez2016openintro
