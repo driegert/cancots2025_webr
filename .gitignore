@@ -54,3 +54,5 @@ rsconnect/
 /.quarto/
 .DS_Store
 *.log
+
+**/*.quarto_ipynb

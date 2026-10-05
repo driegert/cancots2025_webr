@@ -6,10 +6,10 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/quarto-contrib/kbd/kbd.js"></script>
 <link href="../../site_libs/quarto-contrib/kbd/kbd.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Your name">
   <title>Course Tutorials – Lecture Template</title>
@@ -19,10 +19,16 @@
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -97,7 +103,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -2037,7 +2043,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Your name 
+Your name
 </div>
         <p class="quarto-title-affiliation">
             Your Institute
@@ -2167,11 +2173,11 @@ Your name
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Source</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a></a>::: incremental</span>
-<span id="cb1-2"><a></a><span class="ss">-   </span>la</span>
-<span id="cb1-3"><a></a><span class="ss">-   </span>la</span>
-<span id="cb1-4"><a></a><span class="ss">-   </span>land</span>
-<span id="cb1-5"><a></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a aria-label="1"></a>::: incremental</span>
+<span id="cb1-2"><a aria-label="2"></a><span class="ss">-   </span>la</span>
+<span id="cb1-3"><a aria-label="3"></a><span class="ss">-   </span>la</span>
+<span id="cb1-4"><a aria-label="4"></a><span class="ss">-   </span>land</span>
+<span id="cb1-5"><a aria-label="5"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:50%;">
 <p><strong>Rendered</strong></p>
 <ul>
@@ -2182,22 +2188,22 @@ Your name
 </div></div>
 <div class="fragment">
 <p><strong>Note</strong>: You can also enable this for all lists by default:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb2-2"><a></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
-<span id="cb2-3"><a></a><span class="at">    </span><span class="fu">incremental</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="at">   </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a aria-label="1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb2-2"><a aria-label="2"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb2-3"><a aria-label="3"></a><span class="at">    </span><span class="fu">incremental</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="at">   </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="code" class="slide level2">
 <h2>Writing Code</h2>
 <p>To include runnable code in Quarto, use fenced code blocks with the appropriate language engine:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a></a><span class="in">```{r}</span></span>
-<span id="cb3-2"><a></a><span class="co"># Load data</span></span>
-<span id="cb3-3"><a></a><span class="fu">data</span>(mtcars)</span>
-<span id="cb3-4"><a></a></span>
-<span id="cb3-5"><a></a><span class="co"># Fit linear model</span></span>
-<span id="cb3-6"><a></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt <span class="sc">+</span> hp, <span class="at">data =</span> mtcars)</span>
-<span id="cb3-7"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a aria-label="1"></a><span class="in">```{r}</span></span>
+<span id="cb3-2"><a aria-label="2"></a><span class="co"># Load data</span></span>
+<span id="cb3-3"><a aria-label="3"></a><span class="fu">data</span>(mtcars)</span>
+<span id="cb3-4"><a aria-label="4"></a></span>
+<span id="cb3-5"><a aria-label="5"></a><span class="co"># Fit linear model</span></span>
+<span id="cb3-6"><a aria-label="6"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt <span class="sc">+</span> hp, <span class="at">data =</span> mtcars)</span>
+<span id="cb3-7"><a aria-label="7"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Use three backticks followed by <code>{r}</code> to start an R code block.</li>
@@ -2221,34 +2227,34 @@ Your name
 <section id="example-code-folding" class="slide level2">
 <h2>Example: Code Folding</h2>
 <p>See the next slide for the rendered output …</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a></a><span class="in">```{r}</span></span>
-<span id="cb4-2"><a></a><span class="co">#| echo: true</span></span>
-<span id="cb4-3"><a></a><span class="co">#| code-summary: "Click me to show the code!"</span></span>
-<span id="cb4-4"><a></a><span class="co">#| code-fold: true</span></span>
-<span id="cb4-5"><a></a></span>
-<span id="cb4-6"><a></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb4-7"><a></a>dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">cond =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="at">each=</span><span class="dv">10</span>),</span>
-<span id="cb4-8"><a></a>                  <span class="at">xvar =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>,<span class="at">sd=</span><span class="dv">3</span>),</span>
-<span id="cb4-9"><a></a>                  <span class="at">yvar =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>,<span class="at">sd=</span><span class="dv">3</span>))</span>
-<span id="cb4-10"><a></a></span>
-<span id="cb4-11"><a></a><span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x=</span>xvar, <span class="at">y=</span>yvar)) <span class="sc">+</span></span>
-<span id="cb4-12"><a></a>  <span class="fu">geom_point</span>(<span class="at">shape=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb4-13"><a></a>  <span class="fu">geom_smooth</span>() </span>
-<span id="cb4-14"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a aria-label="1"></a><span class="in">```{r}</span></span>
+<span id="cb4-2"><a aria-label="2"></a><span class="co">#| echo: true</span></span>
+<span id="cb4-3"><a aria-label="3"></a><span class="co">#| code-summary: "Click me to show the code!"</span></span>
+<span id="cb4-4"><a aria-label="4"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb4-5"><a aria-label="5"></a></span>
+<span id="cb4-6"><a aria-label="6"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb4-7"><a aria-label="7"></a>dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">cond =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="at">each=</span><span class="dv">10</span>),</span>
+<span id="cb4-8"><a aria-label="8"></a>                  <span class="at">xvar =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>,<span class="at">sd=</span><span class="dv">3</span>),</span>
+<span id="cb4-9"><a aria-label="9"></a>                  <span class="at">yvar =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>,<span class="at">sd=</span><span class="dv">3</span>))</span>
+<span id="cb4-10"><a aria-label="10"></a></span>
+<span id="cb4-11"><a aria-label="11"></a><span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x=</span>xvar, <span class="at">y=</span>yvar)) <span class="sc">+</span></span>
+<span id="cb4-12"><a aria-label="12"></a>  <span class="fu">geom_point</span>(<span class="at">shape=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb4-13"><a aria-label="13"></a>  <span class="fu">geom_smooth</span>() </span>
+<span id="cb4-14"><a aria-label="14"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="example-code-folding-1" class="slide level2">
 <h2>Example: Code Folding</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Click me to show the code!</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb5-2"><a></a>dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">cond =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="at">each=</span><span class="dv">10</span>),</span>
-<span id="cb5-3"><a></a>                  <span class="at">xvar =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>,<span class="at">sd=</span><span class="dv">3</span>),</span>
-<span id="cb5-4"><a></a>                  <span class="at">yvar =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>,<span class="at">sd=</span><span class="dv">3</span>))</span>
-<span id="cb5-5"><a></a></span>
-<span id="cb5-6"><a></a><span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x=</span>xvar, <span class="at">y=</span>yvar)) <span class="sc">+</span></span>
-<span id="cb5-7"><a></a>  <span class="fu">geom_point</span>(<span class="at">shape=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb5-8"><a></a>  <span class="fu">geom_smooth</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-label="1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb5-2"><a aria-label="2"></a>dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">cond =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="at">each=</span><span class="dv">10</span>),</span>
+<span id="cb5-3"><a aria-label="3"></a>                  <span class="at">xvar =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>,<span class="at">sd=</span><span class="dv">3</span>),</span>
+<span id="cb5-4"><a aria-label="4"></a>                  <span class="at">yvar =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>,<span class="at">sd=</span><span class="dv">3</span>))</span>
+<span id="cb5-5"><a aria-label="5"></a></span>
+<span id="cb5-6"><a aria-label="6"></a><span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x=</span>xvar, <span class="at">y=</span>yvar)) <span class="sc">+</span></span>
+<span id="cb5-7"><a aria-label="7"></a>  <span class="fu">geom_point</span>(<span class="at">shape=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb5-8"><a aria-label="8"></a>  <span class="fu">geom_smooth</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 </div>
@@ -2256,18 +2262,18 @@ Your name
 <section id="example-code-hiding" class="slide level2">
 <h2>Example: Code Hiding</h2>
 <p>Setting <code>echo: false</code> hides the code and shows only the output.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a></a><span class="in">```{r}</span></span>
-<span id="cb6-2"><a></a><span class="co">#| echo: false</span></span>
-<span id="cb6-3"><a></a></span>
-<span id="cb6-4"><a></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb6-5"><a></a>dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">cond =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="at">each=</span><span class="dv">10</span>),</span>
-<span id="cb6-6"><a></a>                  <span class="at">xvar =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>,<span class="at">sd=</span><span class="dv">3</span>),</span>
-<span id="cb6-7"><a></a>                  <span class="at">yvar =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>,<span class="at">sd=</span><span class="dv">3</span>))</span>
-<span id="cb6-8"><a></a></span>
-<span id="cb6-9"><a></a><span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x=</span>xvar, <span class="at">y=</span>yvar)) <span class="sc">+</span></span>
-<span id="cb6-10"><a></a>  <span class="fu">geom_point</span>(<span class="at">shape=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb6-11"><a></a>  <span class="fu">geom_smooth</span>() </span>
-<span id="cb6-12"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a aria-label="1"></a><span class="in">```{r}</span></span>
+<span id="cb6-2"><a aria-label="2"></a><span class="co">#| echo: false</span></span>
+<span id="cb6-3"><a aria-label="3"></a></span>
+<span id="cb6-4"><a aria-label="4"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb6-5"><a aria-label="5"></a>dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">cond =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="at">each=</span><span class="dv">10</span>),</span>
+<span id="cb6-6"><a aria-label="6"></a>                  <span class="at">xvar =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>,<span class="at">sd=</span><span class="dv">3</span>),</span>
+<span id="cb6-7"><a aria-label="7"></a>                  <span class="at">yvar =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>,<span class="at">sd=</span><span class="dv">3</span>))</span>
+<span id="cb6-8"><a aria-label="8"></a></span>
+<span id="cb6-9"><a aria-label="9"></a><span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x=</span>xvar, <span class="at">y=</span>yvar)) <span class="sc">+</span></span>
+<span id="cb6-10"><a aria-label="10"></a>  <span class="fu">geom_point</span>(<span class="at">shape=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb6-11"><a aria-label="11"></a>  <span class="fu">geom_smooth</span>() </span>
+<span id="cb6-12"><a aria-label="12"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>See the next slide for the rendered output …</p>
 </section>
 <section id="example-code-hiding-1" class="slide level2">
@@ -2278,14 +2284,14 @@ Your name
 <h2>Code Copying</h2>
 <p>All code blocks include a clipboard icon by default. Hover and click to copy the code.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb7-2"><a></a>dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">cond =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="at">each=</span><span class="dv">10</span>),</span>
-<span id="cb7-3"><a></a>                  <span class="at">xvar =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>,<span class="at">sd=</span><span class="dv">3</span>),</span>
-<span id="cb7-4"><a></a>                  <span class="at">yvar =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>,<span class="at">sd=</span><span class="dv">3</span>))</span>
-<span id="cb7-5"><a></a></span>
-<span id="cb7-6"><a></a><span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x=</span>xvar, <span class="at">y=</span>yvar)) <span class="sc">+</span></span>
-<span id="cb7-7"><a></a>  <span class="fu">geom_point</span>(<span class="at">shape=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb7-8"><a></a>  <span class="fu">geom_smooth</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-label="1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb7-2"><a aria-label="2"></a>dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">cond =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="at">each=</span><span class="dv">10</span>),</span>
+<span id="cb7-3"><a aria-label="3"></a>                  <span class="at">xvar =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>,<span class="at">sd=</span><span class="dv">3</span>),</span>
+<span id="cb7-4"><a aria-label="4"></a>                  <span class="at">yvar =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>,<span class="at">sd=</span><span class="dv">3</span>))</span>
+<span id="cb7-5"><a aria-label="5"></a></span>
+<span id="cb7-6"><a aria-label="6"></a><span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x=</span>xvar, <span class="at">y=</span>yvar)) <span class="sc">+</span></span>
+<span id="cb7-7"><a aria-label="7"></a>  <span class="fu">geom_point</span>(<span class="at">shape=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb7-8"><a aria-label="8"></a>  <span class="fu">geom_smooth</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="output-location" class="slide level2 smaller">
@@ -2325,33 +2331,33 @@ Your name
 <section id="adjusting-slide-size" class="slide level2">
 <h2>Adjusting Slide Size</h2>
 <p>The table didn’t quite fit on the previous slide, so we use the <code>.smaller</code> CSS class to reduce the font size for the entire slide. Here’s what’s happening under the hood:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a></a>## Normal Slide</span>
-<span id="cb8-2"><a></a></span>
-<span id="cb8-3"><a></a>This is normal size text.</span>
-<span id="cb8-4"><a></a></span>
-<span id="cb8-5"><a></a>## Smaller Slide {.smaller}</span>
-<span id="cb8-6"><a></a></span>
-<span id="cb8-7"><a></a>This text will be smaller so more fits on the slide.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a aria-label="1"></a>## Normal Slide</span>
+<span id="cb8-2"><a aria-label="2"></a></span>
+<span id="cb8-3"><a aria-label="3"></a>This is normal size text.</span>
+<span id="cb8-4"><a aria-label="4"></a></span>
+<span id="cb8-5"><a aria-label="5"></a>## Smaller Slide {.smaller}</span>
+<span id="cb8-6"><a aria-label="6"></a></span>
+<span id="cb8-7"><a aria-label="7"></a>This text will be smaller so more fits on the slide.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="example-default-output-after-code" class="slide level2">
 <h2>Example: Default (output after code)</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x=</span>xvar, <span class="at">y=</span>yvar)) <span class="sc">+</span></span>
-<span id="cb9-2"><a></a>  <span class="fu">geom_point</span>(<span class="at">shape=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb9-3"><a></a>  <span class="fu">geom_smooth</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-label="1"></a><span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x=</span>xvar, <span class="at">y=</span>yvar)) <span class="sc">+</span></span>
+<span id="cb9-2"><a aria-label="2"></a>  <span class="fu">geom_point</span>(<span class="at">shape=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb9-3"><a aria-label="3"></a>  <span class="fu">geom_smooth</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="lecture-template_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
 <section id="example-output-on-next-slide" class="slide level2">
 <h2>Example: Output on next slide</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a></a><span class="in">```{r}</span></span>
-<span id="cb10-2"><a></a><span class="co">#| output-location: slide</span></span>
-<span id="cb10-3"><a></a></span>
-<span id="cb10-4"><a></a><span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x=</span>xvar, <span class="at">y=</span>yvar)) <span class="sc">+</span></span>
-<span id="cb10-5"><a></a>  <span class="fu">geom_point</span>(<span class="at">shape=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb10-6"><a></a>  <span class="fu">geom_smooth</span>() </span>
-<span id="cb10-7"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a aria-label="1"></a><span class="in">```{r}</span></span>
+<span id="cb10-2"><a aria-label="2"></a><span class="co">#| output-location: slide</span></span>
+<span id="cb10-3"><a aria-label="3"></a></span>
+<span id="cb10-4"><a aria-label="4"></a><span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x=</span>xvar, <span class="at">y=</span>yvar)) <span class="sc">+</span></span>
+<span id="cb10-5"><a aria-label="5"></a>  <span class="fu">geom_point</span>(<span class="at">shape=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb10-6"><a aria-label="6"></a>  <span class="fu">geom_smooth</span>() </span>
+<span id="cb10-7"><a aria-label="7"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 </section>
@@ -2367,13 +2373,13 @@ Your name
 <h2>Example: Column</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a></a><span class="in">```{r}</span></span>
-<span id="cb11-2"><a></a><span class="co">#| output-location: column</span></span>
-<span id="cb11-3"><a></a></span>
-<span id="cb11-4"><a></a><span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x=</span>xvar, <span class="at">y=</span>yvar)) <span class="sc">+</span></span>
-<span id="cb11-5"><a></a>  <span class="fu">geom_point</span>(<span class="at">shape=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb11-6"><a></a>  <span class="fu">geom_smooth</span>() </span>
-<span id="cb11-7"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a aria-label="1"></a><span class="in">```{r}</span></span>
+<span id="cb11-2"><a aria-label="2"></a><span class="co">#| output-location: column</span></span>
+<span id="cb11-3"><a aria-label="3"></a></span>
+<span id="cb11-4"><a aria-label="4"></a><span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x=</span>xvar, <span class="at">y=</span>yvar)) <span class="sc">+</span></span>
+<span id="cb11-5"><a aria-label="5"></a>  <span class="fu">geom_point</span>(<span class="at">shape=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb11-6"><a aria-label="6"></a>  <span class="fu">geom_smooth</span>() </span>
+<span id="cb11-7"><a aria-label="7"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -2388,16 +2394,16 @@ Your name
 <h2>Example: Resize figure</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a></a><span class="in">```{r}</span></span>
-<span id="cb12-2"><a></a><span class="co">#| output-location: column</span></span>
-<span id="cb12-3"><a></a><span class="co">#| fig-width: 4</span></span>
-<span id="cb12-4"><a></a><span class="co">#| fig-height: 3</span></span>
-<span id="cb12-5"><a></a><span class="co">#| out-width: "100%"</span></span>
-<span id="cb12-6"><a></a></span>
-<span id="cb12-7"><a></a><span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x=</span>xvar, <span class="at">y=</span>yvar)) <span class="sc">+</span></span>
-<span id="cb12-8"><a></a>  <span class="fu">geom_point</span>(<span class="at">shape=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb12-9"><a></a>  <span class="fu">geom_smooth</span>() </span>
-<span id="cb12-10"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a aria-label="1"></a><span class="in">```{r}</span></span>
+<span id="cb12-2"><a aria-label="2"></a><span class="co">#| output-location: column</span></span>
+<span id="cb12-3"><a aria-label="3"></a><span class="co">#| fig-width: 4</span></span>
+<span id="cb12-4"><a aria-label="4"></a><span class="co">#| fig-height: 3</span></span>
+<span id="cb12-5"><a aria-label="5"></a><span class="co">#| out-width: "100%"</span></span>
+<span id="cb12-6"><a aria-label="6"></a></span>
+<span id="cb12-7"><a aria-label="7"></a><span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x=</span>xvar, <span class="at">y=</span>yvar)) <span class="sc">+</span></span>
+<span id="cb12-8"><a aria-label="8"></a>  <span class="fu">geom_point</span>(<span class="at">shape=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb12-9"><a aria-label="9"></a>  <span class="fu">geom_smooth</span>() </span>
+<span id="cb12-10"><a aria-label="10"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -2416,17 +2422,17 @@ Your name
 <section id="static-image" class="slide level2">
 <h2>Static Image</h2>
 <p>The basic syntax for including an image is:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a></a><span class="al">![Image Caption (Optional)](img/logo.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a aria-label="1"></a><span class="al">![Image Caption (Optional)](img/logo.png)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Which renders to: (jump <a href="#/resizing">here</a> for more image options)</p>
 
 <img data-src="img/logo.png" class="r-stretch quarto-figure-center"><p class="caption">Image Caption (Optional). Read more about figures and subfigures here: <a href="https://quarto.org/docs/authoring/figures.html">Quarto: figures</a></p></section>
 <section id="presenter-notes" class="slide level2">
 <h2>Presenter Notes</h2>
 <p>You can create presenter notes using div with the <code>notes</code> class</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a></a>::: notes</span>
-<span id="cb14-2"><a></a>This is how you include presenter notes</span>
-<span id="cb14-3"><a></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Read this in <a href="https://quarto.org/docs/presentations/revealjs/presenting.html#speaker-view">Speaker View</a> by pressing the <kbd aria-hidden="true">S</kbd><span class="visually-hidden">S</span> key (give it a try!)</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a aria-label="1"></a>::: notes</span>
+<span id="cb14-2"><a aria-label="2"></a>This is how you include presenter notes</span>
+<span id="cb14-3"><a aria-label="3"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Read this in <a href="https://quarto.org/docs/presentations/revealjs/presenting.html#speaker-view">Speaker View</a> by pressing the <kbd title="S" aria-hidden="true">S</kbd><span class="visually-hidden">S</span> key (give it a try!)</p>
 <div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -2458,7 +2464,7 @@ Your name
 <h2>Scrollable Slides</h2>
 <p>The <code>.scrollable</code> class makes overflow content scrollable vertically rather than being cut off.</p>
 <p>You can acheive it using:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a></a><span class="fu">## Slide Title {.scrollable}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a aria-label="1"></a><span class="fu">## Slide Title {.scrollable}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This is especially useful when you have:</p>
 <ul>
 <li>Long code blocks</li>
@@ -2579,20 +2585,20 @@ Your name
 <section id="smaller-slides" class="slide level2">
 <h2>Smaller Slides</h2>
 <p>The <code>.smaller</code> class—used in the same way as <code>.scrollable</code>— reduces the base font size for the entire slide, excluding the slide title.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a></a><span class="fu">## Normal Slide</span></span>
-<span id="cb16-2"><a></a></span>
-<span id="cb16-3"><a></a>This is normal size text.</span>
-<span id="cb16-4"><a></a></span>
-<span id="cb16-5"><a></a><span class="fu">## Smaller Slide {.smaller}</span></span>
-<span id="cb16-6"><a></a></span>
-<span id="cb16-7"><a></a>This text will be smaller so more fits on the slide.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a aria-label="1"></a><span class="fu">## Normal Slide</span></span>
+<span id="cb16-2"><a aria-label="2"></a></span>
+<span id="cb16-3"><a aria-label="3"></a>This is normal size text.</span>
+<span id="cb16-4"><a aria-label="4"></a></span>
+<span id="cb16-5"><a aria-label="5"></a><span class="fu">## Smaller Slide {.smaller}</span></span>
+<span id="cb16-6"><a aria-label="6"></a></span>
+<span id="cb16-7"><a aria-label="7"></a>This text will be smaller so more fits on the slide.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>An example of this can be seen on <a href="#/output-location">this</a> slide.</p>
 </section>
 <section id="cross-referencing-slides" class="slide level2">
 <h2>Cross-referencing slides</h2>
 <ul>
 <li><p>Given the following slide title, Quarto will automatically generate the ID: of <code>my-amazing-slide</code>.<sup>1</sup></p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a></a><span class="fu">## My Amazing Slide! </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a aria-label="1"></a><span class="fu">## My Amazing Slide! </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>To reference that slide we can use</p>
 <ul>
 <li><p><code>[this slide](#my-amazing-slide)</code>, e.g.&nbsp;<a href="#/output-location">this slide</a></p></li>
@@ -2603,9 +2609,9 @@ Your name
 <section id="custom-titles" class="slide level2">
 <h2>Custom Titles</h2>
 <p>If you want to make a custom-id, use:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a></a><span class="fu">## This slide title is too long {#short-id}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a aria-label="1"></a><span class="fu">## This slide title is too long {#short-id}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>and reference using:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a></a><span class="co">[</span><span class="ot">link</span><span class="co">](#short-id)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a aria-label="1"></a><span class="co">[</span><span class="ot">link</span><span class="co">](#short-id)</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <aside class="notes">
 <p>Quarto auto-generates heading IDs (like Pandoc) by: converting to lower case, removing punctation and replacing spaces with hyphens</p>
 <p>How to manually assign IDs using {#my-id}</p>
@@ -2698,16 +2704,16 @@ Your name
 <section id="code-highlighting" class="slide level2">
 <h2>Code highlighting</h2>
 <p>In addition to the HTML Code Block options, revealjs supports the ability to do line highlighting. This is accomplished using:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="co">#| code-line-numbers: "1-2|4-5|7-8"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a aria-label="1"></a><span class="co">#| code-line-numbers: "1-2|4-5|7-8"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21" data-code-line-numbers="1-2|4-5|7-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="co"># Load data</span></span>
-<span id="cb21-2"><a></a><span class="fu">data</span>(mtcars)</span>
-<span id="cb21-3"><a></a></span>
-<span id="cb21-4"><a></a><span class="co"># Fit linear model</span></span>
-<span id="cb21-5"><a></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt <span class="sc">+</span> hp, <span class="at">data =</span> mtcars)</span>
-<span id="cb21-6"><a></a></span>
-<span id="cb21-7"><a></a><span class="co"># Summary output</span></span>
-<span id="cb21-8"><a></a><span class="fu">summary</span>(model)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21" data-code-line-numbers="1-2|4-5|7-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a aria-label="1"></a><span class="co"># Load data</span></span>
+<span id="cb21-2"><a aria-label="2"></a><span class="fu">data</span>(mtcars)</span>
+<span id="cb21-3"><a aria-label="3"></a></span>
+<span id="cb21-4"><a aria-label="4"></a><span class="co"># Fit linear model</span></span>
+<span id="cb21-5"><a aria-label="5"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt <span class="sc">+</span> hp, <span class="at">data =</span> mtcars)</span>
+<span id="cb21-6"><a aria-label="6"></a></span>
+<span id="cb21-7"><a aria-label="7"></a><span class="co"># Summary output</span></span>
+<span id="cb21-8"><a aria-label="8"></a><span class="fu">summary</span>(model)  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <aside><div>
@@ -2717,13 +2723,13 @@ Your name
 <h2>Code Annotation</h2>
 <p>Much like footnotes, we could use <a href="https://quarto.org/docs/authoring/code-annotation.html">Code Annotations</a> to attach explanation to lines of code.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-20"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-20-1"><a href="#annotated-cell-20-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="annotated-cell-20-2"><a href="#annotated-cell-20-2"></a><span class="fu">library</span>(palmerpenguins)</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-20" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-20-3" class="code-annotation-target"><a href="#annotated-cell-20-3"></a>penguins <span class="sc">|&gt;</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-20" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-20-4" class="code-annotation-target"><a href="#annotated-cell-20-4"></a>  <span class="fu">mutate</span>(</span>
-<span id="annotated-cell-20-5"><a href="#annotated-cell-20-5"></a>    <span class="at">bill_ratio =</span> bill_depth_mm <span class="sc">/</span> bill_length_mm,</span>
-<span id="annotated-cell-20-6"><a href="#annotated-cell-20-6"></a>    <span class="at">bill_area  =</span> bill_depth_mm <span class="sc">*</span> bill_length_mm</span>
-<span id="annotated-cell-20-7"><a href="#annotated-cell-20-7"></a>  )</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-20"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-20-1"><a href="#annotated-cell-20-1" aria-label="1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="annotated-cell-20-2"><a href="#annotated-cell-20-2" aria-label="2"></a><span class="fu">library</span>(palmerpenguins)</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-20" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-20-3" class="code-annotation-target"><a href="#annotated-cell-20-3" aria-label="3"></a>penguins <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-20" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-20-4" class="code-annotation-target"><a href="#annotated-cell-20-4" aria-label="4"></a>  <span class="fu">mutate</span>(</span>
+<span id="annotated-cell-20-5"><a href="#annotated-cell-20-5" aria-label="5"></a>    <span class="at">bill_ratio =</span> bill_depth_mm <span class="sc">/</span> bill_length_mm,</span>
+<span id="annotated-cell-20-6"><a href="#annotated-cell-20-6" aria-label="6"></a>    <span class="at">bill_area  =</span> bill_depth_mm <span class="sc">*</span> bill_length_mm</span>
+<span id="annotated-cell-20-7"><a href="#annotated-cell-20-7" aria-label="7"></a>  )</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-20" data-target-annotation="1">1</dt>
@@ -2744,30 +2750,30 @@ Your name
 <section id="code-animations" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Code Animations</h2>
 <p>You can also animate between code blocks to show changes in code. For example:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb22-1" class="hljs-ln-code"><a></a><span class="co"># Define a server for the Shiny app</span></span>
-<span id="cb22-2" class="hljs-ln-code"><a></a><span class="cf">function</span>(input, output) {</span>
-<span id="cb22-3" class="hljs-ln-code"><a></a>  </span>
-<span id="cb22-4" class="hljs-ln-code"><a></a>  <span class="co"># Fill in the spot we created for a plot</span></span>
-<span id="cb22-5" class="hljs-ln-code"><a></a>  output<span class="sc">$</span>phonePlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb22-6" class="hljs-ln-code"><a></a>    <span class="co"># Render a barplot</span></span>
-<span id="cb22-7" class="hljs-ln-code"><a></a>  })</span>
-<span id="cb22-8" class="hljs-ln-code"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb22-1" class="hljs-ln-code"><a aria-label="1"></a><span class="co"># Define a server for the Shiny app</span></span>
+<span id="cb22-2" class="hljs-ln-code"><a aria-label="2"></a><span class="cf">function</span>(input, output) {</span>
+<span id="cb22-3" class="hljs-ln-code"><a aria-label="3"></a>  </span>
+<span id="cb22-4" class="hljs-ln-code"><a aria-label="4"></a>  <span class="co"># Fill in the spot we created for a plot</span></span>
+<span id="cb22-5" class="hljs-ln-code"><a aria-label="5"></a>  output<span class="sc">$</span>phonePlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb22-6" class="hljs-ln-code"><a aria-label="6"></a>    <span class="co"># Render a barplot</span></span>
+<span id="cb22-7" class="hljs-ln-code"><a aria-label="7"></a>  })</span>
+<span id="cb22-8" class="hljs-ln-code"><a aria-label="8"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="code-animations-ii" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Code Animations II</h2>
 <p>You can also animate between code blocks to show changes in code. For example:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb23-1" class="hljs-ln-code"><a></a><span class="co"># Define a server for the Shiny app</span></span>
-<span id="cb23-2" class="hljs-ln-code"><a></a><span class="cf">function</span>(input, output) {</span>
-<span id="cb23-3" class="hljs-ln-code"><a></a>  </span>
-<span id="cb23-4" class="hljs-ln-code"><a></a>  <span class="co"># Fill in the spot we created for a plot</span></span>
-<span id="cb23-5" class="hljs-ln-code"><a></a>  output<span class="sc">$</span>phonePlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb23-6" class="hljs-ln-code"><a></a>    <span class="co"># Render a barplot</span></span>
-<span id="cb23-7" class="hljs-ln-code"><a></a>    <span class="fu">barplot</span>(WorldPhones[,input<span class="sc">$</span>region]<span class="sc">*</span><span class="dv">1000</span>, </span>
-<span id="cb23-8" class="hljs-ln-code"><a></a>            <span class="at">main=</span>input<span class="sc">$</span>region,</span>
-<span id="cb23-9" class="hljs-ln-code"><a></a>            <span class="at">ylab=</span><span class="st">"Number of Telephones"</span>,</span>
-<span id="cb23-10" class="hljs-ln-code"><a></a>            <span class="at">xlab=</span><span class="st">"Year"</span>)</span>
-<span id="cb23-11" class="hljs-ln-code"><a></a>  })</span>
-<span id="cb23-12" class="hljs-ln-code"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb23-1" class="hljs-ln-code"><a aria-label="1"></a><span class="co"># Define a server for the Shiny app</span></span>
+<span id="cb23-2" class="hljs-ln-code"><a aria-label="2"></a><span class="cf">function</span>(input, output) {</span>
+<span id="cb23-3" class="hljs-ln-code"><a aria-label="3"></a>  </span>
+<span id="cb23-4" class="hljs-ln-code"><a aria-label="4"></a>  <span class="co"># Fill in the spot we created for a plot</span></span>
+<span id="cb23-5" class="hljs-ln-code"><a aria-label="5"></a>  output<span class="sc">$</span>phonePlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb23-6" class="hljs-ln-code"><a aria-label="6"></a>    <span class="co"># Render a barplot</span></span>
+<span id="cb23-7" class="hljs-ln-code"><a aria-label="7"></a>    <span class="fu">barplot</span>(WorldPhones[,input<span class="sc">$</span>region]<span class="sc">*</span><span class="dv">1000</span>, </span>
+<span id="cb23-8" class="hljs-ln-code"><a aria-label="8"></a>            <span class="at">main=</span>input<span class="sc">$</span>region,</span>
+<span id="cb23-9" class="hljs-ln-code"><a aria-label="9"></a>            <span class="at">ylab=</span><span class="st">"Number of Telephones"</span>,</span>
+<span id="cb23-10" class="hljs-ln-code"><a aria-label="10"></a>            <span class="at">xlab=</span><span class="st">"Year"</span>)</span>
+<span id="cb23-11" class="hljs-ln-code"><a aria-label="11"></a>  })</span>
+<span id="cb23-12" class="hljs-ln-code"><a aria-label="12"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="footer">
 <p>Learn more: <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#code-animations">Code Animations</a></p>
 </div>
@@ -2798,16 +2804,16 @@ Your name
 <p>For demonstration we make our image left-aligned.</p>
 
 <img data-src="img/logo.png" class="quarto-figure quarto-figure-right r-stretch"><p>In the Source Editor, the markdown syntax is:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a></a><span class="al">![](img/logo.png)</span>{fig-align="right"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a aria-label="1"></a><span class="al">![](img/logo.png)</span>{fig-align="right"}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="resizing" class="slide level2">
 <h2>Resizing in Markdown (Source Editor)</h2>
 <p>You can resize images using the <code>{}</code> attribute list syntax directly after the image. e.g.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a></a><span class="al">![](img/logo.png)</span>{width=150px}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a aria-label="1"></a><span class="al">![](img/logo.png)</span>{width=150px}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You can also use other units:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a></a><span class="al">![](img/logo.png)</span>{width=50%}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a aria-label="1"></a><span class="al">![](img/logo.png)</span>{width=50%}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You can combine it with alignment:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a></a><span class="al">![](img/logo.png)</span>{fig-align="right" width=150px}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a aria-label="1"></a><span class="al">![](img/logo.png)</span>{fig-align="right" width=150px}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="resizing-in-visual-editor" class="slide level2">
 <h2>Resizing in Visual Editor</h2>
@@ -2826,10 +2832,10 @@ Your name
 <p>You can embed videos in documents using <code>{{&lt; video &gt;}}</code> the shortcode; see <a href="https://quarto.org/docs/authoring/videos.html">Quarto: videos</a></p>
 <div class="fragment">
 <p>For example, here we embed a YouTube video (see the rendered output on the following slide):</p>
-<div class="sourceCode" id="cb28" data-shortcodes="false"><pre class="sourceCode numberSource markdown code-no-line-numbers number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a></a>{{&lt; video https://youtu.be/EbAAmrB0luA?si=f0TtOI9v_kotj8bk </span>
-<span id="cb28-2"><a></a>  width="800" </span>
-<span id="cb28-3"><a></a>  aspect-ratio="21x12" </span>
-<span id="cb28-4"><a></a>  <span class="at">&gt;}}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28" data-shortcodes="false"><pre class="sourceCode numberSource markdown code-no-line-numbers number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a aria-label="1"></a>{{&lt; video https://youtu.be/EbAAmrB0luA?si=f0TtOI9v_kotj8bk </span>
+<span id="cb28-2"><a aria-label="2"></a>  width="800" </span>
+<span id="cb28-3"><a aria-label="3"></a>  aspect-ratio="21x12" </span>
+<span id="cb28-4"><a aria-label="4"></a>  <span class="at">&gt;}}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="section-1" class="slide level2">
@@ -3048,7 +3054,7 @@ Your name
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -3160,13 +3166,14 @@ Your name
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
@@ -3181,7 +3188,7 @@ Your name
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/nishanmudalige\.github\.io\/STA258_Tutorials\/");
+            var filterRegex = new RegExp("https:\/\/driegert\.github\.io\/cancots2025_webr\/");
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

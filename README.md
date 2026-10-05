@@ -36,7 +36,7 @@ The deliverable for the sub-group is a skeleton of a course consisting of
 
 <br>
 
-A template for a sample course can be viewed by [**clicking here**](https://nishanmudalige.github.io/CanCOTS_2025_Interactive_R_Tutorials/).
+A template for a sample course can be viewed by [**clicking here**](https://driegert.github.io/cancots2025_webr/).
 
 ---
 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -10,10 +10,16 @@
 
 <title>Graded Tutorial: Introduction to R – Course Tutorials</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -71,10 +77,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-a14e3238c51140e99ccc48519b6ed9ce.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-fd585ca6cded4883934af53548858190.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -189,7 +195,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfc3VtIn0sImNvZGUi
 <div class="cell" data-exercise="ex_sum" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_sum">
 <code id="interpolate-5" class="solution-code d-none">1 + 2 + 3 + 4</code>
-<div class="sourceCode cell-code" id="interpolate-6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-6-1"><a href="#interpolate-6-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span> <span class="sc">+</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-6-1"><a href="#interpolate-6-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span> <span class="sc">+</span> <span class="dv">4</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -219,7 +225,7 @@ eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwiZXhlcmNpc2UiOiJl
 <div class="cell" data-exercise="ex_vec" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_vec">
 <code id="interpolate-10" class="solution-code d-none">my_vec &lt;- c(5, 10, 15, 20)</code>
-<div class="sourceCode cell-code" id="interpolate-11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-11-1"><a href="#interpolate-11-1" aria-hidden="true" tabindex="-1"></a>my_vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-11-1"><a href="#interpolate-11-1" aria-hidden="true" tabindex="-1"></a>my_vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -250,7 +256,7 @@ eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwiZXhlcmNpc2UiOiJl
 <div class="cell" data-exercise="ex_mean" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_mean">
 <code id="interpolate-15" class="solution-code d-none">avg_val &lt;- mean(c(2, 4, 6, 8, 10))</code>
-<div class="sourceCode cell-code" id="interpolate-16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-16-1"><a href="#interpolate-16-1" aria-hidden="true" tabindex="-1"></a>avg_val <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-16-1"><a href="#interpolate-16-1" aria-hidden="true" tabindex="-1"></a>avg_val <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -275,7 +281,7 @@ Photo by <a href="https://unsplash.com/@thehumbleco?utm_source=unsplash&amp;utm_
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Preview
+<span class="screen-reader-only">Note</span>Preview
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -309,7 +315,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfaGlzdF9leGFjdCJ9
 <div class="cell" data-exercise="ex_hist_exact" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_hist_exact">
 <code id="interpolate-21" class="solution-code d-none">hist(ToothGrowth$len)</code>
-<div class="sourceCode cell-code" id="interpolate-22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-22-1"><a href="#interpolate-22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ToothGrowth<span class="sc">$</span>len)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-22-1"><a href="#interpolate-22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ToothGrowth<span class="sc">$</span>len)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -328,7 +334,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Preview
+<span class="screen-reader-only">Note</span>Preview
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -362,7 +368,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfYm94cGxvdF9leGFj
 <div class="cell" data-exercise="ex_boxplot_exact" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_boxplot_exact">
 <code id="interpolate-27" class="solution-code d-none">boxplot(ToothGrowth$len)</code>
-<div class="sourceCode cell-code" id="interpolate-28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-28-1"><a href="#interpolate-28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(ToothGrowth<span class="sc">$</span>len)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-28-1"><a href="#interpolate-28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(ToothGrowth<span class="sc">$</span>len)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -392,7 +398,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfaGlzdF9jb2wifSwi
 <div class="cell" data-exercise="ex_hist_col" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_hist_col">
 <code id="interpolate-32" class="solution-code d-none">hist(ToothGrowth$len, col = "steelblue")</code>
-<div class="sourceCode cell-code" id="interpolate-33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-33-1"><a href="#interpolate-33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ToothGrowth<span class="sc">$</span>len, <span class="at">col =</span> <span class="st">"steelblue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-33-1"><a href="#interpolate-33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ToothGrowth<span class="sc">$</span>len, <span class="at">col =</span> <span class="st">"steelblue"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -422,7 +428,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfYm94X2gifSwiY29k
 <div class="cell" data-exercise="ex_box_h" data-solution="true">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_box_h">
 <code id="interpolate-37" class="solution-code d-none">boxplot(ToothGrowth$dose, horizontal = TRUE)</code>
-<div class="sourceCode cell-code" id="interpolate-38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-38-1"><a href="#interpolate-38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(ToothGrowth<span class="sc">$</span>dose, <span class="at">horizontal =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-38-1"><a href="#interpolate-38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(ToothGrowth<span class="sc">$</span>dose, <span class="at">horizontal =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -463,7 +469,7 @@ eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwiZXhlcmNpc2UiOiJl
 <div class="cell" data-exercise="ex_csv_load" data-solution="true" data-files="data/iris.csv">
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_csv_load">
 <code id="interpolate-43" class="solution-code d-none">df &lt;- read.csv("iris.csv")</code>
-<div class="sourceCode cell-code" id="interpolate-44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-44-1"><a href="#interpolate-44-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"iris.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-44-1"><a href="#interpolate-44-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"iris.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -499,8 +505,8 @@ eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwiZXhlcmNpc2UiOiJl
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_csv_nrows">
 <code id="interpolate-49" class="solution-code d-none">df &lt;- read.csv("iris.csv")
 rows &lt;- nrow(df)</code>
-<div class="sourceCode cell-code" id="interpolate-50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-50-1"><a href="#interpolate-50-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"iris.csv"</span>)</span>
-<span id="interpolate-50-2"><a href="#interpolate-50-2" aria-hidden="true" tabindex="-1"></a>rows <span class="ot">&lt;-</span> <span class="fu">nrow</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-50-1"><a href="#interpolate-50-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"iris.csv"</span>)</span>
+<span id="interpolate-50-2"><a href="#interpolate-50-2" aria-hidden="true" tabindex="-1"></a>rows <span class="ot">&lt;-</span> <span class="fu">nrow</span>(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -537,9 +543,9 @@ eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwiZXhlcmNpc2UiOiJl
 <code id="interpolate-55" class="solution-code d-none">df   &lt;- read.csv("iris.csv")
 cols &lt;- names(df)
 cols</code>
-<div class="sourceCode cell-code" id="interpolate-56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-56-1"><a href="#interpolate-56-1" aria-hidden="true" tabindex="-1"></a>df   <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"iris.csv"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-56-1"><a href="#interpolate-56-1" aria-hidden="true" tabindex="-1"></a>df   <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"iris.csv"</span>)</span>
 <span id="interpolate-56-2"><a href="#interpolate-56-2" aria-hidden="true" tabindex="-1"></a>cols <span class="ot">&lt;-</span> <span class="fu">names</span>(df)</span>
-<span id="interpolate-56-3"><a href="#interpolate-56-3" aria-hidden="true" tabindex="-1"></a>cols</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="interpolate-56-3"><a href="#interpolate-56-3" aria-hidden="true" tabindex="-1"></a>cols</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -575,8 +581,8 @@ eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwiZXhlcmNpc2UiOiJl
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_csv_head">
 <code id="interpolate-61" class="solution-code d-none">df &lt;- read.csv("iris.csv")
 head(df)</code>
-<div class="sourceCode cell-code" id="interpolate-62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-62-1"><a href="#interpolate-62-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"iris.csv"</span>)</span>
-<span id="interpolate-62-2"><a href="#interpolate-62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-62-1"><a href="#interpolate-62-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"iris.csv"</span>)</span>
+<span id="interpolate-62-2"><a href="#interpolate-62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -612,8 +618,8 @@ eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwiZXhlcmNpc2UiOiJl
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_csv_hist">
 <code id="interpolate-67" class="solution-code d-none">df &lt;- read.csv("iris.csv")
 hist(df$Sepal.Length, col = "lightgray", main = "Sepal.Length", xlab = "cm") </code>
-<div class="sourceCode cell-code" id="interpolate-68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-68-1"><a href="#interpolate-68-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"iris.csv"</span>)</span>
-<span id="interpolate-68-2"><a href="#interpolate-68-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(df<span class="sc">$</span>Sepal.Length, <span class="at">col =</span> <span class="st">"lightgray"</span>, <span class="at">main =</span> <span class="st">"Sepal.Length"</span>, <span class="at">xlab =</span> <span class="st">"cm"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-68-1"><a href="#interpolate-68-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"iris.csv"</span>)</span>
+<span id="interpolate-68-2"><a href="#interpolate-68-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(df<span class="sc">$</span>Sepal.Length, <span class="at">col =</span> <span class="st">"lightgray"</span>, <span class="at">main =</span> <span class="st">"Sepal.Length"</span>, <span class="at">xlab =</span> <span class="st">"cm"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -637,7 +643,7 @@ eyJhdHRyIjp7ImNoZWNrIjp0cnVlLCJlZGl0Ijp0cnVlLCJldmFsIjp0cnVlLCJleGVyY2lzZSI6ImV4
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Info
+<span class="screen-reader-only">Note</span>Info
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -650,7 +656,7 @@ Info
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Info
+<span class="screen-reader-only">Note</span>Info
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -678,11 +684,11 @@ eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwiZXhlcmNpc2UiOiJl
   res2 &lt;- b / a
   list(res1, res2)
 }</code>
-<div class="sourceCode cell-code" id="interpolate-73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-73-1"><a href="#interpolate-73-1" aria-hidden="true" tabindex="-1"></a>divide_nums <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="interpolate-73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="interpolate-73-1"><a href="#interpolate-73-1" aria-hidden="true" tabindex="-1"></a>divide_nums <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
 <span id="interpolate-73-2"><a href="#interpolate-73-2" aria-hidden="true" tabindex="-1"></a>  res1 <span class="ot">&lt;-</span> a <span class="sc">/</span> b</span>
 <span id="interpolate-73-3"><a href="#interpolate-73-3" aria-hidden="true" tabindex="-1"></a>  res2 <span class="ot">&lt;-</span> b <span class="sc">/</span> a</span>
 <span id="interpolate-73-4"><a href="#interpolate-73-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(res1, res2)</span>
-<span id="interpolate-73-5"><a href="#interpolate-73-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="interpolate-73-5"><a href="#interpolate-73-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -775,13 +781,14 @@ window._ojs.runtime.interpretFromScriptTags();
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -796,7 +803,7 @@ window._ojs.runtime.interpretFromScriptTags();
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/nishanmudalige\.github\.io\/STA258_Tutorials\/");
+        var filterRegex = new RegExp("https:\/\/driegert\.github\.io\/cancots2025_webr\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

@@ -1,15 +1,18 @@
 project:
   type: website
   output-dir: "docs"
+  render:
+    - "**/*.qmd"
+    - "!**/_extensions/"
 
 website:
   title: "Course Tutorials"
-  site-url: https://nishanmudalige.github.io/STA258_Tutorials/
+  site-url: https://driegert.github.io/cancots2025_webr/
 #   navbar:
 #     pinned: true
 #     left:
 #       - text: "Home"
-#         href: https://nishanmudalige.github.io/STA258_Tutorials/
+#         href: https://driegert.github.io/cancots2025_webr/
 #       - text: "Tutorials"
 #         menu:
 #         - text: "Tutorial on Intro to R"
