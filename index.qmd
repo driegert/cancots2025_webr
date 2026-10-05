@@ -1,0 +1,13 @@
+---
+title: "Redirecting…"
+search: false
+format:
+  html:
+    include-in-header:
+      text: |
+        <meta http-equiv="refresh" content="0; url=course_skeleton/index.html">
+---
+
+<!-- Site root: sends visitors to the sample course landing page. -->
+
+If you are not redirected, go to the [sample course](course_skeleton/index.html).

@@ -2,62 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://driegert.github.io/cancots2025_webr/tutorials/tutorial_regression.html</loc>
-    <lastmod>2026-10-05T12:43:20.630Z</lastmod>
+    <lastmod>2026-10-05T12:56:04.136Z</lastmod>
   </url>
   <url>
     <loc>https://driegert.github.io/cancots2025_webr/tutorials/graded_tutorial_intro_to_r.html</loc>
-    <lastmod>2026-10-05T12:43:20.623Z</lastmod>
-  </url>
-  <url>
-    <loc>https://driegert.github.io/cancots2025_webr/course_skeleton/tutorials/tutorial_intro_to_r.html</loc>
-    <lastmod>2026-10-05T12:52:55.021Z</lastmod>
-  </url>
-  <url>
-    <loc>https://driegert.github.io/cancots2025_webr/course_skeleton/syllabus.html</loc>
-    <lastmod>2026-10-05T12:43:20.540Z</lastmod>
-  </url>
-  <url>
-    <loc>https://driegert.github.io/cancots2025_webr/course_skeleton/lectures/lecture-template.html</loc>
-    <lastmod>2026-10-05T12:43:20.539Z</lastmod>
-  </url>
-  <url>
-    <loc>https://driegert.github.io/cancots2025_webr/course_skeleton/activities/activity_intro_to_visuals.html</loc>
-    <lastmod>2026-10-05T12:43:20.525Z</lastmod>
-  </url>
-  <url>
-    <loc>https://driegert.github.io/cancots2025_webr/course_skeleton/about.html</loc>
-    <lastmod>2026-10-05T12:43:20.522Z</lastmod>
-  </url>
-  <url>
-    <loc>https://driegert.github.io/cancots2025_webr/activities/activity_coins.html</loc>
-    <lastmod>2026-10-05T12:52:55.024Z</lastmod>
-  </url>
-  <url>
-    <loc>https://driegert.github.io/cancots2025_webr/activities/activity_intro_to_visuals.html</loc>
-    <lastmod>2026-10-05T12:43:20.519Z</lastmod>
-  </url>
-  <url>
-    <loc>https://driegert.github.io/cancots2025_webr/course_skeleton/activities/activity_coins.html</loc>
-    <lastmod>2026-10-05T12:52:55.027Z</lastmod>
-  </url>
-  <url>
-    <loc>https://driegert.github.io/cancots2025_webr/course_skeleton/index.html</loc>
-    <lastmod>2026-10-05T12:43:20.527Z</lastmod>
-  </url>
-  <url>
-    <loc>https://driegert.github.io/cancots2025_webr/course_skeleton/lectures/regression-lecture.html</loc>
-    <lastmod>2026-10-05T12:43:20.539Z</lastmod>
-  </url>
-  <url>
-    <loc>https://driegert.github.io/cancots2025_webr/course_skeleton/tutorials/graded_tutorial_intro_to_r.html</loc>
-    <lastmod>2026-10-05T12:43:20.546Z</lastmod>
+    <lastmod>2026-10-05T12:56:04.128Z</lastmod>
   </url>
   <url>
     <loc>https://driegert.github.io/cancots2025_webr/course_skeleton/tutorials/tutorial_regression.html</loc>
-    <lastmod>2026-10-05T12:43:20.554Z</lastmod>
+    <lastmod>2026-10-05T12:56:04.053Z</lastmod>
+  </url>
+  <url>
+    <loc>https://driegert.github.io/cancots2025_webr/course_skeleton/tutorials/graded_tutorial_intro_to_r.html</loc>
+    <lastmod>2026-10-05T12:56:04.043Z</lastmod>
+  </url>
+  <url>
+    <loc>https://driegert.github.io/cancots2025_webr/course_skeleton/lectures/regression-lecture.html</loc>
+    <lastmod>2026-10-05T12:56:04.038Z</lastmod>
+  </url>
+  <url>
+    <loc>https://driegert.github.io/cancots2025_webr/course_skeleton/index.html</loc>
+    <lastmod>2026-10-05T12:56:04.024Z</lastmod>
+  </url>
+  <url>
+    <loc>https://driegert.github.io/cancots2025_webr/course_skeleton/activities/activity_coins.html</loc>
+    <lastmod>2026-10-05T12:56:04.021Z</lastmod>
+  </url>
+  <url>
+    <loc>https://driegert.github.io/cancots2025_webr/activities/activity_intro_to_visuals.html</loc>
+    <lastmod>2026-10-05T12:56:04.015Z</lastmod>
+  </url>
+  <url>
+    <loc>https://driegert.github.io/cancots2025_webr/activities/activity_coins.html</loc>
+    <lastmod>2026-10-05T12:56:04.015Z</lastmod>
+  </url>
+  <url>
+    <loc>https://driegert.github.io/cancots2025_webr/course_skeleton/about.html</loc>
+    <lastmod>2026-10-05T12:56:04.020Z</lastmod>
+  </url>
+  <url>
+    <loc>https://driegert.github.io/cancots2025_webr/course_skeleton/activities/activity_intro_to_visuals.html</loc>
+    <lastmod>2026-10-05T12:56:04.021Z</lastmod>
+  </url>
+  <url>
+    <loc>https://driegert.github.io/cancots2025_webr/course_skeleton/lectures/lecture-template.html</loc>
+    <lastmod>2026-10-05T12:56:04.038Z</lastmod>
+  </url>
+  <url>
+    <loc>https://driegert.github.io/cancots2025_webr/course_skeleton/syllabus.html</loc>
+    <lastmod>2026-10-05T12:56:04.038Z</lastmod>
+  </url>
+  <url>
+    <loc>https://driegert.github.io/cancots2025_webr/course_skeleton/tutorials/tutorial_intro_to_r.html</loc>
+    <lastmod>2026-10-05T12:56:04.053Z</lastmod>
+  </url>
+  <url>
+    <loc>https://driegert.github.io/cancots2025_webr/index.html</loc>
+    <lastmod>2026-10-05T13:24:17.807Z</lastmod>
   </url>
   <url>
     <loc>https://driegert.github.io/cancots2025_webr/tutorials/tutorial_intro_to_r.html</loc>
-    <lastmod>2026-10-05T12:52:55.018Z</lastmod>
+    <lastmod>2026-10-05T12:56:04.136Z</lastmod>
   </url>
 </urlset>

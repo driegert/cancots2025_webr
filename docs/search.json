@@ -119,67 +119,368 @@
     "text": "Q13 — Write a function using division\nDefine a function called divide_nums that takes two arguments (a and b) and returns the results of:\n\na / b\nb / a\n\nBoth results should be stored in separate variables before being returned.\n\n\n\n\n\n\nNoteInfo\n\n\n\nRemember: in R, division by zero (1/0) will return Inf rather than an error.\n\n\n\n\n\n\n\n\nNoteInfo\n\n\n\nIn R, lists are written with list(a, b, c). Each element can be anything: a number, a string, or even another list.\n\n\n\n\n\n\n\n\n\n\n\nStart with: res1 &lt;- a / b res2 &lt;- b / a and then use the list command.\n\n\n\n\ndivide_nums &lt;- function(a, b) {\n  res1 &lt;- a / b\n  res2 &lt;- b / a\n  list(res1, res2)\n}\ndivide_nums &lt;- function(a, b) {\n  res1 &lt;- a / b\n  res2 &lt;- b / a\n  list(res1, res2)\n}"
   },
   {
-    "objectID": "course_skeleton/tutorials/tutorial_intro_to_r.html",
-    "href": "course_skeleton/tutorials/tutorial_intro_to_r.html",
-    "title": "Tutorial: Introduction to R",
+    "objectID": "course_skeleton/tutorials/tutorial_regression.html",
+    "href": "course_skeleton/tutorials/tutorial_regression.html",
+    "title": "Tutorial: Regression Analaysis with R",
     "section": "",
-    "text": "Objective Learn how to compute summary statistics and create basic plots using dplyr and ggplot2, two core packages from the tidyverse.\n\nSetup\n\n\nLoad necessary packages\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nExample Data\n\nWe’ll use the built-in mtcars dataset for demonstration.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nSummary Statistics\n\nCalculate mean, median, standard deviation, and count for mpg (miles per gallon).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nYou can also group by a categorical variable, e.g., number of cylinders (cyl):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nBasic Plots with ggplot2\n\nScatter plot of mpg vs wt (weight):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nBoxplot of mpg by number of cylinders:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nExercise (Optional)\n\nCompute the mean horsepower (hp) for each cylinder group and create a bar plot of these means.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "text": "This is a sample lecture on regression. For this example, we set packages: [\"tibble\", \"dplyr\", \"ggplot2\", \"palmerpenguins\", \"mosaic].\n\n\nThis example is on the palmerpenguins data set.\n\n\n\n\n\nLet’s examine the data set. For simplicity, we will use complete cases for this tutorial.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nWe would like to perform a t-test on the body mass of male and female Adelie penguins. Let’s start with some initial data analysis.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nlet’s examine side-by-side boxplots and histograms of the mass of male and female Adelie penguins. For simplicity, we’ll remove the data points where information is missing.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s conduct the following test on whether the mean body mass of male Adelie penguins is equal to the mean body mass of female Adelie penguins, or whether there is a difference.\nThe null and alternative hypothesis are \\[\n  H_{0}: \\mu_{\\text{male}} = \\mu_{\\text{female}}\n  \\quad\n  H_{a}: \\mu_{\\text{male}} \\neq \\mu_{\\text{female}}\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nRecall the simple linear regression model is\n\\[\nY = \\beta_{0} + \\beta_{1} X + \\varepsilon, \\quad \\varepsilon \\sim N(0, \\sigma^2)\n\\] This is estimated using \\[\n\\hat{y} = \\hat{\\beta}_{0} + \\hat{\\beta}_{1}x\n\\]\nFor the Adelie penguins, let’s examine whether there is a linear relationship between the bill_length and body_mass_g of the Adelie penguins. We’ll start with a scatterplot of the data.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere appears to be a positive linear relationship between body mass and flipper length. Let’s get the least squares regression line:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe equation of the regression line is:\n\\[\n  \\hat{y}_{\\text{flipper length}} = 165.2\n    + 0.007 x_{\\text{mass}}\n\\]\nLet’s superimpose the least squares line on the plot:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s see if there is a difference between the flipper length of male and female flipper lengths:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere appers to be a difference for male and female penguins. Let’s create a new model with sex as an indicator variable.\n\\[\n  \\hat{y}_{\\text{flipper length}} = \\hat{\\beta}_0\n    + \\hat{\\beta}_{\\text{mass}} x_{\\text{mass}}\n    + \\hat{\\beta}_{\\text{sex}} x_{\\text{sex}}\n\\] where\n\\[\nx_{\\text{sex}} =\n  \\begin{cases}\n    1, \\text{ if sex is } \\texttt{male}; \\\\\n    0, \\text{ if sex is } \\texttt{female}\n  \\end{cases}\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFrom the output above, we see our model is\n\\[\n  \\hat{y}_{\\text{flipper length}} = 165.2\n    + 0.006 x_{\\text{mass}}\n    + 0.344 x_{\\text{sex}}\n\\]\nIf we add both lines to the scatter plot we get the following.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFrom both the plot and the R output, we observe the itnteraction effect is not significant."
   },
   {
-    "objectID": "course_skeleton/syllabus.html",
-    "href": "course_skeleton/syllabus.html",
-    "title": "Course Syllabus ",
+    "objectID": "course_skeleton/tutorials/tutorial_regression.html#exploratory-data-analysis",
+    "href": "course_skeleton/tutorials/tutorial_regression.html#exploratory-data-analysis",
+    "title": "Tutorial: Regression Analaysis with R",
     "section": "",
-    "text": "Course: Course Title\nInstructor: Instructor Name\nEmail: instructor@email.ca\nOffice hours: TBD\nClass time/location: TBD"
+    "text": "This example is on the palmerpenguins data set.\n\n\n\n\n\nLet’s examine the data set. For simplicity, we will use complete cases for this tutorial.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
-    "objectID": "course_skeleton/syllabus.html#course-information",
-    "href": "course_skeleton/syllabus.html#course-information",
-    "title": "Course Syllabus ",
+    "objectID": "course_skeleton/tutorials/tutorial_regression.html#sample-hypothesis-test",
+    "href": "course_skeleton/tutorials/tutorial_regression.html#sample-hypothesis-test",
+    "title": "Tutorial: Regression Analaysis with R",
     "section": "",
-    "text": "Course: Course Title\nInstructor: Instructor Name\nEmail: instructor@email.ca\nOffice hours: TBD\nClass time/location: TBD"
+    "text": "We would like to perform a t-test on the body mass of male and female Adelie penguins. Let’s start with some initial data analysis.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nlet’s examine side-by-side boxplots and histograms of the mass of male and female Adelie penguins. For simplicity, we’ll remove the data points where information is missing.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s conduct the following test on whether the mean body mass of male Adelie penguins is equal to the mean body mass of female Adelie penguins, or whether there is a difference.\nThe null and alternative hypothesis are \\[\n  H_{0}: \\mu_{\\text{male}} = \\mu_{\\text{female}}\n  \\quad\n  H_{a}: \\mu_{\\text{male}} \\neq \\mu_{\\text{female}}\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
-    "objectID": "course_skeleton/syllabus.html#course-description",
-    "href": "course_skeleton/syllabus.html#course-description",
-    "title": "Course Syllabus ",
-    "section": "Course description",
-    "text": "Course description\nAdd a short course description here."
+    "objectID": "course_skeleton/tutorials/tutorial_regression.html#simple-linear-regression",
+    "href": "course_skeleton/tutorials/tutorial_regression.html#simple-linear-regression",
+    "title": "Tutorial: Regression Analaysis with R",
+    "section": "",
+    "text": "Recall the simple linear regression model is\n\\[\nY = \\beta_{0} + \\beta_{1} X + \\varepsilon, \\quad \\varepsilon \\sim N(0, \\sigma^2)\n\\] This is estimated using \\[\n\\hat{y} = \\hat{\\beta}_{0} + \\hat{\\beta}_{1}x\n\\]\nFor the Adelie penguins, let’s examine whether there is a linear relationship between the bill_length and body_mass_g of the Adelie penguins. We’ll start with a scatterplot of the data.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere appears to be a positive linear relationship between body mass and flipper length. Let’s get the least squares regression line:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe equation of the regression line is:\n\\[\n  \\hat{y}_{\\text{flipper length}} = 165.2\n    + 0.007 x_{\\text{mass}}\n\\]\nLet’s superimpose the least squares line on the plot:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s see if there is a difference between the flipper length of male and female flipper lengths:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere appers to be a difference for male and female penguins. Let’s create a new model with sex as an indicator variable.\n\\[\n  \\hat{y}_{\\text{flipper length}} = \\hat{\\beta}_0\n    + \\hat{\\beta}_{\\text{mass}} x_{\\text{mass}}\n    + \\hat{\\beta}_{\\text{sex}} x_{\\text{sex}}\n\\] where\n\\[\nx_{\\text{sex}} =\n  \\begin{cases}\n    1, \\text{ if sex is } \\texttt{male}; \\\\\n    0, \\text{ if sex is } \\texttt{female}\n  \\end{cases}\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFrom the output above, we see our model is\n\\[\n  \\hat{y}_{\\text{flipper length}} = 165.2\n    + 0.006 x_{\\text{mass}}\n    + 0.344 x_{\\text{sex}}\n\\]\nIf we add both lines to the scatter plot we get the following.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFrom both the plot and the R output, we observe the itnteraction effect is not significant."
   },
   {
-    "objectID": "course_skeleton/syllabus.html#learning-objectives",
-    "href": "course_skeleton/syllabus.html#learning-objectives",
-    "title": "Course Syllabus ",
-    "section": "Learning objectives",
-    "text": "Learning objectives\nBy the end of this course, students should be able to:\n\nexplain core concepts using appropriate terminology\napply course methods to real or realistic problems\ninterpret results clearly and accurately\ncommunicate findings in a reproducible format\nreflect on assumptions, limitations, and uncertainty"
+    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q1",
+    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q1",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q1 — Make the sum equal 10",
+    "text": "Q1 — Make the sum equal 10\nReplace ＿ with a number so the expression evaluates to 10.\n\n\n\n\n\n\n\n\n\n\n\n\nReplace the two ＿ with 2 numbers that add up to 7.\n\n\n\n\n1 + 2 + 3 + 4\n1 + 2 + 3 + 4"
   },
   {
-    "objectID": "course_skeleton/syllabus.html#course-materials",
-    "href": "course_skeleton/syllabus.html#course-materials",
-    "title": "Course Syllabus ",
-    "section": "Course materials",
-    "text": "Course materials\nRequired and recommended materials will be listed here."
+    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q2-create-a-vector",
+    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q2-create-a-vector",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q2 — Create a vector",
+    "text": "Q2 — Create a vector\nMake a vector called my_vec that contains the numbers 5, 10, 15, 20.\n\n\n\n\n\n\n\n\n\nUse the c() function to combine numbers: c(1, 2, 3)\n\n\n\n\nmy_vec &lt;- c(5, 10, 15, 20)\nmy_vec &lt;- c(5, 10, 15, 20)"
   },
   {
-    "objectID": "course_skeleton/syllabus.html#assessment",
-    "href": "course_skeleton/syllabus.html#assessment",
-    "title": "Course Syllabus ",
-    "section": "Assessment",
-    "text": "Assessment\n\n\n\nComponent\nWeight\n\n\n\n\nAssignments\nXX%\n\n\nQuizzes\nXX%\n\n\nMidterm\nXX%\n\n\nFinal project/exam\nXX%\n\n\nParticipation\nXX%"
+    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q3-find-the-average",
+    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q3-find-the-average",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q3 — Find the average",
+    "text": "Q3 — Find the average\nCompute the mean of the vector c(2, 4, 6, 8, 10).\nYour answer should be stored in a variable called avg_val.\n\n\n\n\n\n\n\n\n\nUse the mean() function: mean(c(…))\n\n\n\n\navg_val &lt;- mean(c(2, 4, 6, 8, 10))\navg_val &lt;- mean(c(2, 4, 6, 8, 10))"
   },
   {
-    "objectID": "course_skeleton/syllabus.html#course-policies",
-    "href": "course_skeleton/syllabus.html#course-policies",
-    "title": "Course Syllabus ",
-    "section": "Course policies",
-    "text": "Course policies\nAdd policies for attendance, late work, academic integrity, use of AI tools, accessibility, and communication expectations."
+    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q4-draw-a-histogram-from-toothgrowth-type-the-full-call",
+    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q4-draw-a-histogram-from-toothgrowth-type-the-full-call",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q4 — Draw a histogram from ToothGrowth (type the full call)",
+    "text": "Q4 — Draw a histogram from ToothGrowth (type the full call)\nUse exactly one of these numeric columns and nothing else: len or dose\n\n\n\nPhoto by The Humble Co. on Unsplash\n\n\n\n\n\n\n\n\nNotePreview\n\n\n\nFind a preview of the ToothGrowth dataset here:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUse the hist command.\n\n\n\n\nhist(ToothGrowth$len)\nhist(ToothGrowth$len)"
   },
   {
-    "objectID": "course_skeleton/syllabus.html#recommended-textbooks",
-    "href": "course_skeleton/syllabus.html#recommended-textbooks",
-    "title": "Course Syllabus ",
-    "section": "Recommended Textbooks",
-    "text": "Recommended Textbooks\n\nDevore et al. (2021)\nDiez et al. (2016)"
+    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q5-draw-a-boxplot-from-toothgrowth-type-the-full-call",
+    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q5-draw-a-boxplot-from-toothgrowth-type-the-full-call",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q5 — Draw a boxplot from ToothGrowth (type the full call)",
+    "text": "Q5 — Draw a boxplot from ToothGrowth (type the full call)\nUse exactly one of these numeric columns and nothing else: len or dose\n\n\n\n\n\n\nNotePreview\n\n\n\nFind a preview of the ToothGrowth dataset here:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUse the boxplot command.\n\n\n\n\nboxplot(ToothGrowth$len)\nboxplot(ToothGrowth$len)"
+  },
+  {
+    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q6-add-a-color-to-the-histogram",
+    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q6-add-a-color-to-the-histogram",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q6 — Add a color to the histogram",
+    "text": "Q6 — Add a color to the histogram\nRe-draw a histogram of ToothGrowth$len and set any bar color using the col= argument.\n\n\n\n\n\n\n\n\n\nadd col as an additional argument here and give it a color of your choice.\n\n\n\n\nhist(ToothGrowth$len, col = \"steelblue\")\nhist(ToothGrowth$len, col = \"steelblue\")"
+  },
+  {
+    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q7-boxplot-make-it-horizontal",
+    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q7-boxplot-make-it-horizontal",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q7 — Boxplot (make it horizontal)",
+    "text": "Q7 — Boxplot (make it horizontal)\nDraw a boxplot of ToothGrowth$dose and make it horizontal using horizontal = TRUE as an argument.\n\n\n\n\n\n\n\n\n\nadd horizontal as an argument just like col from the previous question\n\n\n\n\nboxplot(ToothGrowth$dose, horizontal = TRUE)\nboxplot(ToothGrowth$dose, horizontal = TRUE)"
+  },
+  {
+    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q8-load-a-csv-as-a-dataframe",
+    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q8-load-a-csv-as-a-dataframe",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q8 — Load a CSV as a DataFrame",
+    "text": "Q8 — Load a CSV as a DataFrame\nLoad iris.csv into a dataframe named df.\n\n\n\nPhoto by Andrew Small on Unsplash\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUse read.csv here.\n\n\n\n\ndf &lt;- read.csv(\"iris.csv\")\ndf &lt;- read.csv(\"iris.csv\")"
+  },
+  {
+    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q9-count-rows-in-iris.csv",
+    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q9-count-rows-in-iris.csv",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q9 — Count rows in iris.csv",
+    "text": "Q9 — Count rows in iris.csv\nCount the number of rows in iris.csv and store them in the variable rows\n\n\n\n\n\n\n\n\n\n\n\n\nUse nrow.\n\n\n\n\ndf &lt;- read.csv(\"iris.csv\")\nrows &lt;- nrow(df)\ndf &lt;- read.csv(\"iris.csv\")\nrows &lt;- nrow(df)"
+  },
+  {
+    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q10-show-column-names",
+    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q10-show-column-names",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q10 — Show column names",
+    "text": "Q10 — Show column names\nPrint the column names from iris.csv\n\n\n\n\n\n\n\n\n\n\n\n\nUse names.\n\n\n\n\ndf   &lt;- read.csv(\"iris.csv\")\ncols &lt;- names(df)\ncols\ndf   &lt;- read.csv(\"iris.csv\")\ncols &lt;- names(df)\ncols"
+  },
+  {
+    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q11-print-some-of-the-data",
+    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q11-print-some-of-the-data",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q11 — Print some of the data",
+    "text": "Q11 — Print some of the data\nPrint the first 5 rows from iris.csv.\n\n\n\n\n\n\n\n\n\n\n\n\nUse head.\n\n\n\n\ndf &lt;- read.csv(\"iris.csv\")\nhead(df)\ndf &lt;- read.csv(\"iris.csv\")\nhead(df)"
+  },
+  {
+    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q12-make-a-histogram-from-iris.csv",
+    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q12-make-a-histogram-from-iris.csv",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q12 — Make a histogram from iris.csv",
+    "text": "Q12 — Make a histogram from iris.csv\nMake a histogram of the column Sepal.Length from iris.csv.\n\n\n\n\n\n\n\n\n\n\n\n\nUse hist (see Q5).\n\n\n\n\ndf &lt;- read.csv(\"iris.csv\")\nhist(df$Sepal.Length, col = \"lightgray\", main = \"Sepal.Length\", xlab = \"cm\") \ndf &lt;- read.csv(\"iris.csv\")\nhist(df$Sepal.Length, col = \"lightgray\", main = \"Sepal.Length\", xlab = \"cm\")"
+  },
+  {
+    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q2",
+    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q2",
+    "title": "Graded Tutorial: Introduction to R",
+    "section": "Q13 — Write a function using division",
+    "text": "Q13 — Write a function using division\nDefine a function called divide_nums that takes two arguments (a and b) and returns the results of:\n\na / b\nb / a\n\nBoth results should be stored in separate variables before being returned.\n\n\n\n\n\n\nNoteInfo\n\n\n\nRemember: in R, division by zero (1/0) will return Inf rather than an error.\n\n\n\n\n\n\n\n\nNoteInfo\n\n\n\nIn R, lists are written with list(a, b, c). Each element can be anything: a number, a string, or even another list.\n\n\n\n\n\n\n\n\n\n\n\nStart with: res1 &lt;- a / b res2 &lt;- b / a and then use the list command.\n\n\n\n\ndivide_nums &lt;- function(a, b) {\n  res1 &lt;- a / b\n  res2 &lt;- b / a\n  list(res1, res2)\n}\ndivide_nums &lt;- function(a, b) {\n  res1 &lt;- a / b\n  res2 &lt;- b / a\n  list(res1, res2)\n}"
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#introduction",
+    "href": "course_skeleton/lectures/regression-lecture.html#introduction",
+    "title": "Regression",
+    "section": "Introduction",
+    "text": "Introduction\n\n\nIn this lecture we will introduce Simple Linear Regression (SLR) to model the relationship between two numerical variables.\nWe will quantify the relationship between variables using popular metrics like the Correlation Coefficient and \\(R^2\\) value.\nStatistical inference for this model will be discussed, and the critical distinction between inference for mean response and inference for the outcome will be clarified.\nWe will also introduce a basic understanding of the multiple regression model."
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#recall-scatterplots",
+    "href": "course_skeleton/lectures/regression-lecture.html#recall-scatterplots",
+    "title": "Regression",
+    "section": "Recall: Scatterplots",
+    "text": "Recall: Scatterplots\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#line-of-best-fit",
+    "href": "course_skeleton/lectures/regression-lecture.html#line-of-best-fit",
+    "title": "Regression",
+    "section": "Line of Best fit",
+    "text": "Line of Best fit"
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#visualization-of-residuals",
+    "href": "course_skeleton/lectures/regression-lecture.html#visualization-of-residuals",
+    "title": "Regression",
+    "section": "Visualization of Residuals",
+    "text": "Visualization of Residuals"
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#what-is-regression",
+    "href": "course_skeleton/lectures/regression-lecture.html#what-is-regression",
+    "title": "Regression",
+    "section": "What is regression",
+    "text": "What is regression\n\nRegression analysis is a tool to investigate how two or more variables are related.\n\n“The general objective of a regression analysis is to determine the relationship between two (or more) variables so that we can gain information about one of them through knowing values of the other(s).”\n\n\nSource: Ch 12 of Devore et al. (2021)"
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#variable-types",
+    "href": "course_skeleton/lectures/regression-lecture.html#variable-types",
+    "title": "Regression",
+    "section": "Variable Types",
+    "text": "Variable Types\nWe want to see how a specific response variable, \\(Y\\) is affected by one or more explanatory variables \\(X_1, \\dots, X_p\\)\n\n\\(Y\\) is also known as the dependent variable or output variable. This variable is continuous (i.e. numeric data type)\n\\(X_i\\)’s are also known as independent/predictor variables or features. These may be continuous or categorical; however, we only consider continuous predictors in this course."
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#section",
+    "href": "course_skeleton/lectures/regression-lecture.html#section",
+    "title": "Regression",
+    "section": "",
+    "text": "Example\n\n\n\nOne may wish to use a person’s height, gender and race to predict a person’s weight. What is/are the response variable(s)?\n\n\n\n\n\nHeight\nGender\nRace\nWeight"
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#section-1",
+    "href": "course_skeleton/lectures/regression-lecture.html#section-1",
+    "title": "Regression",
+    "section": "",
+    "text": "Example\n\n\n\nOne may wish to use a person’s height, gender and race to predict a person’s weight. What is/are the dependent variable(s)?\n\n\n\n\n\nHeight\nGender\nRace\nWeight"
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#model",
+    "href": "course_skeleton/lectures/regression-lecture.html#model",
+    "title": "Regression",
+    "section": "Model",
+    "text": "Model\n\\[\\begin{align}\nY &= \\underbrace{f(X_1, \\dots, X_p)}_{\\text{deterministic}} + \\underbrace{\\epsilon}_{\\text{random}} \\\\\n&\\phantom{= \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\dots \\beta_p X_p + \\epsilon}\n\\end{align}\\]"
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#model-1",
+    "href": "course_skeleton/lectures/regression-lecture.html#model-1",
+    "title": "Regression",
+    "section": "Model",
+    "text": "Model\n\\[\\begin{align}\nY &= \\underbrace{f(X_1, \\dots, X_p)}_{\\text{deterministic}} + \\underbrace{\\epsilon}_{\\text{random}}\\\\\n&= \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\dots \\beta_p X_p + \\epsilon\n\\end{align}\\]\n\nIn a linear regression model, the function \\(f(X_1, \\dots, X_p)\\) is a linear combination of the explanatory variables."
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#model-2",
+    "href": "course_skeleton/lectures/regression-lecture.html#model-2",
+    "title": "Regression",
+    "section": "Model",
+    "text": "Model\n\\[\\begin{align}\n\\overset{\\overset{\\text{response}}{\\downarrow}}{Y} &= \\beta_0 + \\beta_1 \\underset{\\underset{\\text{explanatory}}{\\uparrow}}{X_1} + \\beta_2 \\underset{\\underset{\\text{explanatory}}{\\uparrow}}{X_2} + \\dots \\beta_p \\underset{\\underset{\\text{explanatory}}{\\uparrow}}{X_p} + \\epsilon\n\\end{align}\\]\n\n\n\\(\\beta_0\\) is the \\(y\\)-intercept\n\\(\\beta_i\\) are the regression coefficients, and\n\\(\\epsilon\\) are the errors that are assumed \\(N(0, \\sigma)\\)\n\n\n\nIn statistics, we can describe how variables are related using a mathematical function.\nThe function along with other assumptions is called a model.\nThere are many models we can consider. In this class, we will focus on linear models, particularly, when there is only one predictor variable.\nWe refer to this model as the simple linear regression model. (Penn STat 500)\n\n\nas well as modeling numerical response variables using a numerical or categorical explanatory variable."
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#simple-linear-regression",
+    "href": "course_skeleton/lectures/regression-lecture.html#simple-linear-regression",
+    "title": "Regression",
+    "section": "Simple Linear Regression",
+    "text": "Simple Linear Regression\n\nWhen \\(p = 1\\), namely, we are only considering one explanatory variable, our model is called “simple” linear regression (SLR).\nWhen \\(p&gt;1\\) we fall into multiple linear regression (MLR)."
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#slr-model",
+    "href": "course_skeleton/lectures/regression-lecture.html#slr-model",
+    "title": "Regression",
+    "section": "SLR model",
+    "text": "SLR model\nThe SLR model reduces to an equation for of a line:\n\\[Y = \\beta_0 + \\beta_1 X\\]\nwhere:\n\n\\(\\beta_0\\) is the \\(y\\)-intercept, and\n\\(\\beta_1\\) is the slope"
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#simulation-part-1",
+    "href": "course_skeleton/lectures/regression-lecture.html#simulation-part-1",
+    "title": "Regression",
+    "section": "Simulation: Part 1",
+    "text": "Simulation: Part 1\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nThis is only the deterministic portion"
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#comment",
+    "href": "course_skeleton/lectures/regression-lecture.html#comment",
+    "title": "Regression",
+    "section": "Comment",
+    "text": "Comment\n\nWe have only code the deterministic portion of this model\nIn other words, we are missing random component\nLet’s add some random noise …"
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#simulation-part-ii",
+    "href": "course_skeleton/lectures/regression-lecture.html#simulation-part-ii",
+    "title": "Regression",
+    "section": "Simulation: Part II",
+    "text": "Simulation: Part II\n\n\n\n\n\n\nWarning\n\n\nChange sd as needed\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#section-2",
+    "href": "course_skeleton/lectures/regression-lecture.html#section-2",
+    "title": "Regression",
+    "section": "",
+    "text": "\\(X\\)sParametersDeterministicNoise\n\n\nCreate n values for x, for example using:\n\nx = runif(n, min = -2, max = 10) # or runif() / rnorm()\n\n\n\n\n\n\n\n\n\n\n\n\nFor \\(\\beta_0\\) = beta0 = 3, \\(\\beta_1\\) = beta1 = 4, we have\n\\[Y = 3 + 4 \\cdot X\\]"
+  },
+  {
+    "objectID": "course_skeleton/lectures/regression-lecture.html#references",
+    "href": "course_skeleton/lectures/regression-lecture.html#references",
+    "title": "Regression",
+    "section": "References",
+    "text": "References\n\n\n\n\nDevore, J. L., K. N. Berk, and M. A. Carlton. 2021. Modern Mathematical Statistics with Applications. Springer Texts in Statistics. Springer International Publishing. https://books.google.ca/books?id=ghcsEAAAQBAJ."
+  },
+  {
+    "objectID": "course_skeleton/index.html",
+    "href": "course_skeleton/index.html",
+    "title": " Course Title",
+    "section": "",
+    "text": "This is a generic course landing page.\nHere students will find:"
+  },
+  {
+    "objectID": "course_skeleton/index.html#course-schedule",
+    "href": "course_skeleton/index.html#course-schedule",
+    "title": " Course Title",
+    "section": "Course Schedule",
+    "text": "Course Schedule\nThe schedule below is tentative and may be adjusted as the course progresses.\n\nLectures\n\n\n\nTable 1: The tentative course schedule for lectures\n\n\n\n\n\nWeek\nTopic\nMaterials\n\n\n\n\n1\nIntroduction to Quarto Slides with webr\nSlides\n\n\n2\nLinear Regression demo\nSlides\n\n\n\n\n\n\n\n\nInteractive Activities and Simulations\n\n\n\nTable 2: The tentative course schedule for interactive activities and simulations with R\n\n\n\n\n\nWeek\nTopic\nMaterials\n\n\n\n\n1\nCoin Flipping activity\nActivity\n\n\n2\nIntroduction to visuals\nActivity\n\n\n\n\n\n\n\n\nInteractive R Tutorials\n\n\n\nTable 3: The tentative course schedule for interactive R tutorials\n\n\n\n\n\nWeek\nTopic\nMaterials\n\n\n\n\n1\nIntroduction to R\nTutorial\n\n\n2\nTutorial on Regression with R\nTutorial\n\n\n3\nGraded tutorial on introductory level content in R\nTutorial"
+  },
+  {
+    "objectID": "course_skeleton/index.html#lecture-slide",
+    "href": "course_skeleton/index.html#lecture-slide",
+    "title": " Course Title",
+    "section": "Lecture Slide",
+    "text": "Lecture Slide\nThe slide decks above were made in Quarto in revealjs (HTML). A lecture template with some helpful demonstrations can be here; see the rendered version here.\n\n\n\n\n\n\nNote\n\n\n\nNote that revealjs presentations can be presented as HTML slides or can be printed to PDF for easier distribution. 🎉\n\n\n\nPrint/Save to PDF:\nReveal presentations can be exported to PDF via a special print stylesheet.\n\nToggle into Print View using the E key (or using the Navigation Menu)\nOpen the in-browser[^2] print dialog (CTRL/CMD+P).\nChange the Destination setting to Save as PDF.\nChange the Layout to Landscape.\nChange the Margins to None.\nEnable the Background graphics option.\nClick Save 🎉\n\nVisit https://quarto.org/docs/presentations/revealjs/ for more details on create revealjs slides."
+  },
+  {
+    "objectID": "course_skeleton/activities/activity_coins.html",
+    "href": "course_skeleton/activities/activity_coins.html",
+    "title": "An Activity in R on Coin Flipping",
+    "section": "",
+    "text": "Coin Flip Example\nFor a random variable \\(X\\) that follows the Bernoulli distribution with probability \\(p\\), each realization of the random variable has two possible outcomes (e.g., Success or Failure, 1 or 0, Heads or Tails, etc.). More specifically, the Bernoulli distribution is a discrete probability distribution such that \\(P(X=1)=p\\) and \\(P(X=0)=1-p\\).\nAs a simple example, we can design an experiment where we flip a coin and record the outcome using the following code:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNow let’s try flipping the coin a few times:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s do this again, but this time we’ll keep track of the number of Heads and Tails that occur.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nBy default, the sample function gives every outcome an equal chance of happening. If we want to make certain events more likely than others, we can do this by adding a prob argument. For example, we can make it so that our coin has a 75% chance of landing on heads for any single flip by using the following code:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFinally, let’s try flipping the coin 100 times and keep track of how the frequency of Heads progresses over the tosses.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "activities/activity_intro_to_visuals.html",
+    "href": "activities/activity_intro_to_visuals.html",
+    "title": "In-Class Activity: Summarizing Numerical Data",
+    "section": "",
+    "text": "This script will provide a quick demonstration of summarizing data visually."
+  },
+  {
+    "objectID": "activities/activity_intro_to_visuals.html#pixar-data",
+    "href": "activities/activity_intro_to_visuals.html#pixar-data",
+    "title": "In-Class Activity: Summarizing Numerical Data",
+    "section": "Pixar Data",
+    "text": "Pixar Data\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe data we will be looking at contains information about Pixar films released prior to 2021, as provided by Wikipedia. The following variables were collected for each film:\n\nfilm: The name of the film.\nrelease_date: The date the film premiered.\nrun_time: The length of the film in minutes.\nrotten_tomatoes: Score from the review-aggregation website Rotten Tomatoes; scored out of 100.\nbox_office_worldwide: Box office gross amount in U.S. dollars worldwide.\nbudget: Movie budget in U.S. dollars.\n\nThe data can be found in the following table:\n\n\n\n\n\n\nfilm\nrelease_date\nrun_time\nrotten_tomatoes\nbox_office_worldwide\nbudget\n\n\n\n\nToy Story\n1995-11-22\n81\n100\n373,554,033\n30,000,000\n\n\nA Bug's Life\n1998-11-25\n95\n92\n363,258,859\n120,000,000\n\n\nToy Story 2\n1999-11-24\n92\n100\n497,374,776\n90,000,000\n\n\nMonsters, Inc.\n2001-11-02\n92\n96\n632,316,649\n115,000,000\n\n\nFinding Nemo\n2003-05-30\n100\n99\n871,014,978\n94,000,000\n\n\nThe Incredibles\n2004-11-05\n115\n97\n631,606,713\n92,000,000\n\n\nCars\n2006-06-09\n117\n74\n461,983,149\n120,000,000\n\n\nRatatouille\n2007-06-29\n111\n96\n623,726,085\n150,000,000\n\n\nWALL-E\n2008-06-27\n98\n95\n521,311,860\n180,000,000\n\n\nUp\n2009-05-29\n96\n98\n735,099,082\n175,000,000\n\n\nToy Story 3\n2010-06-18\n103\n98\n1,066,969,703\n200,000,000\n\n\nCars 2\n2011-06-24\n106\n40\n559,852,396\n200,000,000\n\n\nBrave\n2012-06-22\n93\n78\n538,983,207\n185,000,000\n\n\nMonsters University\n2013-06-21\n104\n80\n743,559,607\n200,000,000\n\n\nInside Out\n2015-06-19\n95\n98\n857,611,174\n175,000,000\n\n\nThe Good Dinosaur\n2015-11-25\n93\n76\n332,207,671\n175,000,000\n\n\nFinding Dory\n2016-06-17\n97\n94\n1,028,570,889\n200,000,000\n\n\nCars 3\n2017-06-16\n102\n69\n383,930,656\n175,000,000\n\n\nCoco\n2017-11-22\n105\n97\n807,082,196\n175,000,000\n\n\nIncredibles 2\n2018-06-15\n118\n93\n1,242,805,359\n200,000,000\n\n\nToy Story 4\n2019-06-21\n100\n97\n1,073,394,593\n200,000,000\n\n\nOnward\n2020-03-06\n102\n88\n141,950,121\n175,000,000\n\n\nSoul\n2020-12-25\n100\n96\n135,435,315\n175,000,000\n\n\n\n\n\n\n\nDescriptive Statistics\nThe following functions are useful for summarizing numerical data: mean, median, min, max, range, sd, var, fivenum\nTry them here:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nBasic Plots\nThere is a generic plot function in R which is useful for creating quick visualizations of a data set. If you pass one numeric variable into this function, a quick plot will be made by creating a point for each observation in the order they occur in the data frame (index). Passing two numeric variables into this function will create a scatterplot, with the first variable corresponding to the x-axis and the second corresponding to the y-axis.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere are some arguments we can add to the plot function to make our visualizations more informative:\n\nmain = “Title of the Graph”\nxlab = “x-axis label”\nylab = “y-axis label”\nxlim = c(0,100) (changing the values on the x-axis)\nylim = c(0,100) (changing the values on the y-axis)\ncol = “colour” (full list of colours can be found here)\npch = number (list of potential shapes for points can be found here)\n\nWe can even add text to our plots by incorporating the text function.\n\n\nBarplots\nTo draw a basic bar graph, we can simply use the barplot function and specify which variable it is that we want to represent the height of the bars. For example, we can use the following code to quickly plot the Rotten Tomatoes score for each of the Pixar movies:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere are some arguments we can add to the barplot function to make our bar graph more informative.\n\nhoriz = T (draw the bars horizontally)\nname = variable to label the bars\nlas = 2 (rotates the labels)\ncex.names = 0.5 (change the labels font size)\n\n\n\nHistograms\nWe can create histograms of the data using the hist function. For example, we can use the following code to quickly create a histogram of the Rotten Tomatoes scores for the Pixar movies:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nArguments we can add to the hist function to make our graph more informative.\n\nbreaks = number (number of bars displayed)\nlabels = T (add numbers to bars)\n\n\n\nBoxplots\nThe boxplot function can be used to (unsurprisingly) create boxplots. Keeping with our Rotten Tomatoes examples:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nArguments we can add to the boxplot function to make our graph more informative.\n\nhorizontal = T (draw the boxplot horizontally)"
+  },
+  {
+    "objectID": "activities/activity_coins.html",
+    "href": "activities/activity_coins.html",
+    "title": "An Activity in R on Coin Flipping",
+    "section": "",
+    "text": "Coin Flip Example\nFor a random variable \\(X\\) that follows the Bernoulli distribution with probability \\(p\\), each realization of the random variable has two possible outcomes (e.g., Success or Failure, 1 or 0, Heads or Tails, etc.). More specifically, the Bernoulli distribution is a discrete probability distribution such that \\(P(X=1)=p\\) and \\(P(X=0)=1-p\\).\nAs a simple example, we can design an experiment where we flip a coin and record the outcome using the following code:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNow let’s try flipping the coin a few times:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s do this again, but this time we’ll keep track of the number of Heads and Tails that occur.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nBy default, the sample function gives every outcome an equal chance of happening. If we want to make certain events more likely than others, we can do this by adding a prob argument. For example, we can make it so that our coin has a 75% chance of landing on heads for any single flip by using the following code:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFinally, let’s try flipping the coin 100 times and keep track of how the frequency of Heads progresses over the tosses.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "course_skeleton/about.html",
+    "href": "course_skeleton/about.html",
+    "title": "About",
+    "section": "",
+    "text": "This course provides an introduction to key concepts in statistics and data science, with an emphasis on understanding, interpretation, and communication rather than rote computation.\nStudents will engage with real and realistic datasets, develop intuition through visualization and simulation, and learn to clearly communicate their findings."
+  },
+  {
+    "objectID": "course_skeleton/about.html#about-this-course",
+    "href": "course_skeleton/about.html#about-this-course",
+    "title": "About",
+    "section": "",
+    "text": "This course provides an introduction to key concepts in statistics and data science, with an emphasis on understanding, interpretation, and communication rather than rote computation.\nStudents will engage with real and realistic datasets, develop intuition through visualization and simulation, and learn to clearly communicate their findings."
+  },
+  {
+    "objectID": "course_skeleton/about.html#teaching-philosophy",
+    "href": "course_skeleton/about.html#teaching-philosophy",
+    "title": "About",
+    "section": "Teaching philosophy",
+    "text": "Teaching philosophy\nThis course is designed around the following principles:\n\nConceptual understanding first\nWe focus on why methods work and how to interpret results, not just how to compute them.\nReproducibility matters\nAll work should be clear, organized, and reproducible using modern tools.\nLearning by doing\nStudents will practice through labs, assignments, and in-class activities.\nCommunication is key\nBeing able to explain results clearly is just as important as obtaining them."
+  },
+  {
+    "objectID": "course_skeleton/about.html#course-structure",
+    "href": "course_skeleton/about.html#course-structure",
+    "title": "About",
+    "section": "Course structure",
+    "text": "Course structure\nThe course typically includes:\n\nLectures\nIntroduce key concepts and worked examples\nLabs / practice\nReinforce ideas through hands-on work\nAssignments\nApply methods to new problems and datasets\nAssessments\nEvaluate conceptual understanding and applied skills"
+  },
+  {
+    "objectID": "course_skeleton/about.html#tools-and-technologies",
+    "href": "course_skeleton/about.html#tools-and-technologies",
+    "title": "About",
+    "section": "Tools and technologies",
+    "text": "Tools and technologies\nThis course uses:\n\nR and RStudio / Positron\nQuarto for reproducible documents and presentations\nWebR (in some cases) for running code in the browser\nGitHub for version control and collaboration (optional/advanced)\n\nNo prior experience with these tools is assumed unless otherwise stated."
+  },
+  {
+    "objectID": "course_skeleton/about.html#expectations",
+    "href": "course_skeleton/about.html#expectations",
+    "title": "About",
+    "section": "Expectations",
+    "text": "Expectations\nStudents are expected to:\n\nattend and participate in lectures\nengage actively with course materials\nattempt all assigned work\nask questions and seek help when needed\ncollaborate appropriately while maintaining academic integrity"
+  },
+  {
+    "objectID": "course_skeleton/about.html#support",
+    "href": "course_skeleton/about.html#support",
+    "title": "About",
+    "section": "Support",
+    "text": "Support\nLearning new concepts can be challenging. Support is available through:\n\noffice hours\ndiscussion forums\npeer collaboration (where appropriate)\n\nIf you are struggling, please reach out early."
+  },
+  {
+    "objectID": "course_skeleton/about.html#a-note-on-flexibility",
+    "href": "course_skeleton/about.html#a-note-on-flexibility",
+    "title": "About",
+    "section": "A note on flexibility",
+    "text": "A note on flexibility\nThe course schedule and materials may be adjusted based on pacing and feedback to best support student learning."
+  },
+  {
+    "objectID": "course_skeleton/activities/activity_intro_to_visuals.html",
+    "href": "course_skeleton/activities/activity_intro_to_visuals.html",
+    "title": "An Activity in R Introducing Visual",
+    "section": "",
+    "text": "This script will provide a quick demonstration of summarizing data visually."
+  },
+  {
+    "objectID": "course_skeleton/activities/activity_intro_to_visuals.html#pixar-data",
+    "href": "course_skeleton/activities/activity_intro_to_visuals.html#pixar-data",
+    "title": "An Activity in R Introducing Visual",
+    "section": "Pixar Data",
+    "text": "Pixar Data\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe data we will be looking at contains information about Pixar films released prior to 2021, as provided by Wikipedia. The following variables were collected for each film:\n\nfilm: The name of the film.\nrelease_date: The date the film premiered.\nrun_time: The length of the film in minutes.\nrotten_tomatoes: Score from the review-aggregation website Rotten Tomatoes; scored out of 100.\nbox_office_worldwide: Box office gross amount in U.S. dollars worldwide.\nbudget: Movie budget in U.S. dollars.\n\nThe data can be found in the following table:\n\n\n\n\n\n\nfilm\nrelease_date\nrun_time\nrotten_tomatoes\nbox_office_worldwide\nbudget\n\n\n\n\nToy Story\n1995-11-22\n81\n100\n373,554,033\n30,000,000\n\n\nA Bug's Life\n1998-11-25\n95\n92\n363,258,859\n120,000,000\n\n\nToy Story 2\n1999-11-24\n92\n100\n497,374,776\n90,000,000\n\n\nMonsters, Inc.\n2001-11-02\n92\n96\n632,316,649\n115,000,000\n\n\nFinding Nemo\n2003-05-30\n100\n99\n871,014,978\n94,000,000\n\n\nThe Incredibles\n2004-11-05\n115\n97\n631,606,713\n92,000,000\n\n\nCars\n2006-06-09\n117\n74\n461,983,149\n120,000,000\n\n\nRatatouille\n2007-06-29\n111\n96\n623,726,085\n150,000,000\n\n\nWALL-E\n2008-06-27\n98\n95\n521,311,860\n180,000,000\n\n\nUp\n2009-05-29\n96\n98\n735,099,082\n175,000,000\n\n\nToy Story 3\n2010-06-18\n103\n98\n1,066,969,703\n200,000,000\n\n\nCars 2\n2011-06-24\n106\n40\n559,852,396\n200,000,000\n\n\nBrave\n2012-06-22\n93\n78\n538,983,207\n185,000,000\n\n\nMonsters University\n2013-06-21\n104\n80\n743,559,607\n200,000,000\n\n\nInside Out\n2015-06-19\n95\n98\n857,611,174\n175,000,000\n\n\nThe Good Dinosaur\n2015-11-25\n93\n76\n332,207,671\n175,000,000\n\n\nFinding Dory\n2016-06-17\n97\n94\n1,028,570,889\n200,000,000\n\n\nCars 3\n2017-06-16\n102\n69\n383,930,656\n175,000,000\n\n\nCoco\n2017-11-22\n105\n97\n807,082,196\n175,000,000\n\n\nIncredibles 2\n2018-06-15\n118\n93\n1,242,805,359\n200,000,000\n\n\nToy Story 4\n2019-06-21\n100\n97\n1,073,394,593\n200,000,000\n\n\nOnward\n2020-03-06\n102\n88\n141,950,121\n175,000,000\n\n\nSoul\n2020-12-25\n100\n96\n135,435,315\n175,000,000\n\n\n\n\n\n\n\nDescriptive Statistics\nThe following functions are useful for summarizing numerical data: mean, median, min, max, range, sd, var, fivenum\nTry them here:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nBasic Plots\nThere is a generic plot function in R which is useful for creating quick visualizations of a data set. If you pass one numeric variable into this function, a quick plot will be made by creating a point for each observation in the order they occur in the data frame (index). Passing two numeric variables into this function will create a scatterplot, with the first variable corresponding to the x-axis and the second corresponding to the y-axis.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere are some arguments we can add to the plot function to make our visualizations more informative:\n\nmain = “Title of the Graph”\nxlab = “x-axis label”\nylab = “y-axis label”\nxlim = c(0,100) (changing the values on the x-axis)\nylim = c(0,100) (changing the values on the y-axis)\ncol = “colour” (full list of colours can be found here)\npch = number (list of potential shapes for points can be found here)\n\nWe can even add text to our plots by incorporating the text function.\n\n\nBarplots\nTo draw a basic bar graph, we can simply use the barplot function and specify which variable it is that we want to represent the height of the bars. For example, we can use the following code to quickly plot the Rotten Tomatoes score for each of the Pixar movies:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere are some arguments we can add to the barplot function to make our bar graph more informative.\n\nhoriz = T (draw the bars horizontally)\nname = variable to label the bars\nlas = 2 (rotates the labels)\ncex.names = 0.5 (change the labels font size)\n\n\n\nHistograms\nWe can create histograms of the data using the hist function. For example, we can use the following code to quickly create a histogram of the Rotten Tomatoes scores for the Pixar movies:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nArguments we can add to the hist function to make our graph more informative.\n\nbreaks = number (number of bars displayed)\nlabels = T (add numbers to bars)\n\n\n\nBoxplots\nThe boxplot function can be used to (unsurprisingly) create boxplots. Keeping with our Rotten Tomatoes examples:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nArguments we can add to the boxplot function to make our graph more informative.\n\nhorizontal = T (draw the boxplot horizontally)"
   },
   {
     "objectID": "course_skeleton/lectures/lecture-template.html#outline",
@@ -504,368 +805,67 @@
     "text": "iFrame\nYou can also embed videos/webpages using an iFrame\n\n\n\n\n\n\n\n\nNote\n\n\nSome websites block iframe, so previews may not appear in the rendered Quarto output for those sites."
   },
   {
-    "objectID": "course_skeleton/activities/activity_intro_to_visuals.html",
-    "href": "course_skeleton/activities/activity_intro_to_visuals.html",
-    "title": "An Activity in R Introducing Visual",
+    "objectID": "course_skeleton/syllabus.html",
+    "href": "course_skeleton/syllabus.html",
+    "title": "Course Syllabus ",
     "section": "",
-    "text": "This script will provide a quick demonstration of summarizing data visually."
+    "text": "Course: Course Title\nInstructor: Instructor Name\nEmail: instructor@email.ca\nOffice hours: TBD\nClass time/location: TBD"
   },
   {
-    "objectID": "course_skeleton/activities/activity_intro_to_visuals.html#pixar-data",
-    "href": "course_skeleton/activities/activity_intro_to_visuals.html#pixar-data",
-    "title": "An Activity in R Introducing Visual",
-    "section": "Pixar Data",
-    "text": "Pixar Data\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe data we will be looking at contains information about Pixar films released prior to 2021, as provided by Wikipedia. The following variables were collected for each film:\n\nfilm: The name of the film.\nrelease_date: The date the film premiered.\nrun_time: The length of the film in minutes.\nrotten_tomatoes: Score from the review-aggregation website Rotten Tomatoes; scored out of 100.\nbox_office_worldwide: Box office gross amount in U.S. dollars worldwide.\nbudget: Movie budget in U.S. dollars.\n\nThe data can be found in the following table:\n\n\n\n\n\n\nfilm\nrelease_date\nrun_time\nrotten_tomatoes\nbox_office_worldwide\nbudget\n\n\n\n\nToy Story\n1995-11-22\n81\n100\n373,554,033\n30,000,000\n\n\nA Bug's Life\n1998-11-25\n95\n92\n363,258,859\n120,000,000\n\n\nToy Story 2\n1999-11-24\n92\n100\n497,374,776\n90,000,000\n\n\nMonsters, Inc.\n2001-11-02\n92\n96\n632,316,649\n115,000,000\n\n\nFinding Nemo\n2003-05-30\n100\n99\n871,014,978\n94,000,000\n\n\nThe Incredibles\n2004-11-05\n115\n97\n631,606,713\n92,000,000\n\n\nCars\n2006-06-09\n117\n74\n461,983,149\n120,000,000\n\n\nRatatouille\n2007-06-29\n111\n96\n623,726,085\n150,000,000\n\n\nWALL-E\n2008-06-27\n98\n95\n521,311,860\n180,000,000\n\n\nUp\n2009-05-29\n96\n98\n735,099,082\n175,000,000\n\n\nToy Story 3\n2010-06-18\n103\n98\n1,066,969,703\n200,000,000\n\n\nCars 2\n2011-06-24\n106\n40\n559,852,396\n200,000,000\n\n\nBrave\n2012-06-22\n93\n78\n538,983,207\n185,000,000\n\n\nMonsters University\n2013-06-21\n104\n80\n743,559,607\n200,000,000\n\n\nInside Out\n2015-06-19\n95\n98\n857,611,174\n175,000,000\n\n\nThe Good Dinosaur\n2015-11-25\n93\n76\n332,207,671\n175,000,000\n\n\nFinding Dory\n2016-06-17\n97\n94\n1,028,570,889\n200,000,000\n\n\nCars 3\n2017-06-16\n102\n69\n383,930,656\n175,000,000\n\n\nCoco\n2017-11-22\n105\n97\n807,082,196\n175,000,000\n\n\nIncredibles 2\n2018-06-15\n118\n93\n1,242,805,359\n200,000,000\n\n\nToy Story 4\n2019-06-21\n100\n97\n1,073,394,593\n200,000,000\n\n\nOnward\n2020-03-06\n102\n88\n141,950,121\n175,000,000\n\n\nSoul\n2020-12-25\n100\n96\n135,435,315\n175,000,000\n\n\n\n\n\n\n\nDescriptive Statistics\nThe following functions are useful for summarizing numerical data: mean, median, min, max, range, sd, var, fivenum\nTry them here:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nBasic Plots\nThere is a generic plot function in R which is useful for creating quick visualizations of a data set. If you pass one numeric variable into this function, a quick plot will be made by creating a point for each observation in the order they occur in the data frame (index). Passing two numeric variables into this function will create a scatterplot, with the first variable corresponding to the x-axis and the second corresponding to the y-axis.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere are some arguments we can add to the plot function to make our visualizations more informative:\n\nmain = “Title of the Graph”\nxlab = “x-axis label”\nylab = “y-axis label”\nxlim = c(0,100) (changing the values on the x-axis)\nylim = c(0,100) (changing the values on the y-axis)\ncol = “colour” (full list of colours can be found here)\npch = number (list of potential shapes for points can be found here)\n\nWe can even add text to our plots by incorporating the text function.\n\n\nBarplots\nTo draw a basic bar graph, we can simply use the barplot function and specify which variable it is that we want to represent the height of the bars. For example, we can use the following code to quickly plot the Rotten Tomatoes score for each of the Pixar movies:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere are some arguments we can add to the barplot function to make our bar graph more informative.\n\nhoriz = T (draw the bars horizontally)\nname = variable to label the bars\nlas = 2 (rotates the labels)\ncex.names = 0.5 (change the labels font size)\n\n\n\nHistograms\nWe can create histograms of the data using the hist function. For example, we can use the following code to quickly create a histogram of the Rotten Tomatoes scores for the Pixar movies:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nArguments we can add to the hist function to make our graph more informative.\n\nbreaks = number (number of bars displayed)\nlabels = T (add numbers to bars)\n\n\n\nBoxplots\nThe boxplot function can be used to (unsurprisingly) create boxplots. Keeping with our Rotten Tomatoes examples:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nArguments we can add to the boxplot function to make our graph more informative.\n\nhorizontal = T (draw the boxplot horizontally)"
-  },
-  {
-    "objectID": "course_skeleton/about.html",
-    "href": "course_skeleton/about.html",
-    "title": "About",
+    "objectID": "course_skeleton/syllabus.html#course-information",
+    "href": "course_skeleton/syllabus.html#course-information",
+    "title": "Course Syllabus ",
     "section": "",
-    "text": "This course provides an introduction to key concepts in statistics and data science, with an emphasis on understanding, interpretation, and communication rather than rote computation.\nStudents will engage with real and realistic datasets, develop intuition through visualization and simulation, and learn to clearly communicate their findings."
+    "text": "Course: Course Title\nInstructor: Instructor Name\nEmail: instructor@email.ca\nOffice hours: TBD\nClass time/location: TBD"
   },
   {
-    "objectID": "course_skeleton/about.html#about-this-course",
-    "href": "course_skeleton/about.html#about-this-course",
-    "title": "About",
+    "objectID": "course_skeleton/syllabus.html#course-description",
+    "href": "course_skeleton/syllabus.html#course-description",
+    "title": "Course Syllabus ",
+    "section": "Course description",
+    "text": "Course description\nAdd a short course description here."
+  },
+  {
+    "objectID": "course_skeleton/syllabus.html#learning-objectives",
+    "href": "course_skeleton/syllabus.html#learning-objectives",
+    "title": "Course Syllabus ",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this course, students should be able to:\n\nexplain core concepts using appropriate terminology\napply course methods to real or realistic problems\ninterpret results clearly and accurately\ncommunicate findings in a reproducible format\nreflect on assumptions, limitations, and uncertainty"
+  },
+  {
+    "objectID": "course_skeleton/syllabus.html#course-materials",
+    "href": "course_skeleton/syllabus.html#course-materials",
+    "title": "Course Syllabus ",
+    "section": "Course materials",
+    "text": "Course materials\nRequired and recommended materials will be listed here."
+  },
+  {
+    "objectID": "course_skeleton/syllabus.html#assessment",
+    "href": "course_skeleton/syllabus.html#assessment",
+    "title": "Course Syllabus ",
+    "section": "Assessment",
+    "text": "Assessment\n\n\n\nComponent\nWeight\n\n\n\n\nAssignments\nXX%\n\n\nQuizzes\nXX%\n\n\nMidterm\nXX%\n\n\nFinal project/exam\nXX%\n\n\nParticipation\nXX%"
+  },
+  {
+    "objectID": "course_skeleton/syllabus.html#course-policies",
+    "href": "course_skeleton/syllabus.html#course-policies",
+    "title": "Course Syllabus ",
+    "section": "Course policies",
+    "text": "Course policies\nAdd policies for attendance, late work, academic integrity, use of AI tools, accessibility, and communication expectations."
+  },
+  {
+    "objectID": "course_skeleton/syllabus.html#recommended-textbooks",
+    "href": "course_skeleton/syllabus.html#recommended-textbooks",
+    "title": "Course Syllabus ",
+    "section": "Recommended Textbooks",
+    "text": "Recommended Textbooks\n\nDevore et al. (2021)\nDiez et al. (2016)"
+  },
+  {
+    "objectID": "course_skeleton/tutorials/tutorial_intro_to_r.html",
+    "href": "course_skeleton/tutorials/tutorial_intro_to_r.html",
+    "title": "Tutorial: Introduction to R",
     "section": "",
-    "text": "This course provides an introduction to key concepts in statistics and data science, with an emphasis on understanding, interpretation, and communication rather than rote computation.\nStudents will engage with real and realistic datasets, develop intuition through visualization and simulation, and learn to clearly communicate their findings."
-  },
-  {
-    "objectID": "course_skeleton/about.html#teaching-philosophy",
-    "href": "course_skeleton/about.html#teaching-philosophy",
-    "title": "About",
-    "section": "Teaching philosophy",
-    "text": "Teaching philosophy\nThis course is designed around the following principles:\n\nConceptual understanding first\nWe focus on why methods work and how to interpret results, not just how to compute them.\nReproducibility matters\nAll work should be clear, organized, and reproducible using modern tools.\nLearning by doing\nStudents will practice through labs, assignments, and in-class activities.\nCommunication is key\nBeing able to explain results clearly is just as important as obtaining them."
-  },
-  {
-    "objectID": "course_skeleton/about.html#course-structure",
-    "href": "course_skeleton/about.html#course-structure",
-    "title": "About",
-    "section": "Course structure",
-    "text": "Course structure\nThe course typically includes:\n\nLectures\nIntroduce key concepts and worked examples\nLabs / practice\nReinforce ideas through hands-on work\nAssignments\nApply methods to new problems and datasets\nAssessments\nEvaluate conceptual understanding and applied skills"
-  },
-  {
-    "objectID": "course_skeleton/about.html#tools-and-technologies",
-    "href": "course_skeleton/about.html#tools-and-technologies",
-    "title": "About",
-    "section": "Tools and technologies",
-    "text": "Tools and technologies\nThis course uses:\n\nR and RStudio / Positron\nQuarto for reproducible documents and presentations\nWebR (in some cases) for running code in the browser\nGitHub for version control and collaboration (optional/advanced)\n\nNo prior experience with these tools is assumed unless otherwise stated."
-  },
-  {
-    "objectID": "course_skeleton/about.html#expectations",
-    "href": "course_skeleton/about.html#expectations",
-    "title": "About",
-    "section": "Expectations",
-    "text": "Expectations\nStudents are expected to:\n\nattend and participate in lectures\nengage actively with course materials\nattempt all assigned work\nask questions and seek help when needed\ncollaborate appropriately while maintaining academic integrity"
-  },
-  {
-    "objectID": "course_skeleton/about.html#support",
-    "href": "course_skeleton/about.html#support",
-    "title": "About",
-    "section": "Support",
-    "text": "Support\nLearning new concepts can be challenging. Support is available through:\n\noffice hours\ndiscussion forums\npeer collaboration (where appropriate)\n\nIf you are struggling, please reach out early."
-  },
-  {
-    "objectID": "course_skeleton/about.html#a-note-on-flexibility",
-    "href": "course_skeleton/about.html#a-note-on-flexibility",
-    "title": "About",
-    "section": "A note on flexibility",
-    "text": "A note on flexibility\nThe course schedule and materials may be adjusted based on pacing and feedback to best support student learning."
-  },
-  {
-    "objectID": "activities/activity_coins.html",
-    "href": "activities/activity_coins.html",
-    "title": "An Activity in R on Coin Flipping",
-    "section": "",
-    "text": "Coin Flip Example\nFor a random variable \\(X\\) that follows the Bernoulli distribution with probability \\(p\\), each realization of the random variable has two possible outcomes (e.g., Success or Failure, 1 or 0, Heads or Tails, etc.). More specifically, the Bernoulli distribution is a discrete probability distribution such that \\(P(X=1)=p\\) and \\(P(X=0)=1-p\\).\nAs a simple example, we can design an experiment where we flip a coin and record the outcome using the following code:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNow let’s try flipping the coin a few times:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s do this again, but this time we’ll keep track of the number of Heads and Tails that occur.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nBy default, the sample function gives every outcome an equal chance of happening. If we want to make certain events more likely than others, we can do this by adding a prob argument. For example, we can make it so that our coin has a 75% chance of landing on heads for any single flip by using the following code:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFinally, let’s try flipping the coin 100 times and keep track of how the frequency of Heads progresses over the tosses.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "activities/activity_intro_to_visuals.html",
-    "href": "activities/activity_intro_to_visuals.html",
-    "title": "In-Class Activity: Summarizing Numerical Data",
-    "section": "",
-    "text": "This script will provide a quick demonstration of summarizing data visually."
-  },
-  {
-    "objectID": "activities/activity_intro_to_visuals.html#pixar-data",
-    "href": "activities/activity_intro_to_visuals.html#pixar-data",
-    "title": "In-Class Activity: Summarizing Numerical Data",
-    "section": "Pixar Data",
-    "text": "Pixar Data\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe data we will be looking at contains information about Pixar films released prior to 2021, as provided by Wikipedia. The following variables were collected for each film:\n\nfilm: The name of the film.\nrelease_date: The date the film premiered.\nrun_time: The length of the film in minutes.\nrotten_tomatoes: Score from the review-aggregation website Rotten Tomatoes; scored out of 100.\nbox_office_worldwide: Box office gross amount in U.S. dollars worldwide.\nbudget: Movie budget in U.S. dollars.\n\nThe data can be found in the following table:\n\n\n\n\n\n\nfilm\nrelease_date\nrun_time\nrotten_tomatoes\nbox_office_worldwide\nbudget\n\n\n\n\nToy Story\n1995-11-22\n81\n100\n373,554,033\n30,000,000\n\n\nA Bug's Life\n1998-11-25\n95\n92\n363,258,859\n120,000,000\n\n\nToy Story 2\n1999-11-24\n92\n100\n497,374,776\n90,000,000\n\n\nMonsters, Inc.\n2001-11-02\n92\n96\n632,316,649\n115,000,000\n\n\nFinding Nemo\n2003-05-30\n100\n99\n871,014,978\n94,000,000\n\n\nThe Incredibles\n2004-11-05\n115\n97\n631,606,713\n92,000,000\n\n\nCars\n2006-06-09\n117\n74\n461,983,149\n120,000,000\n\n\nRatatouille\n2007-06-29\n111\n96\n623,726,085\n150,000,000\n\n\nWALL-E\n2008-06-27\n98\n95\n521,311,860\n180,000,000\n\n\nUp\n2009-05-29\n96\n98\n735,099,082\n175,000,000\n\n\nToy Story 3\n2010-06-18\n103\n98\n1,066,969,703\n200,000,000\n\n\nCars 2\n2011-06-24\n106\n40\n559,852,396\n200,000,000\n\n\nBrave\n2012-06-22\n93\n78\n538,983,207\n185,000,000\n\n\nMonsters University\n2013-06-21\n104\n80\n743,559,607\n200,000,000\n\n\nInside Out\n2015-06-19\n95\n98\n857,611,174\n175,000,000\n\n\nThe Good Dinosaur\n2015-11-25\n93\n76\n332,207,671\n175,000,000\n\n\nFinding Dory\n2016-06-17\n97\n94\n1,028,570,889\n200,000,000\n\n\nCars 3\n2017-06-16\n102\n69\n383,930,656\n175,000,000\n\n\nCoco\n2017-11-22\n105\n97\n807,082,196\n175,000,000\n\n\nIncredibles 2\n2018-06-15\n118\n93\n1,242,805,359\n200,000,000\n\n\nToy Story 4\n2019-06-21\n100\n97\n1,073,394,593\n200,000,000\n\n\nOnward\n2020-03-06\n102\n88\n141,950,121\n175,000,000\n\n\nSoul\n2020-12-25\n100\n96\n135,435,315\n175,000,000\n\n\n\n\n\n\n\nDescriptive Statistics\nThe following functions are useful for summarizing numerical data: mean, median, min, max, range, sd, var, fivenum\nTry them here:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nBasic Plots\nThere is a generic plot function in R which is useful for creating quick visualizations of a data set. If you pass one numeric variable into this function, a quick plot will be made by creating a point for each observation in the order they occur in the data frame (index). Passing two numeric variables into this function will create a scatterplot, with the first variable corresponding to the x-axis and the second corresponding to the y-axis.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere are some arguments we can add to the plot function to make our visualizations more informative:\n\nmain = “Title of the Graph”\nxlab = “x-axis label”\nylab = “y-axis label”\nxlim = c(0,100) (changing the values on the x-axis)\nylim = c(0,100) (changing the values on the y-axis)\ncol = “colour” (full list of colours can be found here)\npch = number (list of potential shapes for points can be found here)\n\nWe can even add text to our plots by incorporating the text function.\n\n\nBarplots\nTo draw a basic bar graph, we can simply use the barplot function and specify which variable it is that we want to represent the height of the bars. For example, we can use the following code to quickly plot the Rotten Tomatoes score for each of the Pixar movies:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere are some arguments we can add to the barplot function to make our bar graph more informative.\n\nhoriz = T (draw the bars horizontally)\nname = variable to label the bars\nlas = 2 (rotates the labels)\ncex.names = 0.5 (change the labels font size)\n\n\n\nHistograms\nWe can create histograms of the data using the hist function. For example, we can use the following code to quickly create a histogram of the Rotten Tomatoes scores for the Pixar movies:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nArguments we can add to the hist function to make our graph more informative.\n\nbreaks = number (number of bars displayed)\nlabels = T (add numbers to bars)\n\n\n\nBoxplots\nThe boxplot function can be used to (unsurprisingly) create boxplots. Keeping with our Rotten Tomatoes examples:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nArguments we can add to the boxplot function to make our graph more informative.\n\nhorizontal = T (draw the boxplot horizontally)"
-  },
-  {
-    "objectID": "course_skeleton/activities/activity_coins.html",
-    "href": "course_skeleton/activities/activity_coins.html",
-    "title": "An Activity in R on Coin Flipping",
-    "section": "",
-    "text": "Coin Flip Example\nFor a random variable \\(X\\) that follows the Bernoulli distribution with probability \\(p\\), each realization of the random variable has two possible outcomes (e.g., Success or Failure, 1 or 0, Heads or Tails, etc.). More specifically, the Bernoulli distribution is a discrete probability distribution such that \\(P(X=1)=p\\) and \\(P(X=0)=1-p\\).\nAs a simple example, we can design an experiment where we flip a coin and record the outcome using the following code:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNow let’s try flipping the coin a few times:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s do this again, but this time we’ll keep track of the number of Heads and Tails that occur.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nBy default, the sample function gives every outcome an equal chance of happening. If we want to make certain events more likely than others, we can do this by adding a prob argument. For example, we can make it so that our coin has a 75% chance of landing on heads for any single flip by using the following code:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFinally, let’s try flipping the coin 100 times and keep track of how the frequency of Heads progresses over the tosses.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "course_skeleton/index.html",
-    "href": "course_skeleton/index.html",
-    "title": " Course Title",
-    "section": "",
-    "text": "This is a generic course landing page.\nHere students will find:"
-  },
-  {
-    "objectID": "course_skeleton/index.html#course-schedule",
-    "href": "course_skeleton/index.html#course-schedule",
-    "title": " Course Title",
-    "section": "Course Schedule",
-    "text": "Course Schedule\nThe schedule below is tentative and may be adjusted as the course progresses.\n\nLectures\n\n\n\nTable 1: The tentative course schedule for lectures\n\n\n\n\n\nWeek\nTopic\nMaterials\n\n\n\n\n1\nIntroduction to Quarto Slides with webr\nSlides\n\n\n2\nLinear Regression demo\nSlides\n\n\n\n\n\n\n\n\nInteractive Activities and Simulations\n\n\n\nTable 2: The tentative course schedule for interactive activities and simulations with R\n\n\n\n\n\nWeek\nTopic\nMaterials\n\n\n\n\n1\nCoin Flipping activity\nActivity\n\n\n2\nIntroduction to visuals\nActivity\n\n\n\n\n\n\n\n\nInteractive R Tutorials\n\n\n\nTable 3: The tentative course schedule for interactive R tutorials\n\n\n\n\n\nWeek\nTopic\nMaterials\n\n\n\n\n1\nIntroduction to R\nTutorial\n\n\n2\nTutorial on Regression with R\nTutorial\n\n\n3\nGraded tutorial on introductory level content in R\nTutorial"
-  },
-  {
-    "objectID": "course_skeleton/index.html#lecture-slide",
-    "href": "course_skeleton/index.html#lecture-slide",
-    "title": " Course Title",
-    "section": "Lecture Slide",
-    "text": "Lecture Slide\nThe slide decks above were made in Quarto in revealjs (HTML). A lecture template with some helpful demonstrations can be here; see the rendered version here.\n\n\n\n\n\n\nNote\n\n\n\nNote that revealjs presentations can be presented as HTML slides or can be printed to PDF for easier distribution. 🎉\n\n\n\nPrint/Save to PDF:\nReveal presentations can be exported to PDF via a special print stylesheet.\n\nToggle into Print View using the E key (or using the Navigation Menu)\nOpen the in-browser[^2] print dialog (CTRL/CMD+P).\nChange the Destination setting to Save as PDF.\nChange the Layout to Landscape.\nChange the Margins to None.\nEnable the Background graphics option.\nClick Save 🎉\n\nVisit https://quarto.org/docs/presentations/revealjs/ for more details on create revealjs slides."
-  },
-  {
-    "objectID": "course_skeleton/lectures/regression-lecture.html#introduction",
-    "href": "course_skeleton/lectures/regression-lecture.html#introduction",
-    "title": "Regression",
-    "section": "Introduction",
-    "text": "Introduction\n\n\nIn this lecture we will introduce Simple Linear Regression (SLR) to model the relationship between two numerical variables.\nWe will quantify the relationship between variables using popular metrics like the Correlation Coefficient and \\(R^2\\) value.\nStatistical inference for this model will be discussed, and the critical distinction between inference for mean response and inference for the outcome will be clarified.\nWe will also introduce a basic understanding of the multiple regression model."
-  },
-  {
-    "objectID": "course_skeleton/lectures/regression-lecture.html#recall-scatterplots",
-    "href": "course_skeleton/lectures/regression-lecture.html#recall-scatterplots",
-    "title": "Regression",
-    "section": "Recall: Scatterplots",
-    "text": "Recall: Scatterplots\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "course_skeleton/lectures/regression-lecture.html#line-of-best-fit",
-    "href": "course_skeleton/lectures/regression-lecture.html#line-of-best-fit",
-    "title": "Regression",
-    "section": "Line of Best fit",
-    "text": "Line of Best fit"
-  },
-  {
-    "objectID": "course_skeleton/lectures/regression-lecture.html#visualization-of-residuals",
-    "href": "course_skeleton/lectures/regression-lecture.html#visualization-of-residuals",
-    "title": "Regression",
-    "section": "Visualization of Residuals",
-    "text": "Visualization of Residuals"
-  },
-  {
-    "objectID": "course_skeleton/lectures/regression-lecture.html#what-is-regression",
-    "href": "course_skeleton/lectures/regression-lecture.html#what-is-regression",
-    "title": "Regression",
-    "section": "What is regression",
-    "text": "What is regression\n\nRegression analysis is a tool to investigate how two or more variables are related.\n\n“The general objective of a regression analysis is to determine the relationship between two (or more) variables so that we can gain information about one of them through knowing values of the other(s).”\n\n\nSource: Ch 12 of Devore et al. (2021)"
-  },
-  {
-    "objectID": "course_skeleton/lectures/regression-lecture.html#variable-types",
-    "href": "course_skeleton/lectures/regression-lecture.html#variable-types",
-    "title": "Regression",
-    "section": "Variable Types",
-    "text": "Variable Types\nWe want to see how a specific response variable, \\(Y\\) is affected by one or more explanatory variables \\(X_1, \\dots, X_p\\)\n\n\\(Y\\) is also known as the dependent variable or output variable. This variable is continuous (i.e. numeric data type)\n\\(X_i\\)’s are also known as independent/predictor variables or features. These may be continuous or categorical; however, we only consider continuous predictors in this course."
-  },
-  {
-    "objectID": "course_skeleton/lectures/regression-lecture.html#section",
-    "href": "course_skeleton/lectures/regression-lecture.html#section",
-    "title": "Regression",
-    "section": "",
-    "text": "Example\n\n\n\nOne may wish to use a person’s height, gender and race to predict a person’s weight. What is/are the response variable(s)?\n\n\n\n\n\nHeight\nGender\nRace\nWeight"
-  },
-  {
-    "objectID": "course_skeleton/lectures/regression-lecture.html#section-1",
-    "href": "course_skeleton/lectures/regression-lecture.html#section-1",
-    "title": "Regression",
-    "section": "",
-    "text": "Example\n\n\n\nOne may wish to use a person’s height, gender and race to predict a person’s weight. What is/are the dependent variable(s)?\n\n\n\n\n\nHeight\nGender\nRace\nWeight"
-  },
-  {
-    "objectID": "course_skeleton/lectures/regression-lecture.html#model",
-    "href": "course_skeleton/lectures/regression-lecture.html#model",
-    "title": "Regression",
-    "section": "Model",
-    "text": "Model\n\\[\\begin{align}\nY &= \\underbrace{f(X_1, \\dots, X_p)}_{\\text{deterministic}} + \\underbrace{\\epsilon}_{\\text{random}} \\\\\n&\\phantom{= \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\dots \\beta_p X_p + \\epsilon}\n\\end{align}\\]"
-  },
-  {
-    "objectID": "course_skeleton/lectures/regression-lecture.html#model-1",
-    "href": "course_skeleton/lectures/regression-lecture.html#model-1",
-    "title": "Regression",
-    "section": "Model",
-    "text": "Model\n\\[\\begin{align}\nY &= \\underbrace{f(X_1, \\dots, X_p)}_{\\text{deterministic}} + \\underbrace{\\epsilon}_{\\text{random}}\\\\\n&= \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\dots \\beta_p X_p + \\epsilon\n\\end{align}\\]\n\nIn a linear regression model, the function \\(f(X_1, \\dots, X_p)\\) is a linear combination of the explanatory variables."
-  },
-  {
-    "objectID": "course_skeleton/lectures/regression-lecture.html#model-2",
-    "href": "course_skeleton/lectures/regression-lecture.html#model-2",
-    "title": "Regression",
-    "section": "Model",
-    "text": "Model\n\\[\\begin{align}\n\\overset{\\overset{\\text{response}}{\\downarrow}}{Y} &= \\beta_0 + \\beta_1 \\underset{\\underset{\\text{explanatory}}{\\uparrow}}{X_1} + \\beta_2 \\underset{\\underset{\\text{explanatory}}{\\uparrow}}{X_2} + \\dots \\beta_p \\underset{\\underset{\\text{explanatory}}{\\uparrow}}{X_p} + \\epsilon\n\\end{align}\\]\n\n\n\\(\\beta_0\\) is the \\(y\\)-intercept\n\\(\\beta_i\\) are the regression coefficients, and\n\\(\\epsilon\\) are the errors that are assumed \\(N(0, \\sigma)\\)\n\n\n\nIn statistics, we can describe how variables are related using a mathematical function.\nThe function along with other assumptions is called a model.\nThere are many models we can consider. In this class, we will focus on linear models, particularly, when there is only one predictor variable.\nWe refer to this model as the simple linear regression model. (Penn STat 500)\n\n\nas well as modeling numerical response variables using a numerical or categorical explanatory variable."
-  },
-  {
-    "objectID": "course_skeleton/lectures/regression-lecture.html#simple-linear-regression",
-    "href": "course_skeleton/lectures/regression-lecture.html#simple-linear-regression",
-    "title": "Regression",
-    "section": "Simple Linear Regression",
-    "text": "Simple Linear Regression\n\nWhen \\(p = 1\\), namely, we are only considering one explanatory variable, our model is called “simple” linear regression (SLR).\nWhen \\(p&gt;1\\) we fall into multiple linear regression (MLR)."
-  },
-  {
-    "objectID": "course_skeleton/lectures/regression-lecture.html#slr-model",
-    "href": "course_skeleton/lectures/regression-lecture.html#slr-model",
-    "title": "Regression",
-    "section": "SLR model",
-    "text": "SLR model\nThe SLR model reduces to an equation for of a line:\n\\[Y = \\beta_0 + \\beta_1 X\\]\nwhere:\n\n\\(\\beta_0\\) is the \\(y\\)-intercept, and\n\\(\\beta_1\\) is the slope"
-  },
-  {
-    "objectID": "course_skeleton/lectures/regression-lecture.html#simulation-part-1",
-    "href": "course_skeleton/lectures/regression-lecture.html#simulation-part-1",
-    "title": "Regression",
-    "section": "Simulation: Part 1",
-    "text": "Simulation: Part 1\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nThis is only the deterministic portion"
-  },
-  {
-    "objectID": "course_skeleton/lectures/regression-lecture.html#comment",
-    "href": "course_skeleton/lectures/regression-lecture.html#comment",
-    "title": "Regression",
-    "section": "Comment",
-    "text": "Comment\n\nWe have only code the deterministic portion of this model\nIn other words, we are missing random component\nLet’s add some random noise …"
-  },
-  {
-    "objectID": "course_skeleton/lectures/regression-lecture.html#simulation-part-ii",
-    "href": "course_skeleton/lectures/regression-lecture.html#simulation-part-ii",
-    "title": "Regression",
-    "section": "Simulation: Part II",
-    "text": "Simulation: Part II\n\n\n\n\n\n\nWarning\n\n\nChange sd as needed\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "course_skeleton/lectures/regression-lecture.html#section-2",
-    "href": "course_skeleton/lectures/regression-lecture.html#section-2",
-    "title": "Regression",
-    "section": "",
-    "text": "\\(X\\)sParametersDeterministicNoise\n\n\nCreate n values for x, for example using:\n\nx = runif(n, min = -2, max = 10) # or runif() / rnorm()\n\n\n\n\n\n\n\n\n\n\n\n\nFor \\(\\beta_0\\) = beta0 = 3, \\(\\beta_1\\) = beta1 = 4, we have\n\\[Y = 3 + 4 \\cdot X\\]"
-  },
-  {
-    "objectID": "course_skeleton/lectures/regression-lecture.html#references",
-    "href": "course_skeleton/lectures/regression-lecture.html#references",
-    "title": "Regression",
-    "section": "References",
-    "text": "References\n\n\n\n\nDevore, J. L., K. N. Berk, and M. A. Carlton. 2021. Modern Mathematical Statistics with Applications. Springer Texts in Statistics. Springer International Publishing. https://books.google.ca/books?id=ghcsEAAAQBAJ."
-  },
-  {
-    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q1",
-    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q1",
-    "title": "Graded Tutorial: Introduction to R",
-    "section": "Q1 — Make the sum equal 10",
-    "text": "Q1 — Make the sum equal 10\nReplace ＿ with a number so the expression evaluates to 10.\n\n\n\n\n\n\n\n\n\n\n\n\nReplace the two ＿ with 2 numbers that add up to 7.\n\n\n\n\n1 + 2 + 3 + 4\n1 + 2 + 3 + 4"
-  },
-  {
-    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q2-create-a-vector",
-    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q2-create-a-vector",
-    "title": "Graded Tutorial: Introduction to R",
-    "section": "Q2 — Create a vector",
-    "text": "Q2 — Create a vector\nMake a vector called my_vec that contains the numbers 5, 10, 15, 20.\n\n\n\n\n\n\n\n\n\nUse the c() function to combine numbers: c(1, 2, 3)\n\n\n\n\nmy_vec &lt;- c(5, 10, 15, 20)\nmy_vec &lt;- c(5, 10, 15, 20)"
-  },
-  {
-    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q3-find-the-average",
-    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q3-find-the-average",
-    "title": "Graded Tutorial: Introduction to R",
-    "section": "Q3 — Find the average",
-    "text": "Q3 — Find the average\nCompute the mean of the vector c(2, 4, 6, 8, 10).\nYour answer should be stored in a variable called avg_val.\n\n\n\n\n\n\n\n\n\nUse the mean() function: mean(c(…))\n\n\n\n\navg_val &lt;- mean(c(2, 4, 6, 8, 10))\navg_val &lt;- mean(c(2, 4, 6, 8, 10))"
-  },
-  {
-    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q4-draw-a-histogram-from-toothgrowth-type-the-full-call",
-    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q4-draw-a-histogram-from-toothgrowth-type-the-full-call",
-    "title": "Graded Tutorial: Introduction to R",
-    "section": "Q4 — Draw a histogram from ToothGrowth (type the full call)",
-    "text": "Q4 — Draw a histogram from ToothGrowth (type the full call)\nUse exactly one of these numeric columns and nothing else: len or dose\n\n\n\nPhoto by The Humble Co. on Unsplash\n\n\n\n\n\n\n\n\nNotePreview\n\n\n\nFind a preview of the ToothGrowth dataset here:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUse the hist command.\n\n\n\n\nhist(ToothGrowth$len)\nhist(ToothGrowth$len)"
-  },
-  {
-    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q5-draw-a-boxplot-from-toothgrowth-type-the-full-call",
-    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q5-draw-a-boxplot-from-toothgrowth-type-the-full-call",
-    "title": "Graded Tutorial: Introduction to R",
-    "section": "Q5 — Draw a boxplot from ToothGrowth (type the full call)",
-    "text": "Q5 — Draw a boxplot from ToothGrowth (type the full call)\nUse exactly one of these numeric columns and nothing else: len or dose\n\n\n\n\n\n\nNotePreview\n\n\n\nFind a preview of the ToothGrowth dataset here:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUse the boxplot command.\n\n\n\n\nboxplot(ToothGrowth$len)\nboxplot(ToothGrowth$len)"
-  },
-  {
-    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q6-add-a-color-to-the-histogram",
-    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q6-add-a-color-to-the-histogram",
-    "title": "Graded Tutorial: Introduction to R",
-    "section": "Q6 — Add a color to the histogram",
-    "text": "Q6 — Add a color to the histogram\nRe-draw a histogram of ToothGrowth$len and set any bar color using the col= argument.\n\n\n\n\n\n\n\n\n\nadd col as an additional argument here and give it a color of your choice.\n\n\n\n\nhist(ToothGrowth$len, col = \"steelblue\")\nhist(ToothGrowth$len, col = \"steelblue\")"
-  },
-  {
-    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q7-boxplot-make-it-horizontal",
-    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q7-boxplot-make-it-horizontal",
-    "title": "Graded Tutorial: Introduction to R",
-    "section": "Q7 — Boxplot (make it horizontal)",
-    "text": "Q7 — Boxplot (make it horizontal)\nDraw a boxplot of ToothGrowth$dose and make it horizontal using horizontal = TRUE as an argument.\n\n\n\n\n\n\n\n\n\nadd horizontal as an argument just like col from the previous question\n\n\n\n\nboxplot(ToothGrowth$dose, horizontal = TRUE)\nboxplot(ToothGrowth$dose, horizontal = TRUE)"
-  },
-  {
-    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q8-load-a-csv-as-a-dataframe",
-    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q8-load-a-csv-as-a-dataframe",
-    "title": "Graded Tutorial: Introduction to R",
-    "section": "Q8 — Load a CSV as a DataFrame",
-    "text": "Q8 — Load a CSV as a DataFrame\nLoad iris.csv into a dataframe named df.\n\n\n\nPhoto by Andrew Small on Unsplash\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUse read.csv here.\n\n\n\n\ndf &lt;- read.csv(\"iris.csv\")\ndf &lt;- read.csv(\"iris.csv\")"
-  },
-  {
-    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q9-count-rows-in-iris.csv",
-    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q9-count-rows-in-iris.csv",
-    "title": "Graded Tutorial: Introduction to R",
-    "section": "Q9 — Count rows in iris.csv",
-    "text": "Q9 — Count rows in iris.csv\nCount the number of rows in iris.csv and store them in the variable rows\n\n\n\n\n\n\n\n\n\n\n\n\nUse nrow.\n\n\n\n\ndf &lt;- read.csv(\"iris.csv\")\nrows &lt;- nrow(df)\ndf &lt;- read.csv(\"iris.csv\")\nrows &lt;- nrow(df)"
-  },
-  {
-    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q10-show-column-names",
-    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q10-show-column-names",
-    "title": "Graded Tutorial: Introduction to R",
-    "section": "Q10 — Show column names",
-    "text": "Q10 — Show column names\nPrint the column names from iris.csv\n\n\n\n\n\n\n\n\n\n\n\n\nUse names.\n\n\n\n\ndf   &lt;- read.csv(\"iris.csv\")\ncols &lt;- names(df)\ncols\ndf   &lt;- read.csv(\"iris.csv\")\ncols &lt;- names(df)\ncols"
-  },
-  {
-    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q11-print-some-of-the-data",
-    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q11-print-some-of-the-data",
-    "title": "Graded Tutorial: Introduction to R",
-    "section": "Q11 — Print some of the data",
-    "text": "Q11 — Print some of the data\nPrint the first 5 rows from iris.csv.\n\n\n\n\n\n\n\n\n\n\n\n\nUse head.\n\n\n\n\ndf &lt;- read.csv(\"iris.csv\")\nhead(df)\ndf &lt;- read.csv(\"iris.csv\")\nhead(df)"
-  },
-  {
-    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q12-make-a-histogram-from-iris.csv",
-    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q12-make-a-histogram-from-iris.csv",
-    "title": "Graded Tutorial: Introduction to R",
-    "section": "Q12 — Make a histogram from iris.csv",
-    "text": "Q12 — Make a histogram from iris.csv\nMake a histogram of the column Sepal.Length from iris.csv.\n\n\n\n\n\n\n\n\n\n\n\n\nUse hist (see Q5).\n\n\n\n\ndf &lt;- read.csv(\"iris.csv\")\nhist(df$Sepal.Length, col = \"lightgray\", main = \"Sepal.Length\", xlab = \"cm\") \ndf &lt;- read.csv(\"iris.csv\")\nhist(df$Sepal.Length, col = \"lightgray\", main = \"Sepal.Length\", xlab = \"cm\")"
-  },
-  {
-    "objectID": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q2",
-    "href": "course_skeleton/tutorials/graded_tutorial_intro_to_r.html#q2",
-    "title": "Graded Tutorial: Introduction to R",
-    "section": "Q13 — Write a function using division",
-    "text": "Q13 — Write a function using division\nDefine a function called divide_nums that takes two arguments (a and b) and returns the results of:\n\na / b\nb / a\n\nBoth results should be stored in separate variables before being returned.\n\n\n\n\n\n\nNoteInfo\n\n\n\nRemember: in R, division by zero (1/0) will return Inf rather than an error.\n\n\n\n\n\n\n\n\nNoteInfo\n\n\n\nIn R, lists are written with list(a, b, c). Each element can be anything: a number, a string, or even another list.\n\n\n\n\n\n\n\n\n\n\n\nStart with: res1 &lt;- a / b res2 &lt;- b / a and then use the list command.\n\n\n\n\ndivide_nums &lt;- function(a, b) {\n  res1 &lt;- a / b\n  res2 &lt;- b / a\n  list(res1, res2)\n}\ndivide_nums &lt;- function(a, b) {\n  res1 &lt;- a / b\n  res2 &lt;- b / a\n  list(res1, res2)\n}"
-  },
-  {
-    "objectID": "course_skeleton/tutorials/tutorial_regression.html",
-    "href": "course_skeleton/tutorials/tutorial_regression.html",
-    "title": "Tutorial: Regression Analaysis with R",
-    "section": "",
-    "text": "This is a sample lecture on regression. For this example, we set packages: [\"tibble\", \"dplyr\", \"ggplot2\", \"palmerpenguins\", \"mosaic].\n\n\nThis example is on the palmerpenguins data set.\n\n\n\n\n\nLet’s examine the data set. For simplicity, we will use complete cases for this tutorial.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nWe would like to perform a t-test on the body mass of male and female Adelie penguins. Let’s start with some initial data analysis.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nlet’s examine side-by-side boxplots and histograms of the mass of male and female Adelie penguins. For simplicity, we’ll remove the data points where information is missing.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s conduct the following test on whether the mean body mass of male Adelie penguins is equal to the mean body mass of female Adelie penguins, or whether there is a difference.\nThe null and alternative hypothesis are \\[\n  H_{0}: \\mu_{\\text{male}} = \\mu_{\\text{female}}\n  \\quad\n  H_{a}: \\mu_{\\text{male}} \\neq \\mu_{\\text{female}}\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nRecall the simple linear regression model is\n\\[\nY = \\beta_{0} + \\beta_{1} X + \\varepsilon, \\quad \\varepsilon \\sim N(0, \\sigma^2)\n\\] This is estimated using \\[\n\\hat{y} = \\hat{\\beta}_{0} + \\hat{\\beta}_{1}x\n\\]\nFor the Adelie penguins, let’s examine whether there is a linear relationship between the bill_length and body_mass_g of the Adelie penguins. We’ll start with a scatterplot of the data.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere appears to be a positive linear relationship between body mass and flipper length. Let’s get the least squares regression line:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe equation of the regression line is:\n\\[\n  \\hat{y}_{\\text{flipper length}} = 165.2\n    + 0.007 x_{\\text{mass}}\n\\]\nLet’s superimpose the least squares line on the plot:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s see if there is a difference between the flipper length of male and female flipper lengths:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere appers to be a difference for male and female penguins. Let’s create a new model with sex as an indicator variable.\n\\[\n  \\hat{y}_{\\text{flipper length}} = \\hat{\\beta}_0\n    + \\hat{\\beta}_{\\text{mass}} x_{\\text{mass}}\n    + \\hat{\\beta}_{\\text{sex}} x_{\\text{sex}}\n\\] where\n\\[\nx_{\\text{sex}} =\n  \\begin{cases}\n    1, \\text{ if sex is } \\texttt{male}; \\\\\n    0, \\text{ if sex is } \\texttt{female}\n  \\end{cases}\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFrom the output above, we see our model is\n\\[\n  \\hat{y}_{\\text{flipper length}} = 165.2\n    + 0.006 x_{\\text{mass}}\n    + 0.344 x_{\\text{sex}}\n\\]\nIf we add both lines to the scatter plot we get the following.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFrom both the plot and the R output, we observe the itnteraction effect is not significant."
-  },
-  {
-    "objectID": "course_skeleton/tutorials/tutorial_regression.html#exploratory-data-analysis",
-    "href": "course_skeleton/tutorials/tutorial_regression.html#exploratory-data-analysis",
-    "title": "Tutorial: Regression Analaysis with R",
-    "section": "",
-    "text": "This example is on the palmerpenguins data set.\n\n\n\n\n\nLet’s examine the data set. For simplicity, we will use complete cases for this tutorial.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "course_skeleton/tutorials/tutorial_regression.html#sample-hypothesis-test",
-    "href": "course_skeleton/tutorials/tutorial_regression.html#sample-hypothesis-test",
-    "title": "Tutorial: Regression Analaysis with R",
-    "section": "",
-    "text": "We would like to perform a t-test on the body mass of male and female Adelie penguins. Let’s start with some initial data analysis.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nlet’s examine side-by-side boxplots and histograms of the mass of male and female Adelie penguins. For simplicity, we’ll remove the data points where information is missing.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s conduct the following test on whether the mean body mass of male Adelie penguins is equal to the mean body mass of female Adelie penguins, or whether there is a difference.\nThe null and alternative hypothesis are \\[\n  H_{0}: \\mu_{\\text{male}} = \\mu_{\\text{female}}\n  \\quad\n  H_{a}: \\mu_{\\text{male}} \\neq \\mu_{\\text{female}}\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "course_skeleton/tutorials/tutorial_regression.html#simple-linear-regression",
-    "href": "course_skeleton/tutorials/tutorial_regression.html#simple-linear-regression",
-    "title": "Tutorial: Regression Analaysis with R",
-    "section": "",
-    "text": "Recall the simple linear regression model is\n\\[\nY = \\beta_{0} + \\beta_{1} X + \\varepsilon, \\quad \\varepsilon \\sim N(0, \\sigma^2)\n\\] This is estimated using \\[\n\\hat{y} = \\hat{\\beta}_{0} + \\hat{\\beta}_{1}x\n\\]\nFor the Adelie penguins, let’s examine whether there is a linear relationship between the bill_length and body_mass_g of the Adelie penguins. We’ll start with a scatterplot of the data.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere appears to be a positive linear relationship between body mass and flipper length. Let’s get the least squares regression line:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe equation of the regression line is:\n\\[\n  \\hat{y}_{\\text{flipper length}} = 165.2\n    + 0.007 x_{\\text{mass}}\n\\]\nLet’s superimpose the least squares line on the plot:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLet’s see if there is a difference between the flipper length of male and female flipper lengths:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThere appers to be a difference for male and female penguins. Let’s create a new model with sex as an indicator variable.\n\\[\n  \\hat{y}_{\\text{flipper length}} = \\hat{\\beta}_0\n    + \\hat{\\beta}_{\\text{mass}} x_{\\text{mass}}\n    + \\hat{\\beta}_{\\text{sex}} x_{\\text{sex}}\n\\] where\n\\[\nx_{\\text{sex}} =\n  \\begin{cases}\n    1, \\text{ if sex is } \\texttt{male}; \\\\\n    0, \\text{ if sex is } \\texttt{female}\n  \\end{cases}\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFrom the output above, we see our model is\n\\[\n  \\hat{y}_{\\text{flipper length}} = 165.2\n    + 0.006 x_{\\text{mass}}\n    + 0.344 x_{\\text{sex}}\n\\]\nIf we add both lines to the scatter plot we get the following.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFrom both the plot and the R output, we observe the itnteraction effect is not significant."
+    "text": "Objective Learn how to compute summary statistics and create basic plots using dplyr and ggplot2, two core packages from the tidyverse.\n\nSetup\n\n\nLoad necessary packages\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nExample Data\n\nWe’ll use the built-in mtcars dataset for demonstration.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nSummary Statistics\n\nCalculate mean, median, standard deviation, and count for mpg (miles per gallon).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nYou can also group by a categorical variable, e.g., number of cylinders (cyl):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nBasic Plots with ggplot2\n\nScatter plot of mpg vs wt (weight):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nBoxplot of mpg by number of cylinders:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nExercise (Optional)\n\nCompute the mean horsepower (hp) for each cylinder group and create a bar plot of these means.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
     "objectID": "tutorials/tutorial_intro_to_r.html",
